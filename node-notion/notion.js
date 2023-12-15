@@ -1,5 +1,8 @@
 //@ts-check
-const { Client } = require("@notionhq/client");
+const { Client } = require('@notionhq/client');
+const fs = require('fs');
+const path = require('path');
+const { writeJson } = require('./library.js');
 
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
@@ -22,7 +25,7 @@ const n = {
   fertilizer: 'yOKq',
   notes: 'title',
   date: 'GuZ%3E',
-}
+};
 
 // Use this function to log the properties of a database
 // Useful for finding the schema, ids of properties
@@ -39,7 +42,7 @@ async function getAquariumLogPages() {
     sorts: [
       {
         property: n.date,
-        direction: "descending",
+        direction: 'descending',
       },
     ],
   });
@@ -55,31 +58,32 @@ function notionPropertiesById(properties) {
 
 function fromNotionObject(notionPage) {
   // const id = notionPage.id;
-  const propertiesById = notionPropertiesById(notionPage.properties);
+  const propsById = notionPropertiesById(notionPage.properties);
   return {
     emoji: notionPage?.icon?.emoji ?? null,
-    date: propertiesById[n.date]?.date?.start ?? null,
-    title: propertiesById[n.notes]?.title[0]?.plain_text ?? null,
-    ammonia: propertiesById[n.ammonia]?.number ?? null,
-    nitrites: propertiesById[n.nitrites]?.number ?? null,
-    nitrates: propertiesById[n.nitrates]?.number ?? null,
-    gh: propertiesById[n.gh]?.number ?? null,
-    chlorine: propertiesById[n.chlorine]?.number ?? null,
-    kh: propertiesById[n.kh]?.number ?? null,
-    ph: propertiesById[n.ph]?.number ?? null,
-    tds: propertiesById[n.tds]?.number ?? null,
-    prime: propertiesById[n.prime]?.number ?? null,
-    waterChange: propertiesById[n.waterChange]?.number ?? null,
-    stability: propertiesById[n.stability]?.checkbox ?? null,
-    co2: propertiesById[n.co2]?.checkbox ?? null,
-    bakingSoda: propertiesById[n.bakingSoda]?.checkbox ?? null,
-    replacedFilter: propertiesById[n.replacedFilter]?.checkbox ?? null,
-    crushedCoral: propertiesById[n.crushedCoral]?.checkbox ?? null,
-    fertilizer: propertiesById[n.fertilizer]?.checkbox ?? null,
+    date: propsById[n.date]?.date?.start ?? null,
+    title: propsById[n.notes]?.title[0]?.plain_text ?? null,
+    ammonia: propsById[n.ammonia]?.number ?? null,
+    nitrites: propsById[n.nitrites]?.number ?? null,
+    nitrates: propsById[n.nitrates]?.number ?? null,
+    gh: propsById[n.gh]?.number ?? null,
+    chlorine: propsById[n.chlorine]?.number ?? null,
+    kh: propsById[n.kh]?.number ?? null,
+    ph: propsById[n.ph]?.number ?? null,
+    tds: propsById[n.tds]?.number ?? null,
+    prime: propsById[n.prime]?.number ?? null,
+    waterChange: propsById[n.waterChange]?.number ?? null,
+    stability: propsById[n.stability]?.checkbox ?? null,
+    co2: propsById[n.co2]?.checkbox ?? null,
+    bakingSoda: propsById[n.bakingSoda]?.checkbox ?? null,
+    replacedFilter: propsById[n.replacedFilter]?.checkbox ?? null,
+    crushedCoral: propsById[n.crushedCoral]?.checkbox ?? null,
+    fertilizer: propsById[n.fertilizer]?.checkbox ?? null,
   };
 }
 
 (async () => {
   const pages = await getAquariumLogPages();
-  console.log(pages);
+  const pathToJson = path.join(__dirname, '..', 'src', '_data', 'ten-gallon.json');
+  writeJson(pathToJson, pages);
 })();

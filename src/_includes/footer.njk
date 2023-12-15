@@ -1,0 +1,15 @@
+<sl-divider style="--width: 4px;"></sl-divider>
+
+<div class="page-footer">
+  <footer
+  class="grid animate__animated animate__fadeIn animate__delay-2s"
+>
+    <p>&copy; <time datetime="{{ site.currentYear }}">{{ site.currentYear }}</time>
+    </p>
+    {% for item in site.footerNavigation %}
+      <a href="{{ item.url }}">{{ item.label }}</a>
+      {% if not loop.last %} · {% endif %}
+    {% endfor %}
+  </p>
+</footer>
+</div>

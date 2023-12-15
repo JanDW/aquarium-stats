@@ -1,0 +1,49 @@
+---
+layout: default
+permalink: /
+bodyClasses: home bg-slate-900 text-white font-inter
+loadMain: true
+---
+<header class="hero">
+  <div class="hero__image">
+    <img src="/assets/img/betta.jpg" alt="">
+  </div>
+  <div class="hero__content max-w-[50%]">
+    <h1 class="text-7xl font-black tracking-tighter">Sofie's Betta T<span class="inline-block -ml-3">ank.</span></h1>
+  </div>
+</header>
+
+<div class="border border-slate-800 rounded-lg m-8">
+  <table class="table-auto border-collapse">
+    <caption class="caption-bottom pt-4 pb-6 text-slate-500 italic">Dataset refreshes once a day</caption>
+    <thead>
+      <tr class="bg-blue-950 text-left">
+        <th class="py-2 px-4">Date</th>
+        {%- for key, value in data[0] %}
+          {%- if key != 'date' %}
+            <th class="py-2 px-4">{{ key | toHeading }}</th>
+          {%- endif %}
+        {%- endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {%- for obj in data %}
+        <tr class="{{ 'bg-slate-900/25' if loop.index % 2 == 1 else 'bg-slate-800/25' }}">
+          <th class="whitespace-nowrap py-2 px-4">{{ obj.date }}</th>
+          {%- for key, value in obj %}
+            {%- if key != 'date' %}
+              {% if value === true %}
+                {%- set printValue = '✅' %}
+              {% elif value === false %}
+                {%- set printValue = '' %}
+              {% else %}
+                {%- set printValue = value %}
+              {% endif %}
+              <td class="whitespace-nowrap py-2 px-4">{{ printValue }}</td>
+            {%- endif %}
+          {%- endfor %}
+        </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+</div>

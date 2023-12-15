@@ -1,0 +1,28 @@
+{%- set isHomepage = page.url === "/" -%}
+
+<header class="grid">
+  <nav class="global-nav">  
+    <ul role="list" class="list-none">
+      <li class="m-i-st-0 m-i-end-auto" data-home {{ 'aria-current=page' if isHomepage }}>
+        {%- if not isHomepage %}
+        <a href="/">
+        {%- endif %}
+          {% include "partials/jdw-logo.svg" %}
+        {%- if not isHomepage %}
+        </a>
+        {%- endif %}
+      </li>
+      {% for item in site.navigation %}
+        <li class="animate__animated animate__fadeIn animate__delay-{{ loop.index }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+          {%- if item.url !== page.url %}
+            <a href="{{ item.url }}">
+          {%- endif %}
+          {{ item.label }}
+          {%- if item.url !== page.url %}
+            </a>
+          {%- endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
