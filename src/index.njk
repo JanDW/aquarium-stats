@@ -1,18 +1,26 @@
 ---
-layout: default
+title: Home
 permalink: /
 bodyClasses: home bg-slate-900 text-white font-inter
+mainClasses: 
 loadMain: true
 ---
-<header class="hero">
-  <div class="hero__image">
-    <img src="/assets/img/betta.jpg" alt="">
-  </div>
-  <div class="hero__content max-w-[50%]">
-    <h1 class="text-7xl font-black tracking-tighter">Sofie's Betta T<span class="inline-block -ml-3">ank.</span></h1>
-  </div>
-</header>
 
+{% extends "layouts/default.njk" %}
+
+{%- block header %}
+  <header class="hero">
+    <div class="hero__image">
+      <img src="/assets/img/betta.jpg" alt="">
+    </div>
+    <div class="hero__content max-w-[50%]">
+      <h1 class="text-7xl font-black tracking-tighter text-orange-500">Sofie's Betta T<span class="inline-block -ml-3">ank.</span></h1>
+    </div>
+  </header>
+{%- endblock %}
+
+
+{%- block main %}
 <div class="border border-slate-800 rounded-lg m-8">
   <table class="table-auto border-collapse">
     <caption class="caption-bottom pt-4 pb-6 text-slate-500 italic">Dataset refreshes once a day</caption>
@@ -47,3 +55,4 @@ loadMain: true
     </tbody>
   </table>
 </div>
+{%- endblock %}

@@ -112,7 +112,7 @@
 @layer components {
   /* LOGO */
   .home .jandw-logo path {
-    stroke: white;
+    stroke: theme('colors.teal.500');
   }
 
   /* BETTA BACKGROUND */

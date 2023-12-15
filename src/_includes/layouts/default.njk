@@ -1,7 +1,3 @@
----
-title: Default
----
-
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
   {% block head %}
@@ -11,8 +7,11 @@ title: Default
     {% block global_nav %}
       {% include 'global-nav.njk' %}
     {% endblock %}
+    {%- block header %}
+    
+    {%- endblock %}
     <main id="main" class="{{ mainClasses }}">
-      {{ content | safe }}
+      {%- block main %}{%- endblock %}
     </main>
     {% include 'footer.njk' %}
     {%- block scripts %}{%- endblock %}
