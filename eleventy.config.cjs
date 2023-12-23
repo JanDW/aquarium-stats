@@ -1,4 +1,5 @@
 const markdownIt = require('markdown-it');
+const { DateTime } = require('luxon');
 
 module.exports = function (eleventyConfig) {
   const mdOptions = {
@@ -18,7 +19,14 @@ module.exports = function (eleventyConfig) {
   //eleventyConfig.addPassthroughCopy('src/assets/styles');
   eleventyConfig.addPassthroughCopy({ 'src/assets/siteroot': '/' });
   eleventyConfig.addPassthroughCopy({
-    'node_modules/chartjs/chart.js': 'assets/scripts/chart.js',
+    'node_modules/chart.js/dist/chart.js': 'assets/scripts/chart.js',
+  });
+  eleventyConfig.addPassthroughCopy({
+    'node_modules/@11ty/is-land/is-land.js': 'assets/scripts/is-land.js',
+  });
+  eleventyConfig.addPassthroughCopy({
+    'node_modules/@zachleat/snow-fall/snow-fall.js':
+      'assets/scripts/snow-fall.js',
   });
 
   // Shortcodes
@@ -37,6 +45,10 @@ module.exports = function (eleventyConfig) {
     result = result.charAt(0).toUpperCase() + result.slice(1);
 
     return result;
+  });
+
+  eleventyConfig.addFilter("readableDate", dateObj => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("MMMM d, yyyy");
   });
 
   return {

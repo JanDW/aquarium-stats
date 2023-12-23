@@ -1,8 +1,8 @@
 {%- set isHomepage = page.url === "/" -%}
 
-<header class="grid">
-  <nav class="global-nav">  
-    <ul role="list" class="list-none">
+<header class="main-grid">
+  <nav class="global-nav py-4 main-grid__wide main-grid__medium-tablet ">  
+    <ul role="list" class="list-none flex items-center flex-row">
       <li class="m-i-st-0 m-i-end-auto" data-home {{ 'aria-current=page' if isHomepage }}>
         {%- if not isHomepage %}
         <a href="/">
@@ -13,7 +13,7 @@
         {%- endif %}
       </li>
       {% for item in site.navigation %}
-        <li class="animate__animated animate__fadeIn animate__delay-{{ loop.index }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+        <li class="px-12" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
           {%- if item.url !== page.url %}
             <a href="{{ item.url }}">
           {%- endif %}

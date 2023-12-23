@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+  <head>
   {% block head %}
     {% include 'head.njk' %}
   {% endblock %}
+  {%- block scripts %}{%- endblock %}
+  </head>
   <body {% if bodyClasses %}class="{{ bodyClasses }}"{%- endif -%}>
     {% block global_nav %}
       {% include 'global-nav.njk' %}
@@ -14,6 +17,5 @@
       {%- block main %}{%- endblock %}
     </main>
     {% include 'footer.njk' %}
-    {%- block scripts %}{%- endblock %}
   </body>
 </html>

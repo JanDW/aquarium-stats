@@ -2,7 +2,11 @@
 module.exports = {
   content: ['./src/**/*.njk', './src/**/*.md', './src/**/*.js'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'], // Update this line with your desired font stack
+      },
+    },
   },
   plugins: [],
 };  

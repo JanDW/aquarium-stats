@@ -36,9 +36,9 @@ async function getDatabase(id) {
   console.log(response);
 }
 
-async function getAquariumLogPages() {
+async function getAquariumLogPages(id) {
   const notionPages = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID,
+    database_id: id,
     sorts: [
       {
         property: n.date,
@@ -83,7 +83,11 @@ function fromNotionObject(notionPage) {
 }
 
 (async () => {
-  const pages = await getAquariumLogPages();
-  const pathToJson = path.join(__dirname, '..', 'src', '_data', 'ten-gallon.json');
-  writeJson(pathToJson, pages);
+  const fishData = await getAquariumLogPages(process.env.NOTION_FISH_DB_ID);
+  const fishPathToJson = path.join(__dirname, '..', 'src', '_data', 'fishData.json');
+  writeJson(fishPathToJson, fishData);
+
+  const shrimpData = await getAquariumLogPages(process.env.NOTION_SHRIMP_DB_ID);
+  const shrimpPathToJson = path.join(__dirname, '..', 'src', '_data', 'shrimpData.json');
+  writeJson(shrimpPathToJson, shrimpData);
 })();
