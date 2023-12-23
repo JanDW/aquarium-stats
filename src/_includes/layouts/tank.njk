@@ -1,12 +1,12 @@
 {% extends "layouts/default.njk" %}
 
-{% from 'macros/macros.njk' import createChart %}
+{% from 'macros/macros.njk' import createChart, table %}
 
 {%- block scripts %}
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     // The createChart macro requires this data object.
-    const fullData = {{ data | reverse | dump | safe }};
+    const fullData = {{ dataName | getData | reverse | dump | safe }};
   </script>
 
 {%- endblock %}
@@ -14,7 +14,7 @@
 {%- block header %}
   <header class="hero">
     <div class="hero__image">
-      <snow-fall>
+      <snow-fall style="--snow-fall-size: 5px">
         <img src="{{hero.image}}" alt="{{hero.imageAlt}}">
       </snow-fall>
     </div>
@@ -40,6 +40,7 @@
               <h3 class="text-xl font-bold">{{ inhabitant.name }}</h3>
               <p class="text-sm text-gray-400">
                 <a href="{{ inhabitant.infoLink }}" class="underline">{{ inhabitant.species }}</a>
+                <i>({{binomial}})</i>
               </p>
               <p class="text-sm text-gray-400">Since {{ inhabitant.dateAdded | readableDate }}</p>
             </div>
@@ -67,7 +68,7 @@
   <section class="main-grid__wide">
     <h2 class="text-2xl font-bold">Water Parameters &amp; Maintenance Log</h2>
     <div class="border border-slate-800 rounded-lg mt-4 mb-8">
-      {%- include "table.njk" %}
+      {{table(dataName | getData)}}
     </div>
   </section>
 

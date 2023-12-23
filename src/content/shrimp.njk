@@ -1,124 +1,34 @@
 ---
-title: Home
+bodyClasses: home bg-slate-900 text-white font-inter
+mainClasses: main-grid
+title: Sofie's shrimp tank
 permalink: shrimp/
+dataName: shrimpData
 hero:
-  image: /assets/img/betta-hero.jpg
-  imageAlt: A blue betta fish swimming in a tank
-  title: "Sofie's Betta <span class=\"whitespace-nowrap\">T<span class=\"-ml-3\">ank.</span></span>"
-  subtitle: A 10 gallon planted tank with a single betta fish and some friends.
+  image: /assets/img/neocaridina-hero.jpg
+  imageAlt: A close up of a neocaridina shrimp
+  title: "Sofie's Shrimp <span class=\"whitespace-nowrap\">T<span class=\"-ml-3\">ank.</span></span>"
+  subtitle: A 5 gallon planted tank with neocaridina shrimp and a nerite snail.
 # Lime, Guava, Mango, Pineapple, Coconut, Kiwi, Papaya, Cantaloupe, Remco, Tiger, Stripes
 inhabitants:
-  - name: Remco
-    species: Betta Splendens
-    infoLink: https://en.wikipedia.org/wiki/Siamese_fighting_fish
-    imgSrc: /assets/img/blue-veiltail-betta.jpg
+  - name: Orange
+    species: Neocaridina Shrimp
+    binomial: Neocaridina davidi
+    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
+    imgSrc: /assets/img/pumpkin-neocaridina.jpg
     dateAdded: 2023-11-25
-  - name: Tiger
+  - name: Zinnia
+    species: Neocaridina Shrimp
+    binomial: Neocaridina davidi
+    infoLink: https://en.wikipedia.org/wiki /Neocaridina_davidi
+    imgSrc: /assets/img/pumpkin-neocaridina.jpg
+    dateAdded: 2023-11-25
+  - name: Alexandra
     species: Nerite Snail
+    binomial: Vittina coromandeliana
     infoLink: https://en.wikipedia.org/wiki/Neritidae
     imgSrc: /assets/img/zebra-nerite.jpeg
     dateAdded: 2023-11-25
-  - name: Stripes
-    species: Nerite Snail
-    infoLink: https://en.wikipedia.org/wiki/Neritidae
-    imgSrc: /assets/img/zebra-nerite.jpeg
-    dateAdded: 2023-11-25
-  - name: Pineapple
-    species: Harlequin Rasbora
-    infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
-    imgSrc: /assets/img/harlequin-rasbora.jpg
-    dateAdded: 2021-12-17
-  - name: Coconut
-    species: Harlequin Rasbora
-    infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
-    imgSrc: /assets/img/harlequin-rasbora.jpg
-    dateAdded: 2021-12-17
-  - name: Mango
-    species: Harlequin Rasbora
-    infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
-    imgSrc: /assets/img/harlequin-rasbora.jpg
-    dateAdded: 2021-12-17
 ---
 
-{% extends "layouts/default.njk" %}
-
-{% from 'macros/macros.njk' import createChart %}
-
-{%- block scripts %}
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    // The createChart macro requires this data object.
-    const fullData = {{ data | reverse | dump | safe }};
-  </script>
-
-{%- endblock %}
-
-{%- block header %}
-  <header class="hero">
-    <div class="hero__image">
-      <snow-fall>
-        <img src="{{hero.image}}" alt="{{hero.imageAlt}}">
-      </snow-fall>
-    </div>
-    <div class="hero__content main-grid">
-      <h1 class="main-grid__wide max-w-[50%] text-7xl font-black tracking-tighter text-orange-500">{{ hero.title | safe }}</h1>
-      <p class="main-grid__wide max-w-[50%] text-2xl font-bold mt-8">{{ hero.subtitle }}</p>
-    </div>
-  </header>
-{%- endblock %}
-
-{%- block main %}
-  <section class="main-grid__wide mb-12">
-    <h2 class="text-2xl font-bold main-grid__wide mb-4">
-      Meet the Lodgers
-    </h2>
-
-    <ul class="two-up-grid mt-12">
-      {%- for inhabitant in inhabitants %}
-        <li>
-          <div class="flex items-center">
-            <img src="{{ inhabitant.imgSrc }}" alt="{{ inhabitant.name }}" class="w-32 h-32 rounded-full mr-4">
-            <div>
-              <h3 class="text-xl font-bold">{{ inhabitant.name }}</h3>
-              <p class="text-sm text-gray-400">
-                <a href="{{ inhabitant.infoLink }}" class="underline">{{ inhabitant.species }}</a>
-              </p>
-              <p class="text-sm text-gray-400">Since {{ inhabitant.dateAdded | readableDate }}</p>
-            </div>
-          </div>
-        </li>
-      {%- endfor %}
-    </ul>
-    <p class=""></p>
-  </section>
-  <section class="main-grid main-grid__max">
-    <h2 class="text-2xl font-bold main-grid__wide">Face Some Hard Facts on Soft Water</h2>
-    <div class="main-grid__max two-up-grid px-4 mx-4 py-8 my-8">
-
-      {{ createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null', data) }}
-
-      {{ createChart('nitrates', 'Nitrates', 'ppm', ['nitrates'], 'item.nitrates != null', data) }}
-
-      {{ createChart('tds', 'TDS', 'ppm', ['tds'], 'item.tds != null', data) }}
-
-      {{ createChart('hardness', 'GH, KH & pH', 'dKG & pH', ['gh','kh','ph'], 'item.gh != null || item.kh !== null || item.ph !== null', data) }}
-
-    </div>
-  </section>
-
-  <section class="main-grid__wide">
-    <h2 class="text-2xl font-bold">Water Parameters &amp; Maintenance Log</h2>
-    <div class="border border-slate-800 rounded-lg mt-4 mb-8">
-      {%- include "table.njk" %}
-    </div>
-  </section>
-
-  {# <section class="main-grid__wide">
-    <h2 class="text-2xl font-bold">Tasks</h2>
-    <div class="mt-4 mb-8">
-      {%- include "equipment.njk" %}
-    </div>
-    <!-- Include water changes, crushed coral added, fertilizer added days -->
-  </section> #}
-
-{%- endblock %}
+{% extends "layouts/tank.njk" %}

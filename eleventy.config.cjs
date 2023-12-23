@@ -51,6 +51,10 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("MMMM d, yyyy");
   });
 
+  eleventyConfig.addNunjucksFilter("getData", function(value) {
+    return this.ctx[value];
+  });
+
   return {
     dir: {
       // ⚠️ These values are both relative to your input directory.
