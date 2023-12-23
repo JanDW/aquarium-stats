@@ -14,20 +14,21 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary('md', markdownLib);
   eleventyConfig.setUseGitIgnore(true);
 
-  eleventyConfig.addPassthroughCopy('src/assets/scripts');
-  eleventyConfig.addPassthroughCopy('src/assets/img');
-  //eleventyConfig.addPassthroughCopy('src/assets/styles');
-  eleventyConfig.addPassthroughCopy({ 'src/assets/siteroot': '/' });
-  eleventyConfig.addPassthroughCopy({
-    'node_modules/chart.js/dist/chart.js': 'assets/scripts/chart.js',
-  });
-  eleventyConfig.addPassthroughCopy({
-    'node_modules/@11ty/is-land/is-land.js': 'assets/scripts/is-land.js',
-  });
-  eleventyConfig.addPassthroughCopy({
-    'node_modules/@zachleat/snow-fall/snow-fall.js':
-      'assets/scripts/snow-fall.js',
-  });
+  eleventyConfig.addPassthroughCopy([
+    'src/assets/scripts',
+    'src/assets/img',
+    { 'src/assets/siteroot': '/' },
+    {
+      'node_modules/chart.js/dist/chart.js': 'assets/scripts/chart.js',
+    },
+    {
+      'node_modules/@11ty/is-land/is-land.js': 'assets/scripts/is-land.js',
+    },
+    {
+      'node_modules/@zachleat/snow-fall/snow-fall.js':
+        'assets/scripts/snow-fall.js',
+    },
+  ]);
 
   // Shortcodes
   eleventyConfig.addPairedShortcode('markdown', (content) => {
@@ -47,11 +48,13 @@ module.exports = function (eleventyConfig) {
     return result;
   });
 
-  eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("MMMM d, yyyy");
+  eleventyConfig.addFilter('readableDate', (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(
+      'MMMM d, yyyy'
+    );
   });
 
-  eleventyConfig.addNunjucksFilter("getData", function(value) {
+  eleventyConfig.addNunjucksFilter('getData', function (value) {
     return this.ctx[value];
   });
 
