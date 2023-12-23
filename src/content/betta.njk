@@ -10,39 +10,44 @@ hero:
   imageLink: https://unsplash.com/photos/green-and-red-betta-fish-EgyIbEB7n8Y
   title: "Sofie's Betta <span class=\"whitespace-nowrap\">T<span class=\"-ml-3\">ank.</span></span>"
   subtitle: A 10 gallon planted tank with a single betta fish and some friends.
-# Lime, Guava, Mango, Pineapple, Coconut, Kiwi, Papaya, Cantaloupe, Remco, Tiger, Stripes
 inhabitants:
   - name: Remco
+    emoji: 🚴‍♂️
     species: Veiltail Betta
     binomial: Betta splendens
     infoLink: https://en.wikipedia.org/wiki/Siamese_fighting_fish
     imgSrc: /assets/img/blue-veiltail-betta.jpg
     dateAdded: 2023-11-25
   - name: Tiger
+    emoji: 🐅
     species: Nerite Snail
     binomial: Vittina coromandeliana
     infoLink: https://en.wikipedia.org/wiki/Neritidae
     imgSrc: /assets/img/zebra-nerite.jpeg
     dateAdded: 2023-11-25
   - name: Stripes
+    emoji: 🇺🇸
     species: Nerite Snail
     binomial: Vittina coromandeliana
     infoLink: https://en.wikipedia.org/wiki/Neritidae
     imgSrc: /assets/img/zebra-nerite.jpeg
     dateAdded: 2023-11-25
   - name: Pineapple
+    emoji: 🍍
     species: Harlequin Rasbora
     binomial: Trigonostigma heteromorpha
     infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
     imgSrc: /assets/img/harlequin-rasbora.jpg
     dateAdded: 2021-12-17
   - name: Coconut
+    emoji: 🥥
     species: Harlequin Rasbora
     binomial: Trigonostigma heteromorpha
     infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
     imgSrc: /assets/img/harlequin-rasbora.jpg
     dateAdded: 2021-12-17
   - name: Mango
+    emoji: 🥭
     species: Harlequin Rasbora
     binomial: Trigonostigma heteromorpha
     infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
@@ -53,5 +58,18 @@ mainClasses: main-grid
 ---
 
 {% extends "layouts/tank.njk" %}
+
+{%- set hasInhibitantsContent = true %}
+{%- block inhabitants %}
+  <div class="prose prose-slate prose-lg text-slate-400">
+  {%- markdown %}
+  Remco is responding pretty well to his new tankmates, though I separated them in a breeder box for half a day to make sure he wouldn't attack them. After a day, Remco seems to have made peace with his new crew.
+
+  Three more harlequin rasboras will be added to the tank in the coming weeks, as they are a shoaling fish. 
+
+  Possible names: Guava, Kiwi, Papaya, Cantaloupe, Bart, Dave.
+  {%- endmarkdown %}
+  </div>
+{%- endblock %}
 
 

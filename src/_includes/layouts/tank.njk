@@ -37,10 +37,14 @@
           <div class="flex items-center">
             <img src="{{ inhabitant.imgSrc }}" alt="{{ inhabitant.name }}" class="w-32 h-32 rounded-full mr-4">
             <div>
-              <h3 class="text-xl font-bold">{{ inhabitant.name }}</h3>
-              <p class="text-sm text-gray-400">
-                <a href="{{ inhabitant.infoLink }}" class="underline">{{ inhabitant.species }}</a>
-                <i>({{binomial}})</i>
+              <h3 class="text-xl font-bold">{{ inhabitant.name }}
+                {%- if inhabitant.emoji %}
+                  <span class="text-2xl ml-2">{{ inhabitant.emoji }}</span>
+                {%- endif %}
+              </h3>
+              <p class="">
+                <a href="{{ inhabitant.infoLink }}" class="hover:underline">{{ inhabitant.species }}</a>
+                <p class="italic text-sm text-gray-400">{{inhabitant.binomial}}</p>
               </p>
               <p class="text-sm text-gray-400">Since {{ inhabitant.dateAdded | readableDate }}</p>
             </div>
@@ -48,7 +52,12 @@
         </li>
       {%- endfor %}
     </ul>
-    <p class=""></p>
+
+    {%- if hasInhibitantsContent %}
+      <div class="mt-8 text-slate-400">
+        {%- block inhabitants %}{%- endblock %}
+      </div>
+    {%- endif %}
   </section>
   <section class="main-grid main-grid__max">
     <h2 class="text-2xl font-bold main-grid__wide">Face Some Hard Facts on Soft Water</h2>

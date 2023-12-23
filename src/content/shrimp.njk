@@ -1,7 +1,7 @@
 ---
 bodyClasses: home bg-slate-900 text-white font-inter
 mainClasses: main-grid
-title: Sofie's shrimp tank
+title: Sofie & Senne's shrimp tank
 permalink: shrimp/
 dataName: shrimpData
 hero:
@@ -10,22 +10,26 @@ hero:
   author: theaquariumkeeper2
   authorLink: https://unsplash.com/@theaquariumkeeper2
   imageLink: https://unsplash.com/photos/a-close-up-of-a-shrimp-on-a-plant-6D_tbcL2-98
+  title: "Sofie & Senne's Shrimp <span class=\"whitespace-nowrap\">T<span class=\"-ml-3\">ank.</span></span>"
   subtitle: A 5 gallon planted tank with neocaridina shrimp and a nerite snail.
 # Lime, Guava, Mango, Pineapple, Coconut, Kiwi, Papaya, Cantaloupe, Remco, Tiger, Stripes
 inhabitants:
   - name: Orange
+    emoji: 🍊
     species: Neocaridina Shrimp
     binomial: Neocaridina davidi
     infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
     imgSrc: /assets/img/pumpkin-neocaridina.jpg
     dateAdded: 2023-11-25
   - name: Zinnia
+    emoji: 🌼
     species: Neocaridina Shrimp
     binomial: Neocaridina davidi
     infoLink: https://en.wikipedia.org/wiki /Neocaridina_davidi
     imgSrc: /assets/img/pumpkin-neocaridina.jpg
     dateAdded: 2023-11-25
   - name: Alexandra
+    emoji: 🏛️
     species: Nerite Snail
     binomial: Vittina coromandeliana
     infoLink: https://en.wikipedia.org/wiki/Neritidae
@@ -34,3 +38,8 @@ inhabitants:
 ---
 
 {% extends "layouts/tank.njk" %}
+
+{%- set hasInhibitantsContent = true %}
+{%- block inhabitants %}
+  Zinnia is a berried female, so hopefully we'll have some baby shrimp soon!
+{%- endblock %}
