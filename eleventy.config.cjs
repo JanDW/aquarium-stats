@@ -14,8 +14,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary('md', markdownLib);
   eleventyConfig.setUseGitIgnore(true);
 
-  eleventyConfig.addPassthroughCopy([
-    'src/assets/scripts',
+  // Passthroughs
+  const stuffToCopy = [
     'src/assets/img',
     { 'src/assets/siteroot': '/' },
     {
@@ -28,7 +28,11 @@ module.exports = function (eleventyConfig) {
       'node_modules/@zachleat/snow-fall/snow-fall.js':
         'assets/scripts/snow-fall.js',
     },
-  ]);
+  ];
+
+  stuffToCopy.forEach(stuff => {
+  eleventyConfig.addPassthroughCopy(stuff);
+});
 
   // Shortcodes
   eleventyConfig.addPairedShortcode('markdown', (content) => {
