@@ -1,9 +1,9 @@
 {%- set isHomepage = page.url === "/" -%}
 
 <header class="main-grid">
-  <nav class="global-nav py-4 main-grid__wide main-grid__medium-tablet ">  
-    <ul role="list" class="list-none flex items-center flex-row">
-      <li class="m-i-st-0 m-i-end-auto" data-home {{ 'aria-current=page' if isHomepage }}>
+  <nav class="global-nav py-4 main-grid__wide">  
+    <ul role="list" class="list-none flex items-center flex-row text-lg font-medium">
+      <li class="m-i-st-0 me-auto" data-home {{ 'aria-current=page' if isHomepage }}>
         {%- if not isHomepage %}
         <a href="/">
         {%- endif %}
@@ -13,7 +13,7 @@
         {%- endif %}
       </li>
       {% for item in site.navigation %}
-        <li class="px-12" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+        <li class="px-6" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
           {%- if item.url !== page.url %}
             <a href="{{ item.url }}">
           {%- endif %}
