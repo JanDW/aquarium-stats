@@ -1,5 +1,8 @@
-{% macro createChart(divId, chartTitle, yTitle, dataKeys, filterCondition, data) %}
-  <div class="{{divId}} p-3 bg-slate-950 rounded-lg">
+{% macro createChart(divId, chartTitle, yTitle, dataKeys, filterCondition) %}
+
+{# @TODO Responsiveness is not working: https://www.chartjs.org/docs/latest/configuration/responsive.html#important-note #}
+
+  <div class="{{divId}} p-3 bg-slate-950 rounded-lg relative w-[100%]">
     <canvas id="{{divId}}"></canvas>
     <script>
       (() => {
@@ -133,9 +136,9 @@
               <th class="table__body-cell" scope="row">{{ obj.date }}</th>
               {%- for key, value in obj %}
                 {%- if key != 'date' %}
-                  {% if value === true %}
+                  {% if value == true %}
                     {%- set printValue = '✅' %}
-                  {% elif value === false %}
+                  {% elif value == false %}
                     {%- set printValue = '' %}
                   {% else %}
                     {%- set printValue = value %}
