@@ -1,14 +1,19 @@
+{# Combined data is only available to the template engine when it's rendering the page, not when it's rendering the layout. So my option is to either duplicate these vars in the template frontmatter layout (e.g. betta.njk, shrimp.njk), or to use nunjucks variables. Specifying them in frontmatter in this layout doesn't take effect.  #}
+
+{%- set bodyClasses = "home bg-slate-900 text-white font-inter" %}
+{%- set mainClasses = "main-grid" %}
+
 {% extends "layouts/default.njk" %}
 
-{% from 'macros/macros.njk' import createChart, table %}
+{% from 'macros/macros.njk' import macros %}
 
 {%- block scripts %}
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     // The createChart macro requires this data object.
     const fullData = {{ dataName | getData | reverse | dump | safe }};
+    const dkgToPpm = dkg => dkg * 17.9;
   </script>
-
 {%- endblock %}
 
 {%- block header %}
@@ -30,7 +35,7 @@
     <h2 class="text-2xl font-bold main-grid__wide mb-4">
       Meet the Lodgers
     </h2>
-
+    {# bg-gradient-to-br from-sky-900/40 to-emerald-600/70 py-8 px-12 rounded-2xl border-green-300 border-8 #}
     <ul class="two-up-grid mt-12">
       {%- for inhabitant in inhabitants %}
         <li>
@@ -60,16 +65,16 @@
     {%- endif %}
   </section>
   <section class="main-grid main-grid__max">
-    <h2 class="text-2xl font-bold main-grid__wide">Face Some Hard Facts on Soft Water</h2>
+    <h2 class="text-2xl font-bold main-grid__wide">Hard Facts about Soft Water</h2>
     <div class="main-grid__max two-up-grid px-4 mx-4 py-8 my-8">
 
-      {{ createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null', data) }}
+      {{ macros.createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null') }}
 
-      {{ createChart('nitrates', 'Nitrates', 'ppm', ['nitrates'], 'item.nitrates != null', data) }}
+      {{ macros.createChart('nitrates', 'Nitrates', 'ppm', ['nitrates'], 'item.nitrates != null') }}
 
-      {{ createChart('tds', 'TDS', 'ppm', ['tds'], 'item.tds != null', data) }}
+      {{ macros.createChart('tds', 'TDS', 'ppm', ['tds'], 'item.tds != null') }}
 
-      {{ createChart('hardness', 'GH, KH & pH', 'dKG & pH', ['gh','kh','ph'], 'item.gh != null || item.kh !== null || item.ph !== null', data) }}
+      {{ macros.createChart('hardness', 'GH, KH & pH', 'dKG & pH', ['gh','kh','ph'], 'item.gh != null || item.kh !== null || item.ph !== null') }}
 
     </div>
   </section>
@@ -77,7 +82,7 @@
   <section class="main-grid__wide">
     <h2 class="text-2xl font-bold">Water Parameters &amp; Maintenance Log</h2>
     <div class="border border-slate-800 rounded-lg mt-4 mb-8">
-      {{table(dataName | getData)}}
+      {{ macros.table(dataName | getData) }}
     </div>
   </section>
 
@@ -90,3 +95,11 @@
   </section> #}
 
 {%- endblock %}
+
+{%- block calendars %}{%- endblock %}
+
+{# @TODO 
+https://freefrontend.com/css-glow-effects/
+https://codepen.io/goodkatz/pen/LYPGxQz?editors=1100
+https://freefrontend.com/css-water-effects/
+#}

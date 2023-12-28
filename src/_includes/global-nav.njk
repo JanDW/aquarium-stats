@@ -1,4 +1,4 @@
-{%- set isHomepage = page.url === "/" -%}
+{%- set isHomepage = page.url == "/" -%}
 
 <header class="main-grid">
   <nav class="global-nav py-4 main-grid__wide">  
@@ -14,11 +14,11 @@
       </li>
       {% for item in site.navigation %}
         <li class="px-6" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
-          {%- if item.url !== page.url %}
+          {%- if item.url != page.url %}
             <a href="{{ item.url }}">
           {%- endif %}
           {{ item.label }}
-          {%- if item.url !== page.url %}
+          {%- if item.url != page.url %}
             </a>
           {%- endif %}
         </li>

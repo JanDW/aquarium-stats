@@ -112,7 +112,7 @@
 @layer components {
   .main-grid {
     display: grid;
-  
+
     grid-template-columns:
       [max] 1fr
       [l] 1fr
@@ -121,7 +121,7 @@
       [l] 1fr
       [max];
   }
-  
+
   @media (min-width: 45em) {
     .main-grid {
       grid-template-columns:
@@ -133,7 +133,7 @@
         [max];
     }
   }
-  
+
   @media (min-width: 91em) {
     .main-grid {
       grid-template-columns:
@@ -145,7 +145,7 @@
         [max];
     }
   }
-  
+
   @media print {
     .main-grid {
       display: block;
@@ -153,7 +153,7 @@
       max-width: 80%;
     }
   }
-  
+
   .main-grid > :not([class*='main-grid']) {
     grid-column: m/m 4;
   }
@@ -166,13 +166,13 @@
   .main-grid__medium {
     grid-column: m/m 4;
   }
-  
+
   .main-grid__wide-max {
     grid-column: l/max 5;
   }
-  
+
   /* MOBILE OVERRIDES */
-  
+
   @media (width < 45em) {
     .main-grid__medium-mobile {
       grid-column: m/m 4;
@@ -183,29 +183,24 @@
       grid-column: l/l 2;
     }
   }
-  
+
   @media (width < 45em) {
     .main-grid__max-mobile {
       grid-column: max/max 2;
     }
   }
-  
+
   /* TABLET OVERRIDES */
-  
+
   @media (min-width: 45em) and (max-width: 91em) {
     .main-grid__medium-tablet {
       grid-column: m/m 4;
     }
   }
-  
+
   @media (min-width: 45em) and (max-width: 91em) {
     .main-grid__wide-tablet {
       grid-column: l/l 2;
-    }
-  }
-  @media (min-width: 45em) and (max-width: 91em) {
-    .main-grid__max-tablet {
-      grid-column: max/max 2;
     }
   }
 
@@ -213,7 +208,14 @@
   .two-up-grid {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media (max-width: 1100px) {
+    .two-up-grid {
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
   }
 
   /* LOGO */
