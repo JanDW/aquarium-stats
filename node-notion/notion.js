@@ -6,6 +6,8 @@ const { writeJson } = require('./library.js');
 
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
+// You could opt to store the keys as environment variables, but I prefer to keep them in the code as they are not really sensitive
+
 const fishKeys = {
   ammonia: 'CeXJ',
   nitrites: 'yJhy',
@@ -117,4 +119,5 @@ function fromNotionObject(notionPage, keys) {
   const shrimpData = await getAquariumLogPages(process.env.NOTION_SHRIMP_DB_ID, shrimpKeys);
   const shrimpPathToJson = path.join(__dirname, '..', 'src', '_data', 'shrimpData.json');
   writeJson(shrimpPathToJson, shrimpData);
+  module.exports = { fishData, shrimpData };
 })();

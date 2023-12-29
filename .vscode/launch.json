@@ -12,7 +12,15 @@
       "stopOnEntry": false,
       "args": ["--watch"],
       "cwd": "${workspaceRoot}",
-      "console": "internalConsole",
-  }
+      "console": "internalConsole"
+    },
+    {
+      "name": "Eleventy Serve",
+      "request": "launch",
+      "runtimeArgs": ["run-script", "serve"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    }
   ]
 }

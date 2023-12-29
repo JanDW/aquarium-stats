@@ -5,7 +5,11 @@
 
 {% extends "layouts/default.njk" %}
 
-{% from 'macros/macros.njk' import macros %}
+{# {% from 'macros/macros.njk' import createChart,
+table,
+calendarGrid %} #}
+
+{%- import "macros/macros.njk" as macros %}
 
 {%- block scripts %}
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -94,9 +98,9 @@
     <!-- Include water changes, crushed coral added, fertilizer added days -->
   </section> #}
 
-{%- endblock %}
+  {%- block calendars %}{%- endblock %}
 
-{%- block calendars %}{%- endblock %}
+{%- endblock %}
 
 {# @TODO 
 https://freefrontend.com/css-glow-effects/
