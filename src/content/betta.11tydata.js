@@ -79,7 +79,7 @@ function getDaysInMonth(month, year) {
 
 module.exports = {
   eleventyComputed: {
-    calendarData(data) {
+    bettaCalendarData(data) {
       const fishData = data.fishData;
       
       const daysInCurrentMonth = getDaysInMonth(currentMonth, yearCurrentMonth);

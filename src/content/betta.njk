@@ -56,7 +56,7 @@ inhabitants:
 ---
 
 {% extends "layouts/tank.njk" %}
-{%- from "macros/macros.njk" import calendarGrid %}
+{%- import "macros/macros.njk" as macros %}
 
 
 {%- set hasInhibitantsContent = true %}
@@ -65,12 +65,22 @@ inhabitants:
   {%- markdown %}
   Three more harlequin rasboras will be added to the tank in the coming weeks, as they are a shoaling fish. 
 
-  Possible names: Guava, Kiwi, Papaya, ~~Cantaloupe~~ , Bart, ~~Dave~~.
+  Possible names: Guava, Kiwi, Papaya, ~~Cantaloupe~~ , ~~Bart~~, ~~Dave~~.
   {%- endmarkdown %}
-
-  {{test | dump}}
   </div>
 {%- endblock %}
+
+{%- block calendars %}
+  {{ macros.calendar('waterChange', 'Changed Water (in litres)', bettaCalendarData) }}
+  {{ macros.calendar('co2', 'Added API CO₂ Booster (1ml)', bettaCalendarData) }}
+  {{ macros.calendar('fertilizer', 'Added API Leaf Zone (5ml)', bettaCalendarData) }}
+  {{ macros.calendar('spongeClean', 'Cleaned Sponge Filter', bettaCalendarData) }}
+  {{ macros.calendar('crushedCoral', 'Added Crushed Coral', bettaCalendarData) }}
+  {{ macros.calendar('prime', 'Added Seachem Prime', bettaCalendarData) }}
+  {{ macros.calendar('stability', 'Added Seachem Stability (2.5ml)', bettaCalendarData) }}
+{%- endblock %}
+
+
 
 
 
