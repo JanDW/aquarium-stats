@@ -1,6 +1,6 @@
 const { DateTime } = require('luxon');
 
-const FISH_DATA_PROPERTIES = [
+const DATA_PROPERTIES = [
   'prime',
   'waterChange',
   'stability',
@@ -34,22 +34,22 @@ function getPreviousMonthAndYear(currentMonth, yearCurrentMonth) {
 }
 
 
-function getFishDataForDay(fishData, day) {
-  const fishDataForDay = fishData.find((task) => task.date === day.isoString);
+function getDataForDay(data, day) {
+  const dataForDay = data.find((task) => task.date === day.isoString);
   return Object.fromEntries(
-    FISH_DATA_PROPERTIES.map((property) => [
+    DATA_PROPERTIES.map((property) => [
       property,
-      fishDataForDay?.[property] ?? null,
+      dataForDay?.[property] ?? null,
     ])
   );
 }
 
-function addFishDataToCalendar(calendarData, fishData) {
+function addDataToCalendar(calendarData, data) {
   return {
     ...calendarData,
     days: calendarData.days.map((day) => ({
       ...day,
-      ...getFishDataForDay(fishData, day),
+      ...getDataForDay(data, day),
     })),
   };
 }
@@ -80,21 +80,21 @@ function getDaysInMonth(month, year) {
 
 module.exports = {
   eleventyComputed: {
-    bettaCalendarData(data) {
-      const fishData = data.fishData;
+    shrimpCalendarData(data) {
+      const shrimpData = data.shrimpData;
       
       const daysInCurrentMonth = getDaysInMonth(currentMonth, yearCurrentMonth);
-      const currentMonthCalendarData = addFishDataToCalendar(
+      const currentMonthCalendarData = addDataToCalendar(
         daysInCurrentMonth,
-        fishData
+        shrimpData
       );
       const daysInPreviousMonth = getDaysInMonth(
         previousMonth,
         yearPreviousMonth
       );
-      const previousMonthCalendarData = addFishDataToCalendar(
+      const previousMonthCalendarData = addDataToCalendar(
         daysInPreviousMonth,
-        fishData
+        shrimpData
       );
 
       return [currentMonthCalendarData, previousMonthCalendarData];

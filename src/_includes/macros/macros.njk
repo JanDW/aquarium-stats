@@ -152,9 +152,9 @@
   </div>
 {%- endmacro %}
 
-{%- macro calendar(parameter, parameterDisplay, tankCalendarData) %}
+{%- macro calendar(parameter, emoji, parameterDisplay, tankCalendarData) %}
   <div id="calendar-{{ parameter }}" class="mt-12">
-    <h2 class="font-bold text-2xl mb-4">{{ parameterDisplay }}</h2>
+    <h2 class="font-bold mb-4 flex items-center justify-center"><span class="text-3xl">{{ emoji }}</span><span class="text-2xl ml-2">{{ parameterDisplay }}</span></h2>
     <div class="grid grid-cols-2 gap-12">
       {# {{ calendarData[0].days[0] | dump }} #}
       {%- for month in tankCalendarData | reverse %}
@@ -193,7 +193,7 @@
               {% endif %}
               {%- set className = 'bg-green-400 text-slate-900 px-2 font-semibold' if day[parameter] else 'px-2' %}
               <td class="{{ className }}">
-                <time datetime="{{day.isoString}}">{{day.day}}</time>
+                <time datetime="{{day.isoString}}" title="{{day[parameter]}}">{{day.day}}</time>
               </td>
               {% set counter = counter + 1 %}
             {%- endfor %}

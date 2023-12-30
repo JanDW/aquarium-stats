@@ -40,3 +40,14 @@ inhabitants:
 {%- block inhabitants %}
   Zinnia is a berried female, so hopefully we'll have some baby shrimp soon!
 {%- endblock %}
+
+{%- block calendars %}
+  {{ macros.calendar('waterChange', '🪣', 'Changed Water (in litres)', shrimpCalendarData) }}
+  {{ macros.calendar('co2', '⛽️', 'Added API CO₂ Booster (1ml)', shrimpCalendarData) }}
+  {{ macros.calendar('fertilizer', '🍀', 'Added API Leaf Zone (5ml)', shrimpCalendarData) }}
+  {{ macros.calendar('spongeClean', '🧽', 'Cleaned Sponge Filter', shrimpCalendarData) }}
+  {{ macros.calendar('crushedCoral', '🪸', 'Added Crushed Coral', shrimpCalendarData) }}
+  {{ macros.calendar('prime', '🦺', 'Added Seachem Prime', shrimpCalendarData) }}
+  {{ macros.calendar('stability', '🧫', 'Added Seachem Stability (2.5ml)', shrimpCalendarData) }}
+  {{ macros.calendar('bakingSoda', '🧫', 'Added Baking Soda', shrimpCalendarData) }}
+{%- endblock %}
