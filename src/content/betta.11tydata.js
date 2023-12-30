@@ -34,7 +34,7 @@ function getPreviousMonthAndYear(currentMonth, yearCurrentMonth) {
 
 
 function getFishDataForDay(fishData, day) {
-  const fishDataForDay = fishData.find((fish) => fish.date === day.isoString);
+  const fishDataForDay = fishData.find((task) => task.date === day.isoString);
   return Object.fromEntries(
     FISH_DATA_PROPERTIES.map((property) => [
       property,
@@ -44,10 +44,13 @@ function getFishDataForDay(fishData, day) {
 }
 
 function addFishDataToCalendar(calendarData, fishData) {
-  return calendarData.days.map((day) => ({
-    ...day,
-    ...getFishDataForDay(fishData, day),
-  }));
+  return {
+    ...calendarData,
+    days: calendarData.days.map((day) => ({
+      ...day,
+      ...getFishDataForDay(fishData, day),
+    })),
+  };
 }
 
 function getDaysInMonth(month, year) {
@@ -78,6 +81,7 @@ module.exports = {
   eleventyComputed: {
     calendarData(data) {
       const fishData = data.fishData;
+      
       const daysInCurrentMonth = getDaysInMonth(currentMonth, yearCurrentMonth);
       const currentMonthCalendarData = addFishDataToCalendar(
         daysInCurrentMonth,
