@@ -22,7 +22,7 @@ const fishKeys = {
   stability: '%7BBBc',
   co2: 'Eo%5Be',
   bakingSoda: 'JBgL',
-  replacedFilter: 'A%7BFF',
+  cleanedFilter: 'A%7BFF',
   crushedCoral: 'PKyZ',
   fertilizer: 'yOKq',
   notes: 'title',
@@ -44,8 +44,8 @@ const shrimpKeys = {
   stability: '%7BBBc',
   co2: 'THso',
   bakingSoda: 'JBgL',
-  replacedFilter: '',
-  crushedCoral: '',
+  cleanedFilter: '%5DUZh',
+  crushedCoral: 'IRJF',
   fertilizer: 'zPDM',
   notes: 'title',
   date: 'GuZ%3E',
@@ -139,14 +139,14 @@ function fromNotionObject(notionPage, keys) {
     stability: propsById[keys.stability]?.checkbox ?? null,
     co2: propsById[keys.co2]?.checkbox ?? null,
     bakingSoda: propsById[keys.bakingSoda]?.checkbox ?? null,
-    replacedFilter: propsById[keys.replacedFilter]?.checkbox ?? null,
+    cleanedFilter: propsById[keys.cleanedFilter]?.checkbox ?? null,
     crushedCoral: propsById[keys.crushedCoral]?.checkbox ?? null,
     fertilizer: propsById[keys.fertilizer]?.checkbox ?? null,
   };
 }
 
 (async () => {
-  // getDatabase(process.env.NOTION_FISH_DB_ID);
+  getDatabase(process.env.NOTION_SHRIMP_DB_ID);
 
   const fishData = await getAquariumLogPages(process.env.NOTION_FISH_DB_ID, fishKeys);
   const fishPathToJson = path.join(__dirname, '..', 'src', '_data', 'fishData.json');

@@ -7,10 +7,10 @@ const FISH_DATA_PROPERTIES = [
   'stability',
   'co2',
   'bakingSoda',
-  'replacedFilter',
+  'cleanedFilter',
   'crushedCoral',
   'fertilizer',
-  'spongeClean'
+  'spongeClean',
 ];
 
 const FIRST_DAY_OF_WEEK = 1;
@@ -129,8 +129,10 @@ function getRecentData(data, ...keys) {
   const recentData = {};
 
   for (const key of keys) {
-    const filteredData = data.filter(item => item[key] !== null);
-    filteredData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    const filteredData = data.filter((item) => item[key] !== null);
+    filteredData.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
 
     if (filteredData.length > 0) {
       recentData[key] = {
@@ -143,12 +145,11 @@ function getRecentData(data, ...keys) {
   return recentData;
 }
 
-
 module.exports = {
   eleventyComputed: {
     bettaCalendarData(data) {
       const fishData = data.fishData;
-      
+
       const daysInCurrentMonth = getDaysInMonth(currentMonth, yearCurrentMonth);
       const currentMonthCalendarData = addFishDataToCalendar(
         daysInCurrentMonth,
@@ -167,8 +168,18 @@ module.exports = {
     },
     bettaRecentData(data) {
       const fishData = data.fishData;
-      const recentData = getRecentData(fishData, 'ammonia', 'nitrites', 'nitrates', 'tds', 'ph', 'gh', 'kh', 'chlorine');
+      const recentData = getRecentData(
+        fishData,
+        'ammonia',
+        'nitrites',
+        'nitrates',
+        'tds',
+        'ph',
+        'gh',
+        'kh',
+        'chlorine'
+      );
       return recentData;
     },
-  }
+  },
 };

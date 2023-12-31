@@ -6,7 +6,7 @@ const DATA_PROPERTIES = [
   'stability',
   'co2',
   'bakingSoda',
-  'replacedFilter',
+  'cleanedFilter',
   'crushedCoral',
   'fertilizer',
   'spongeClean',
@@ -136,7 +136,8 @@ module.exports = {
         'tds',
         'ph',
         'gh',
-        'kh'
+        'kh',
+        'chlorine'
       );
       return recentData;
     },

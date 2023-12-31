@@ -93,7 +93,7 @@ calendar:
     tooltip:
       active: false
   spongeClean:
-    parameter: 'spongeClean'
+    parameter: 'cleanedFilter'
     title: 'Cleaned Sponge Filter'
     emoji: '🧽'
     theme:
@@ -141,6 +141,18 @@ calendar:
       borderColorDivider: "md:border-l-blue-900/10"
     tooltip:
       active: false
+  bakingSoda:
+    parameter: 'bakingSoda'
+    title: 'Added Baking Soda'
+    emoji: '🧫'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-amber-700"
+      bgHeadColor: "bg-amber-800"
+      borderColor: "border-amber-900"
+      borderColorDivider: "md:border-l-amber-900/10"
+    tooltip:
+      active: false
 ---
 
 {% extends "layouts/tank.njk" %}
@@ -170,5 +182,6 @@ calendar:
   {{ macros.calendar(calendar.fertilizer, bettaCalendarData) }}
   {{ macros.calendar(calendar.co2, bettaCalendarData) }}
   {{ macros.calendar(calendar.crushedCoral, bettaCalendarData) }}
+  {{ macros.calendar(calendar.bakingSoda, bettaCalendarData) }}
 {%- endblock %}
 
