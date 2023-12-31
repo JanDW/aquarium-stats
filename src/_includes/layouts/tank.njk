@@ -1,8 +1,3 @@
-{# ↓ These variables are kept in nunjucks instead of frontmatter as combined data is only available to the template engine when it's rendering the page, not when it's rendering the layout. So my option is to either duplicate these vars in the template frontmatter layout (e.g. betta.njk, shrimp.njk), or to use nunjucks variables. Specifying them in frontmatter in this layout doesn't take effect.  #}
-
-{%- set bodyClasses = "home bg-slate-900 text-white font-inter" %}
-{%- set mainClasses = "main-grid" %}
-
 {% extends "layouts/default.njk" %}
 {%- import "macros/macros.njk" as macros %}
 
@@ -32,7 +27,7 @@
 {%- block main %}
 
   <section class="main-grid__wide mb-12">
-  <h2 class="text-2xl font-bold mb-4">Wazzup?</h2>
+  <h2 class="text-2xl font-bold mb-4">Most Recent Measurements</h2>
   {%- block recentData %}{%- endblock %}
   </section>
 
