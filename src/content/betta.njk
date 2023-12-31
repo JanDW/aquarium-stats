@@ -9,6 +9,7 @@ hero:
   author: Navin Rai
   authorLink: https://unsplash.com/@nicque
   title: "Sofie's Betta <span class=\"whitespace-nowrap\">T<span class=\"-ml-3\">ank.</span></span>"
+  titleColor: text-[aqua]
   subtitle: A 10 gallon planted tank with a single betta fish and some friends.
 inhabitants:
   - name: Remco
@@ -53,6 +54,93 @@ inhabitants:
     infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
     imgSrc: /assets/img/harlequin-rasbora.jpg
     dateAdded: 2021-12-17
+calendarSettings:
+  waterChange:
+    parameter: 'waterChange'
+    title: 'Water Change'
+    emoji: '🪣'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-teal-700"
+      bgHeadColor: "bg-teal-800"
+      borderColor: "border-teal-900"
+      borderColorDivider: "md:border-l-teal-900/10"
+    tooltip:
+      active: true
+      unit: 'litres'
+  co2:
+    parameter: 'co2'
+    title: 'Added API CO₂ Booster (1ml)'
+    emoji: '⛽️'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-rose-700"
+      bgHeadColor: "bg-rose-800"
+      borderColor: "border-rose-900"
+      borderColorDivider: "md:border-l-rose-900/10"
+    tooltip:
+      active: false
+  fertilizer:
+    parameter: 'fertilizer'
+    title: 'Added API Leaf Zone (5ml)'
+    emoji: '🍀'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-green-700"
+      bgHeadColor: "bg-green-800"
+      borderColor: "border-green-900"
+      borderColorDivider: "md:border-l-green-900/10"
+    tooltip:
+      active: false
+  spongeClean:
+    parameter: 'spongeClean'
+    title: 'Cleaned Sponge Filter'
+    emoji: '🧽'
+    theme:
+      textColor: "text-slate-900"
+      bgCaptionColor: "bg-yellow-200"
+      bgHeadColor: "bg-yellow-300"
+      borderColor: "border-yellow-600"
+      borderColorDivider: "md:border-l-yellow-600/10"
+    tooltip:
+      active: false
+  crushedCoral:
+    parameter: 'crushedCoral'
+    title: 'Added Crushed Coral'
+    emoji: '🪸'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-fuchsia-700"
+      bgHeadColor: "bg-fuchsia-800"
+      borderColor: "border-fuchsia-900"
+      borderColorDivider: "md:border-l-fuchsia-900/10"
+    tooltip:
+      active: false
+  prime:
+    parameter: 'prime'
+    title: 'Added Seachem Prime'
+    emoji: '🦺'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-red-700"
+      bgHeadColor: "bg-red-800"
+      borderColor: "border-red-900"
+      borderColorDivider: "md:border-l-red-900/10"
+    tooltip:
+      active: true
+      unit: 'ml'
+  stability:
+    parameter: 'stability'
+    title: 'Added Seachem Stability (2.5ml)'
+    emoji: '🧫'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-blue-700"
+      bgHeadColor: "bg-blue-800"
+      borderColor: "border-blue-900"
+      borderColorDivider: "md:border-l-blue-900/10"
+    tooltip:
+      active: false
 ---
 
 {% extends "layouts/tank.njk" %}
@@ -71,13 +159,13 @@ inhabitants:
 {%- endblock %}
 
 {%- block calendars %}
-  {{ macros.calendar('waterChange', '🪣', 'Changed Water (in litres)', bettaCalendarData) }}
-  {{ macros.calendar('co2', '⛽️', 'Added API CO₂ Booster (1ml)', bettaCalendarData) }}
-  {{ macros.calendar('fertilizer', '🍀', 'Added API Leaf Zone (5ml)', bettaCalendarData) }}
-  {{ macros.calendar('spongeClean', '🧽', 'Cleaned Sponge Filter', bettaCalendarData) }}
-  {{ macros.calendar('crushedCoral', '🪸', 'Added Crushed Coral', bettaCalendarData) }}
-  {{ macros.calendar('prime', '🦺', 'Added Seachem Prime', bettaCalendarData) }}
-  {{ macros.calendar('stability', '🧫', 'Added Seachem Stability (2.5ml)', bettaCalendarData) }}
+  {{ macros.calendar(calendarSettings.waterChange, bettaCalendarData) }}
+  {{ macros.calendar(calendarSettings.co2, bettaCalendarData) }}
+  {{ macros.calendar(calendarSettings.fertilizer, bettaCalendarData) }}
+  {{ macros.calendar(calendarSettings.spongeClean, bettaCalendarData) }}
+  {{ macros.calendar(calendarSettings.crushedCoral, bettaCalendarData) }}
+  {{ macros.calendar(calendarSettings.prime, bettaCalendarData) }}
+  {{ macros.calendar(calendarSettings.stability, bettaCalendarData) }}
 {%- endblock %}
 
 

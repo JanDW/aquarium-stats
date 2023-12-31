@@ -152,62 +152,76 @@
   </div>
 {%- endmacro %}
 
-{%- macro calendar(parameter, emoji, parameterDisplay, tankCalendarData) %}
-  <div id="calendar-{{ parameter }}" class="mt-12">
-    <h2 class="font-bold mb-4 flex items-center justify-center"><span class="text-3xl">{{ emoji }}</span><span class="text-2xl ml-2">{{ parameterDisplay }}</span></h2>
-    <div class="grid grid-cols-2 gap-12">
+{%- macro calendar(s,data) %}
+  <div id="calendar-{{ s.parameter }}" class="mt-12">
+    <h2 class="font-bold mb-4 flex items-center justify-center">
+      <span class="text-3xl">{{ s.emoji }}</span><span class="text-2xl ml-2">{{ s.title }}</span></h2>
+    <div class="md:grid md:grid-cols-2 md:gap-0">
       {# {{ calendarData[0].days[0] | dump }} #}
-      {%- for month in tankCalendarData | reverse %}
-        <table class="table-auto text-white font-medium font-mono text-xl border border-slate-800 rounded-b-xl">
-          <caption class="pb-4 pt-4 bg-slate-800 font-semibold rounded-t-xl">{{ month.monthHumanReadable }}
-            {{ month.year }}</caption>
-          <thead>
-            <tr>
-              <th scope="col" class="px-2 pb-4 text-left font-medium">Mo</th>
-              <th scope="col" class="px-2 pb-4 text-left font-medium">Tu</th>
-              <th scope="col" class="px-2 pb-4 text-left font-medium">We</th>
-              <th scope="col" class="px-2 pb-4 text-left font-medium">Th</th>
-              <th scope="col" class="px-2 pb-4 text-left font-medium">Fr</th>
-              <th scope="col" class="px-2 pb-4 text-left font-medium">Sa</th>
-              <th scope="col" class="px-2 pb-4 text-left font-medium">Su</th>
-            </tr>
-          </thead>
-          <tbody class="text-slate-400">
-            {% set counter = 0 %}
-            {%- for i in range(0, month.daysToSkip) %}
-              {% if counter % 7 == 0 %}
-                {% if counter != 0 %}
-                </tr>
-              {% endif %}
-              <tr>
-              {% endif %}
-              <td class="px-2"></td>
-              {% set counter = counter + 1 %}
-            {%- endfor %}
-            {%- for day in month.days %}
-              {% if counter % 7 == 0 %}
-                {% if counter != 0 %}
-                </tr>
-              {% endif %}
-              <tr>
-              {% endif %}
-              {%- set className = 'bg-green-400 text-slate-900 px-2 font-semibold' if day[parameter] else 'px-2' %}
-              <td class="{{ className }}">
-                <time datetime="{{day.isoString}}" title="{{day[parameter]}}">{{day.day}}</time>
-              </td>
-              {% set counter = counter + 1 %}
-            {%- endfor %}
-            {%- for i in range(0, month.daysToAppend) %}
-              <td class="px-2"></td>
-              {% set counter = counter + 1 %}
-            {%- endfor %}
-            {% if counter != 0 %}
-            </tr>
-          {% endif %}
-        </tbody>
-      </table>
-    {%- endfor %}
-  </div>
-  <!-- /.two-up-grid -->
-</div>
-{%- endmacro %}
+      {%- for month in data | reverse %}
+        {%- if loop.index == 1 %}
+          {%- set borderClasses = "md:border-r-0 md:rounded-r-none" %}
+        {%- elif loop.index == 2 %}
+          {%- set borderClasses = "md:border-l-1 md:rounded-l-none md:-ml-1 " ~ s.theme.borderColorDivider %}
+        {%- endif %}
+        <div class="rounded-3xl overflow-clip border-4 {{ s.theme.borderColor }} {{ borderClasses }}">
+          <table class="table-auto w-full {{ s.theme.textColor }} font-medium font-mono text-xl">
+            <caption class="pb-4 pt-4 {{ s.theme.bgCaptionColor }} font-semibold font-inter text-2xl">{{ month.monthHumanReadable }}
+              {{ month.year }}</caption>
+            <thead>
+              <tr class="{{ s.theme.bgHeadColor }}">
+                <th scope="col" class="px-2 py-2 font-medium">Mo</th>
+                <th scope="col" class="px-2 py-2 font-medium">Tu</th>
+                <th scope="col" class="px-2 py-2 font-medium">We</th>
+                <th scope="col" class="px-2 py-2 font-medium">Th</th>
+                <th scope="col" class="px-2 py-2 font-medium">Fr</th>
+                <th scope="col" class="px-2 py-2 font-medium">Sa</th>
+                <th scope="col" class="px-2 py-2 font-medium">Su</th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-900 bg-slate-100">
+              {% set counter = 0 %}
+              {%- for i in range(0, month.daysToSkip) %}
+                {% if counter % 7 == 0 %}
+                  {% if counter != 0 %}
+                  </tr>
+                {% endif %}
+                <tr>
+                {% endif %}
+                <td class="px-2"></td>
+                {% set counter = counter + 1 %}
+              {%- endfor %}
+              {%- for day in month.days %}
+                {% if counter % 7 == 0 %}
+                  {% if counter != 0 %}
+                  </tr>
+                {% endif %}
+                <tr>
+                {% endif %}
+                {%- set timeClasses = 'border-blue-300 text-slate-900 rounded-full bg-blue-50 font-semibold' if day[s.parameter] else 'border-transparent' %}
+                {%- set statusTooltip = 'disabled' if not s.tooltip.active or not day[s.parameter] else '' %}
+                <td class="bg-white text-slate-800">
+                  <sl-tooltip content="{{ day[s.parameter] }} {{ s.tooltip.unit }}" placement="top" {{ statusTooltip }}>
+                    <time class="{{ timeClasses }} border-2 border-dashed  aspect-square grid place-content-center m-1" datetime="{{day.isoString}}">
+                      <span>{{day.day}}</span>
+                    </time>
+                  </sl-tooltip>
+                    </td>
+                    {% set counter = counter + 1 %}
+                  {%- endfor %}
+                  {%- for i in range(0, month.daysToAppend) %}
+                    <td class="px-2"></td>
+                    {% set counter = counter + 1 %}
+                  {%- endfor %}
+                  {% if counter != 0 %}
+                  </tr>
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+          <!-- /.rounded-3xl -->
+        {%- endfor %}
+      </div>
+      <!-- /.two-up-grid -->
+    </div>
+  {%- endmacro %}

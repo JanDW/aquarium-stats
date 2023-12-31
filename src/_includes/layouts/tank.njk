@@ -1,14 +1,9 @@
-{# Combined data is only available to the template engine when it's rendering the page, not when it's rendering the layout. So my option is to either duplicate these vars in the template frontmatter layout (e.g. betta.njk, shrimp.njk), or to use nunjucks variables. Specifying them in frontmatter in this layout doesn't take effect.  #}
+{# ↓ These variables are kept in nunjucks instead of frontmatter as combined data is only available to the template engine when it's rendering the page, not when it's rendering the layout. So my option is to either duplicate these vars in the template frontmatter layout (e.g. betta.njk, shrimp.njk), or to use nunjucks variables. Specifying them in frontmatter in this layout doesn't take effect.  #}
 
 {%- set bodyClasses = "home bg-slate-900 text-white font-inter" %}
 {%- set mainClasses = "main-grid" %}
 
 {% extends "layouts/default.njk" %}
-
-{# {% from 'macros/macros.njk' import createChart,
-table,
-calendarGrid %} #}
-
 {%- import "macros/macros.njk" as macros %}
 
 {%- block scripts %}
@@ -16,7 +11,7 @@ calendarGrid %} #}
   <script>
     // The createChart macro requires this data object.
     const fullData = {{ dataName | getData | reverse | dump | safe }};
-    const dkgToPpm = dkg => dkg * 17.9;
+    {# const dkgToPpm = dkg => dkg * 17.9; #}
   </script>
 {%- endblock %}
 
@@ -28,7 +23,7 @@ calendarGrid %} #}
       </snow-fall>
     </div>
     <div class="hero__content main-grid">
-      <h1 class="main-grid__wide max-w-[50%] text-7xl font-black tracking-tighter text-orange-500">{{ hero.title | safe }}</h1>
+      <h1 class="main-grid__wide max-w-[50%] text-7xl font-black tracking-tighter {{ hero.titleColor }}">{{ hero.title | safe }}</h1>
       <p class="main-grid__wide max-w-[50%] text-2xl font-bold mt-8">{{ hero.subtitle }}</p>
     </div>
   </header>
@@ -83,16 +78,16 @@ calendarGrid %} #}
     </div>
   </section>
 
-  <section class="main-grid__wide">
+  <section class="main-grid__max xl:grid xl:grid-cols-2 xl:gap-8">
     {%- block calendars %}{%- endblock %}
   </section>
 
-  <section class="main-grid__wide mt-24">
+  {# <section class="main-grid__wide mt-24">
     <h2 class="text-2xl font-bold">Water Parameters &amp; Maintenance Log</h2>
     <div class="border border-slate-800 rounded-lg mt-4 mb-8">
       {{ macros.table(dataName | getData) }}
     </div>
-  </section>
+  </section> #}
 
 {%- endblock %}
 

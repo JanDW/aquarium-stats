@@ -9,6 +9,7 @@ hero:
   author: theaquariumkeeper2
   authorLink: https://unsplash.com/@theaquariumkeeper2
   title: "Sofie & Senne's Shrimp <span class=\"whitespace-nowrap\">T<span class=\"-ml-3\">ank.</span></span>"
+  titleColor: text-orange-600
   subtitle: A 5 gallon planted tank with neocaridina shrimp and a nerite snail.
 inhabitants:
   - name: Orange
@@ -32,6 +33,105 @@ inhabitants:
     infoLink: https://en.wikipedia.org/wiki/Vittina_natalensis
     imgSrc: /assets/img/zebra-nerite.jpeg
     dateAdded: 2023-12-17
+calendarSettings:
+  waterChange:
+    parameter: 'waterChange'
+    title: 'Water Change'
+    emoji: '🪣'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-teal-700"
+      bgHeadColor: "bg-teal-800"
+      borderColor: "border-teal-900"
+      borderColorDivider: "md:border-l-teal-900/10"
+    tooltip:
+      active: true
+      unit: 'litres'
+  co2:
+    parameter: 'co2'
+    title: 'Added API CO₂ Booster (0.5ml)'
+    emoji: '⛽️'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-rose-700"
+      bgHeadColor: "bg-rose-800"
+      borderColor: "border-rose-900"
+      borderColorDivider: "md:border-l-rose-900/10"
+    tooltip:
+      active: false
+  fertilizer:
+    parameter: 'fertilizer'
+    title: 'Added API Leaf Zone (2.5ml)'
+    emoji: '🍀'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-green-700"
+      bgHeadColor: "bg-green-800"
+      borderColor: "border-green-900"
+      borderColorDivider: "md:border-l-green-900/10"
+    tooltip:
+      active: false
+  spongeClean:
+    parameter: 'spongeClean'
+    title: 'Cleaned Sponge Filter'
+    emoji: '🧽'
+    theme:
+      textColor: "text-slate-900"
+      bgCaptionColor: "bg-yellow-200"
+      bgHeadColor: "bg-yellow-300"
+      borderColor: "border-yellow-600"
+      borderColorDivider: "md:border-l-yellow-600/10"
+    tooltip:
+      active: false
+  crushedCoral:
+    parameter: 'crushedCoral'
+    title: 'Added Crushed Coral'
+    emoji: '🪸'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-fuchsia-700"
+      bgHeadColor: "bg-fuchsia-800"
+      borderColor: "border-fuchsia-900"
+      borderColorDivider: "md:border-l-fuchsia-900/10"
+    tooltip:
+      active: false
+  prime:
+    parameter: 'prime'
+    title: 'Added Seachem Prime'
+    emoji: '🦺'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-red-700"
+      bgHeadColor: "bg-red-800"
+      borderColor: "border-red-900"
+      borderColorDivider: "md:border-l-red-900/10"
+    tooltip:
+      active: true
+      unit: 'ml'
+  stability:
+    parameter: 'stability'
+    title: 'Added Seachem Stability (1ml)'
+    emoji: '🧫'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-blue-700"
+      bgHeadColor: "bg-blue-800"
+      borderColor: "border-blue-900"
+      borderColorDivider: "md:border-l-blue-900/10"
+    tooltip:
+      active: false
+  bakingSoda:
+    parameter: 'bakingSoda'
+    title: 'Added Baking Soda'
+    emoji: '🧫'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-amber-700"
+      bgHeadColor: "bg-amber-800"
+      borderColor: "border-amber-900"
+      borderColorDivider: "md:border-l-amber-900/10"
+    tooltip:
+      active: false
 ---
 
 {% extends "layouts/tank.njk" %}
@@ -42,12 +142,12 @@ inhabitants:
 {%- endblock %}
 
 {%- block calendars %}
-  {{ macros.calendar('waterChange', '🪣', 'Changed Water (in litres)', shrimpCalendarData) }}
-  {{ macros.calendar('co2', '⛽️', 'Added API CO₂ Booster (1ml)', shrimpCalendarData) }}
-  {{ macros.calendar('fertilizer', '🍀', 'Added API Leaf Zone (5ml)', shrimpCalendarData) }}
-  {{ macros.calendar('spongeClean', '🧽', 'Cleaned Sponge Filter', shrimpCalendarData) }}
-  {{ macros.calendar('crushedCoral', '🪸', 'Added Crushed Coral', shrimpCalendarData) }}
-  {{ macros.calendar('prime', '🦺', 'Added Seachem Prime', shrimpCalendarData) }}
-  {{ macros.calendar('stability', '🧫', 'Added Seachem Stability (2.5ml)', shrimpCalendarData) }}
-  {{ macros.calendar('bakingSoda', '🧫', 'Added Baking Soda', shrimpCalendarData) }}
+  {{ macros.calendar(calendarSettings.waterChange, shrimpCalendarData) }}
+  {{ macros.calendar(calendarSettings.co2, shrimpCalendarData) }}
+  {{ macros.calendar(calendarSettings.fertilizer, shrimpCalendarData) }}
+  {{ macros.calendar(calendarSettings.spongeClean, shrimpCalendarData) }}
+  {{ macros.calendar(calendarSettings.crushedCoral, shrimpCalendarData) }}
+  {{ macros.calendar(calendarSettings.prime, shrimpCalendarData) }}
+  {{ macros.calendar(calendarSettings.stability, shrimpCalendarData) }}
+  {{ macros.calendar(calendarSettings.bakingSoda, shrimpCalendarData) }}
 {%- endblock %}
