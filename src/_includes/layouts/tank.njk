@@ -30,6 +30,31 @@
 {%- endblock %}
 
 {%- block main %}
+
+  <section class="main-grid__wide mb-12">
+  <h2 class="text-2xl font-bold mb-4">Wazzup?</h2>
+  {%- block recentData %}{%- endblock %}
+  </section>
+
+  <section class="main-grid main-grid__max">
+    <h2 class="text-2xl font-bold main-grid__wide mb-4">Soft Water, Hard Facts</h2>
+    <div class="main-grid__max two-up-grid px-4 mx-4 mt-4 pb-8 mb-8">
+
+      {{ macros.createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null') }}
+
+      {{ macros.createChart('nitrates', 'Nitrates', 'ppm', ['nitrates'], 'item.nitrates != null') }}
+
+      {{ macros.createChart('tds', 'TDS', 'ppm', ['tds'], 'item.tds != null') }}
+
+      {{ macros.createChart('hardness', 'GH, KH & pH', 'dKG & pH', ['gh','kh','ph'], 'item.gh != null || item.kh !== null || item.ph !== null') }}
+
+    </div>
+  </section>
+
+  <section class="main-grid__max xl:grid xl:grid-cols-2 xl:gap-8">
+    {%- block calendars %}{%- endblock %}
+  </section>
+
   <section class="main-grid__wide mb-12">
     <h2 class="text-2xl font-bold main-grid__wide mb-4">
       Meet the Lodgers
@@ -56,30 +81,11 @@
         </li>
       {%- endfor %}
     </ul>
-
     {%- if hasInhibitantsContent %}
       <div class="mt-8 text-slate-400">
         {%- block inhabitants %}{%- endblock %}
       </div>
     {%- endif %}
-  </section>
-  <section class="main-grid main-grid__max">
-    <h2 class="text-2xl font-bold main-grid__wide">Hard Facts about Soft Water</h2>
-    <div class="main-grid__max two-up-grid px-4 mx-4 py-8 my-8">
-
-      {{ macros.createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null') }}
-
-      {{ macros.createChart('nitrates', 'Nitrates', 'ppm', ['nitrates'], 'item.nitrates != null') }}
-
-      {{ macros.createChart('tds', 'TDS', 'ppm', ['tds'], 'item.tds != null') }}
-
-      {{ macros.createChart('hardness', 'GH, KH & pH', 'dKG & pH', ['gh','kh','ph'], 'item.gh != null || item.kh !== null || item.ph !== null') }}
-
-    </div>
-  </section>
-
-  <section class="main-grid__max xl:grid xl:grid-cols-2 xl:gap-8">
-    {%- block calendars %}{%- endblock %}
   </section>
 
   {# <section class="main-grid__wide mt-24">

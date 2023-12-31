@@ -117,6 +117,33 @@ function getDaysInMonth(month, year) {
   return { monthHumanReadable, year, days, daysToSkip, daysToAppend };
 }
 
+/**
+ * Retrieves the most recent non-null data for each specified key from the provided data array.
+ *
+ * @param {Array<Object>} data - The data array to retrieve data from. Each object in the array should have a 'date' property and properties for each of the specified keys.
+ * @param {...string} keys - The keys to retrieve data for.
+ * @returns {Object} An object where each key is one of the specified keys and each value is an object containing the most recent non-null value for that key and the date of that value.
+ */
+
+function getRecentData(data, ...keys) {
+  const recentData = {};
+
+  for (const key of keys) {
+    const filteredData = data.filter(item => item[key] !== null);
+    filteredData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+    if (filteredData.length > 0) {
+      recentData[key] = {
+        value: filteredData[0][key],
+        date: filteredData[0].date,
+      };
+    }
+  }
+
+  return recentData;
+}
+
+
 module.exports = {
   eleventyComputed: {
     bettaCalendarData(data) {
@@ -138,5 +165,10 @@ module.exports = {
 
       return [currentMonthCalendarData, previousMonthCalendarData];
     },
-  },
+    bettaRecentData(data) {
+      const fishData = data.fishData;
+      const recentData = getRecentData(fishData, 'ammonia', 'nitrites', 'nitrates', 'tds', 'ph', 'gh', 'kh', 'chlorine');
+      return recentData;
+    },
+  }
 };

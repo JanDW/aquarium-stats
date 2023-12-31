@@ -54,7 +54,7 @@ inhabitants:
     infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
     imgSrc: /assets/img/harlequin-rasbora.jpg
     dateAdded: 2021-12-17
-calendarSettings:
+calendar:
   waterChange:
     parameter: 'waterChange'
     title: 'Water Change'
@@ -146,6 +146,10 @@ calendarSettings:
 {% extends "layouts/tank.njk" %}
 {%- import "macros/macros.njk" as macros %}
 
+{%- block recentData %}
+  {{ macros.recentData(bettaRecentData) }}
+{%- endblock %}
+
 
 {%- set hasInhibitantsContent = true %}
 {%- block inhabitants %}
@@ -159,11 +163,12 @@ calendarSettings:
 {%- endblock %}
 
 {%- block calendars %}
-  {{ macros.calendar(calendarSettings.waterChange, bettaCalendarData) }}
-  {{ macros.calendar(calendarSettings.co2, bettaCalendarData) }}
-  {{ macros.calendar(calendarSettings.fertilizer, bettaCalendarData) }}
-  {{ macros.calendar(calendarSettings.spongeClean, bettaCalendarData) }}
-  {{ macros.calendar(calendarSettings.crushedCoral, bettaCalendarData) }}
-  {{ macros.calendar(calendarSettings.prime, bettaCalendarData) }}
-  {{ macros.calendar(calendarSettings.stability, bettaCalendarData) }}
+  {{ macros.calendar(calendar.waterChange, bettaCalendarData) }}
+  {{ macros.calendar(calendar.prime, bettaCalendarData) }}
+  {{ macros.calendar(calendar.stability, bettaCalendarData) }}
+  {{ macros.calendar(calendar.spongeClean, bettaCalendarData) }}
+  {{ macros.calendar(calendar.fertilizer, bettaCalendarData) }}
+  {{ macros.calendar(calendar.co2, bettaCalendarData) }}
+  {{ macros.calendar(calendar.crushedCoral, bettaCalendarData) }}
 {%- endblock %}
+

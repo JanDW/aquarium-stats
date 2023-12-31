@@ -33,7 +33,7 @@ inhabitants:
     infoLink: https://en.wikipedia.org/wiki/Vittina_natalensis
     imgSrc: /assets/img/zebra-nerite.jpeg
     dateAdded: 2023-12-17
-calendarSettings:
+calendar:
   waterChange:
     parameter: 'waterChange'
     title: 'Water Change'
@@ -136,18 +136,22 @@ calendarSettings:
 
 {% extends "layouts/tank.njk" %}
 
+{%- block recentData %}
+  {{ macros.recentData(shrimpRecentData) }}
+{%- endblock %}
+
 {%- set hasInhibitantsContent = true %}
 {%- block inhabitants %}
   Zinnia is a berried female, so hopefully we'll have some baby shrimp soon!
 {%- endblock %}
 
 {%- block calendars %}
-  {{ macros.calendar(calendarSettings.waterChange, shrimpCalendarData) }}
-  {{ macros.calendar(calendarSettings.co2, shrimpCalendarData) }}
-  {{ macros.calendar(calendarSettings.fertilizer, shrimpCalendarData) }}
-  {{ macros.calendar(calendarSettings.spongeClean, shrimpCalendarData) }}
-  {{ macros.calendar(calendarSettings.crushedCoral, shrimpCalendarData) }}
-  {{ macros.calendar(calendarSettings.prime, shrimpCalendarData) }}
-  {{ macros.calendar(calendarSettings.stability, shrimpCalendarData) }}
-  {{ macros.calendar(calendarSettings.bakingSoda, shrimpCalendarData) }}
+  {{ macros.calendar(calendar.waterChange, shrimpCalendarData) }}
+  {{ macros.calendar(calendar.prime, shrimpCalendarData) }}
+  {{ macros.calendar(calendar.stability, shrimpCalendarData) }}
+  {{ macros.calendar(calendar.spongeClean, shrimpCalendarData) }}
+  {{ macros.calendar(calendar.fertilizer, shrimpCalendarData) }}
+  {{ macros.calendar(calendar.co2, shrimpCalendarData) }}
+  {{ macros.calendar(calendar.crushedCoral, shrimpCalendarData) }}
+  {{ macros.calendar(calendar.bakingSoda, shrimpCalendarData) }}
 {%- endblock %}

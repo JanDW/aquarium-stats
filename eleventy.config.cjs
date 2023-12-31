@@ -58,6 +58,11 @@ module.exports = function (eleventyConfig) {
     );
   });
 
+  // Filter that converts 2023-12-26 to Dec 26
+  eleventyConfig.addFilter('shortDate', (dateStr) => {
+    return DateTime.fromISO(dateStr, { zone: 'utc' }).toFormat('MMM d');
+  });
+
   eleventyConfig.addNunjucksFilter('getData', function (value) {
     return this.ctx[value];
   });
