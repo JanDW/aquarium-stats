@@ -52,8 +52,21 @@ const shrimpKeys = {
   spongeClean: '%5DUZh',
 }
 
-// Use this function to log the properties of a database
-// Useful for finding the schema, ids of properties
+/**
+ * Retrieves a Notion database by its ID.
+ * This function is useful for logging the properties of a database,
+ * which can help you find the schema and IDs of properties.
+ *
+ * @param {string} id - The ID of the Notion database to retrieve.
+ * @returns {Promise<Object>} A promise that resolves to the retrieved Notion database.
+ */
+async function getDatabase(id) {
+  const response = await notion.databases.retrieve({
+    database_id: id,
+  });
+  console.log(response);
+}
+
 async function getDatabase(id) {
   const response = await notion.databases.retrieve({
     database_id: id,
@@ -62,6 +75,14 @@ async function getDatabase(id) {
 }
 
 
+/**
+ * Fetches and transforms aquarium log pages from a Notion database.
+ *
+ * @param {string} id - The ID of the Notion database.
+ * @param {Object} keys - The keys used to access specific properties in the Notion database.
+ * @param {string} keys.date - The key for the date property in the Notion database.
+ * @returns {Promise<Array>} A promise that resolves to an array of aquarium log pages.
+ */
 
 async function getAquariumLogPages(id, keys) {
   const notionPages = await notion.databases.query({
@@ -76,12 +97,27 @@ async function getAquariumLogPages(id, keys) {
   return notionPages.results.map(page => fromNotionObject(page, keys));
 }
 
+/**
+ * Transforms the properties object from Notion into an object keyed by property ID.
+ *
+ * @param {Object} properties - The properties object from Notion.
+ * @returns {Object} An object where each key is a property ID and each value is the corresponding property, excluding the ID.
+ */
+
 function notionPropertiesById(properties) {
   return Object.values(properties).reduce((obj, property) => {
     const { id, ...rest } = property;
     return { ...obj, [id]: rest };
   }, {});
 }
+
+/**
+ * Transforms a Notion page object into a more convenient format.
+ *
+ * @param {Object} notionPage - The Notion page object to transform.
+ * @param {Object} keys - An object mapping property names to their IDs in the Notion database.
+ * @returns {Object} An object containing the transformed properties of the Notion page.
+ */
 
 function fromNotionObject(notionPage, keys) {
   // const id = notionPage.id;

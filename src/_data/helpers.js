@@ -1,3 +1,4 @@
+//@ts-check
 module.exports = {
   /**
    * Returns back some attributes based on whether the

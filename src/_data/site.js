@@ -1,3 +1,4 @@
+//@ts-check
 const currentYear = new Date().getFullYear();
 
 module.exports = {
