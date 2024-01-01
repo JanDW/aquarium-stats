@@ -1,6 +1,5 @@
 //@ts-check
 const { Client } = require('@notionhq/client');
-const fs = require('fs');
 const path = require('path');
 const { writeJson } = require('./library.js');
 
@@ -66,14 +65,6 @@ async function getDatabase(id) {
   });
   console.log(response);
 }
-
-async function getDatabase(id) {
-  const response = await notion.databases.retrieve({
-    database_id: id,
-  });
-  console.log(response);
-}
-
 
 /**
  * Fetches and transforms aquarium log pages from a Notion database.
@@ -146,7 +137,7 @@ function fromNotionObject(notionPage, keys) {
 }
 
 (async () => {
-  getDatabase(process.env.NOTION_SHRIMP_DB_ID);
+  // getDatabase(process.env.NOTION_SHRIMP_DB_ID);
 
   const fishData = await getAquariumLogPages(process.env.NOTION_FISH_DB_ID, fishKeys);
   const fishPathToJson = path.join(__dirname, '..', 'src', '_data', 'fishData.json');
