@@ -232,7 +232,14 @@
       <li class="flex flex-col px-4 text-center bg-emerald-950 pt-12 pb-10 rounded-2xl">
         <div class="whitespace-nowrap flex items-center justify-center mt-3">
           <div class="font-semibold tracking-tight text-cyan-400 text-6xl">{{ value.value }}</div>
-          <div class="text-cyan-600 text-xl font-medium ml-3">{{ 'dKG' if key === 'gh' or key === 'kh' else 'ppm' }}</div>
+          {%- if key == 'gh' or key == 'kh' %}
+            {%- set unit = 'dKG' %}  
+            {%- elif key == 'ph' %}
+            {%- set unit = '' %}
+            {%- else %}
+            {%- set unit = 'ppm' %}
+          {%- endif %}
+          <div class="text-cyan-600 text-xl font-medium ml-3">{{ unit }}</div>
         </div>
         <div class="text-orange-200 text-xl font-bold tracking-widest font-medium mt-6 uppercase font-mono">{{ key }}</div>
         <div class="font-mono text-orange-200/60 text-lg font-base">{{ value.date | shortDate }}</div>
