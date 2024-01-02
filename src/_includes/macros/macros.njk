@@ -202,7 +202,7 @@
                 {%- set statusTooltip = 'disabled' if not s.tooltip.active or not day[s.parameter] else '' %}
                 <td class="bg-white text-slate-800">
                   <sl-tooltip content="{{ day[s.parameter] }} {{ s.tooltip.unit }}" placement="top" {{ statusTooltip }}>
-                    <time class="{{ timeClasses }} border-2 border-dashed  aspect-square grid place-content-center m-1" datetime="{{day.isoString}}">
+                    <time class="{{ timeClasses }} border aspect-square grid place-content-center m-1" datetime="{{day.isoString}}">
                       <span>{{day.day}}</span>
                     </time>
                   </sl-tooltip>
