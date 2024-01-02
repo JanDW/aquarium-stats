@@ -71,6 +71,9 @@
                 <p class="italic text-sm text-gray-400">{{inhabitant.binomial}}</p>
               </p>
               <p class="text-sm text-gray-400">Since {{ inhabitant.dateAdded | readableDate }}</p>
+              {%- if inhabitant.dateDied %}
+              <p class="text-sm text-gray-400">✝ {{ inhabitant.dateDied | readableDate }}</p>
+              {%- endif %}
             </div>
           </div>
         </li>
