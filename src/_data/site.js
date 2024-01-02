@@ -3,9 +3,9 @@ const currentYear = new Date().getFullYear();
 
 module.exports = {
   name: 'Jan De Wilde',
-  url: 'https://aquarium.jandewil.de',
+  url: 'https://tanks.jandewil.de',
   email: 'hi@jandewil.de',
-  tagline: 'Jan De Wilde, designer and web developer',
+  tagline: 'Overkill aquarium stats tracking',
   imgDir: '/assets/img/',
   currentYear,
   navigation: [
