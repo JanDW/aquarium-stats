@@ -6,7 +6,7 @@
   <script>
     // The createChart macro requires this data object.
     const fullData = {{ dataName | getData | reverse | dump | safe }};
-    {# const dkgToPpm = dkg => dkg * 17.9; #}
+    {# const dkhToPpm = dkh => dkh * 17.9; #}
   </script>
 {%- endblock %}
 
@@ -41,7 +41,7 @@
 
       {{ macros.createChart('tds', 'TDS', 'ppm', ['tds'], 'item.tds != null') }}
 
-      {{ macros.createChart('hardness', 'GH, KH & pH', 'dKG & pH', ['gh','kh','ph'], 'item.gh != null || item.kh !== null || item.ph !== null') }}
+      {{ macros.createChart('hardness', 'GH, KH & pH', 'dKH & pH', ['gh','kh','ph'], 'item.gh != null || item.kh !== null || item.ph !== null') }}
 
     </div>
   </section>
