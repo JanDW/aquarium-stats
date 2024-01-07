@@ -7,6 +7,8 @@ const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
 // You could opt to store the keys as environment variables, but I prefer to keep them in the code as they are not really sensitive
 
+// 👀 Any changes to the keys, need to be reflected in the fromNotionObject function below, and in the 11tydata.js files
+
 const fishKeys = {
   ammonia: 'CeXJ',
   nitrites: 'yJhy',
@@ -27,6 +29,7 @@ const fishKeys = {
   notes: 'title',
   date: 'GuZ%3E',
   spongeClean: '%A%7BFF',
+  culture: 'm%40~I'
 };
 
 const shrimpKeys = {
@@ -49,21 +52,7 @@ const shrimpKeys = {
   notes: 'title',
   date: 'GuZ%3E',
   spongeClean: '%5DUZh',
-}
-
-/**
- * Retrieves a Notion database by its ID.
- * This function is useful for logging the properties of a database,
- * which can help you find the schema and IDs of properties.
- *
- * @param {string} id - The ID of the Notion database to retrieve.
- * @returns {Promise<Object>} A promise that resolves to the retrieved Notion database.
- */
-async function getDatabase(id) {
-  const response = await notion.databases.retrieve({
-    database_id: id,
-  });
-  console.log(response);
+  culture: 'KMGu'
 }
 
 /**
@@ -133,12 +122,11 @@ function fromNotionObject(notionPage, keys) {
     cleanedFilter: propsById[keys.cleanedFilter]?.checkbox ?? null,
     crushedCoral: propsById[keys.crushedCoral]?.checkbox ?? null,
     fertilizer: propsById[keys.fertilizer]?.checkbox ?? null,
+    culture: propsById[keys.culture]?.checkbox ?? null,
   };
 }
 
 (async () => {
-  // getDatabase(process.env.NOTION_SHRIMP_DB_ID);
-
   const fishData = await getAquariumLogPages(process.env.NOTION_FISH_DB_ID, fishKeys);
   const fishPathToJson = path.join(__dirname, '..', 'src', '_data', 'fishData.json');
   writeJson(fishPathToJson, fishData);

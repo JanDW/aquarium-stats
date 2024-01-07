@@ -2,7 +2,7 @@ name: "Deploy-Netlify"
 
 on:
   schedule:
-    - cron: '0 20 * * *'
+    - cron: '0 20 * * *' # UTC, corresponds to 3pm EST
 
 jobs:
   deploy:
