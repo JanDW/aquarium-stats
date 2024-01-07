@@ -1,7 +1,7 @@
 {%- set isHomepage = page.url == "/" -%}
 
-<header class="main-grid">
-  <nav class="global-nav py-4 main-grid__wide">  
+<header class="container mx-auto">
+  <nav class="global-nav py-4">  
     <ul role="list" class="list-none flex items-center flex-row text-lg font-medium">
       <li class="m-i-st-0 me-auto" data-home {{ 'aria-current=page' if isHomepage }}>
         {%- if not isHomepage %}

@@ -17,23 +17,23 @@
         <img src="{{hero.image}}" alt="{{hero.imageAlt}}">
       </snow-fall>
     </div>
-    <div class="hero__content main-grid">
-      <h1 class="main-grid__wide max-w-[50%] text-7xl font-black tracking-tighter {{ hero.titleColor }}">{{ hero.title | safe }}</h1>
-      <p class="main-grid__wide max-w-[50%] text-2xl font-bold mt-8">{{ hero.subtitle }}</p>
+    <div class="hero__content container mx-auto">
+      <h1 class="max-w-[50%] text-7xl font-black tracking-tighter {{ hero.titleColor }}">{{ hero.title | safe }}</h1>
+      <p class="max-w-[50%] text-2xl font-bold mt-8">{{ hero.subtitle }}</p>
     </div>
   </header>
 {%- endblock %}
 
 {%- block main %}
 
-  <section class="main-grid__wide mb-12">
+  <section class="mb-12 container mx-auto">
   <h2 class="text-2xl font-bold mb-4">Most Recent Measurements</h2>
   {%- block recentData %}{%- endblock %}
   </section>
 
-  <section class="main-grid main-grid__max">
-    <h2 class="text-2xl font-bold main-grid__wide mb-4">Soft Water, Hard Facts</h2>
-    <div class="main-grid__max two-up-grid px-4 mx-4 mt-4 pb-8 mb-8">
+  <section class="2xl:container 2xl:mx-auto">
+    <h2 class="text-2xl font-bold mb-4 container mx-auto">Soft Water, Hard Facts</h2>
+    <div class="grid xl:grid-cols-2 mt-4 pb-8 mb-8">
 
       {{ macros.createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null') }}
 
@@ -46,16 +46,16 @@
     </div>
   </section>
 
-  <section class="main-grid__max xl:grid xl:grid-cols-2 xl:gap-8">
+  <section class="xl:grid xl:grid-cols-2 xl:gap-8 2xl:container 2xl:mx-auto">
     {%- block calendars %}{%- endblock %}
   </section>
 
-  <section class="main-grid__wide mb-12">
-    <h2 class="text-2xl font-bold main-grid__wide mb-4">
+  <section class="container mx-auto mt-24">
+    <h2 class="text-2xl font-bold mb-4">
       Meet the Lodgers
     </h2>
     {# bg-gradient-to-br from-sky-900/40 to-emerald-600/70 py-8 px-12 rounded-2xl border-green-300 border-8 #}
-    <ul class="two-up-grid mt-12">
+    <ul class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
       {%- for inhabitant in inhabitants %}
         <li>
           <div class="flex items-center">
@@ -86,12 +86,12 @@
     {%- endif %}
   </section>
 
-  <section class="main-grid__wide mt-24">
+  {# <section class="mt-24 container mx-auto">
     <h2 class="text-2xl font-bold">Water Parameters &amp; Maintenance Log</h2>
     <div class="border border-slate-800 rounded-lg mt-4 mb-8">
       {{ macros.table(dataName | getData) }}
     </div>
-  </section>
+  </section> #}
 
 {%- endblock %}
 
