@@ -11,6 +11,7 @@ const FISH_DATA_PROPERTIES = [
   'crushedCoral',
   'fertilizer',
   'spongeClean',
+  'culture',
 ];
 
 const FIRST_DAY_OF_WEEK = 1;
@@ -168,6 +169,7 @@ module.exports = {
     },
     bettaRecentData(data) {
       const fishData = data.fishData;
+      // configures recentData macro
       const recentData = getRecentData(
         fishData,
         'ammonia',

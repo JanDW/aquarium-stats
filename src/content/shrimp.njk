@@ -133,6 +133,18 @@ calendar:
       borderColorDivider: "md:border-l-amber-900/10"
     tooltip:
       active: false
+  culture:
+    parameter: 'culture'
+    title: 'Added Resurrection Jar Culture (1.5ml)'
+    emoji: '🪳'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-lime-700"
+      bgHeadColor: "bg-lime-800"
+      borderColor: "border-lime-900"
+      borderColorDivider: "md:border-l-lime-900/10"
+    tooltip:
+      active: false
 ---
 
 {% extends "layouts/tank.njk" %}
@@ -150,6 +162,7 @@ calendar:
   {{ macros.calendar(calendar.co2, shrimpCalendarData) }}
   {{ macros.calendar(calendar.crushedCoral, shrimpCalendarData) }}
   {{ macros.calendar(calendar.bakingSoda, shrimpCalendarData) }}
+  {{ macros.calendar(calendar.culture, shrimpCalendarData) }}
 {%- endblock %}
 
 {%- set hasInhibitantsContent = true %}

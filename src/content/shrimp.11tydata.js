@@ -10,6 +10,7 @@ const DATA_PROPERTIES = [
   'crushedCoral',
   'fertilizer',
   'spongeClean',
+  'culture',
 ];
 
 const FIRST_DAY_OF_WEEK = 1;
@@ -127,9 +128,10 @@ module.exports = {
       return [currentMonthCalendarData, previousMonthCalendarData];
     },
     shrimpRecentData(data) {
-      const fishData = data.shrimpData;
+      const shrimpData = data.shrimpData;
+      //  for RecentData macro
       const recentData = getRecentData(
-        fishData,
+        shrimpData,
         'ammonia',
         'nitrites',
         'nitrates',
