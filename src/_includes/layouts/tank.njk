@@ -50,12 +50,12 @@
     {%- block calendars %}{%- endblock %}
   </section>
 
-  <section class="container mx-auto mt-24">
+  <section class="container mx-auto mt-24 px-4 md:px-0">
     <h2 class="text-2xl font-bold mb-4">
       Meet the Lodgers
     </h2>
     {# bg-gradient-to-br from-sky-900/40 to-emerald-600/70 py-8 px-12 rounded-2xl border-green-300 border-8 #}
-    <ul class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <ul class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
       {%- for inhabitant in inhabitants %}
         <li>
           <div class="flex items-center">

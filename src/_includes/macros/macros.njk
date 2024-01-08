@@ -179,7 +179,7 @@
                 <th scope="col" class="px-2 py-2 font-medium">Su</th>
               </tr>
             </thead>
-            <tbody class="text-slate-900 bg-slate-100">
+            <tbody class="{{ s.theme.textColor }} {{ s.theme.bgCaptionColor }}">
               {% set counter = 0 %}
               {%- for i in range(0, month.daysToSkip) %}
                 {% if counter % 7 == 0 %}
@@ -198,9 +198,9 @@
                 {% endif %}
                 <tr>
                 {% endif %}
-                {%- set timeClasses = 'border-blue-300 text-slate-900 rounded-full bg-blue-50 font-semibold' if day[s.parameter] else 'border-transparent' %}
+                {%- set timeClasses = 'rounded-full ' ~ s.theme.borderColor ~ ' ' ~ s.theme.bgHeadColor if day[s.parameter] else 'border-transparent' %}
                 {%- set statusTooltip = 'disabled' if not s.tooltip.active or not day[s.parameter] else '' %}
-                <td class="bg-white text-slate-800">
+                <td class="{{s.theme.textColor}}">
                   <sl-tooltip content="{{ day[s.parameter] }} {{ s.tooltip.unit }}" placement="top" {{ statusTooltip }}>
                     <time class="{{ timeClasses }} border aspect-square grid place-content-center m-1" datetime="{{day.isoString}}">
                       <span>{{day.day}}</span>
@@ -219,9 +219,11 @@
               </tbody>
             </table>
           </div>
+
           <!-- /.rounded-3xl -->
         {%- endfor %}
       </div>
+
       <!-- /.two-up-grid -->
     </div>
   {%- endmacro %}
@@ -247,4 +249,3 @@
       {%- endfor %}
     </ul>
   {%- endmacro %}
-  
