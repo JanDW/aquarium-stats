@@ -17,9 +17,9 @@
         <img src="{{hero.image}}" alt="{{hero.imageAlt}}">
       </snow-fall>
     </div>
-    <div class="hero__content container mx-auto">
-      <h1 class="max-w-[50%] text-7xl font-black tracking-tighter {{ hero.titleColor }}">{{ hero.title | safe }}</h1>
-      <p class="max-w-[50%] text-2xl font-bold mt-8">{{ hero.subtitle }}</p>
+    <div class="mx-4 hero__content container md:mx-auto">
+      <h1 class="lg:max-w-[50%] text-7xl font-black tracking-tighter {{ hero.titleColor }}">{{ hero.title | safe }}</h1>
+      <p class="max-w-[75%] lg:max-w-[50%] text-2xl font-bold mt-8">{{ hero.subtitle }}</p>
     </div>
   </header>
 {%- endblock %}
@@ -27,12 +27,12 @@
 {%- block main %}
 
   <section class="mb-12 container mx-auto">
-  <h2 class="text-2xl font-bold mb-4">Most Recent Measurements</h2>
+  <h2 class="text-2xl font-bold mb-4 mx-4">Most Recent Measurements</h2>
   {%- block recentData %}{%- endblock %}
   </section>
 
   <section class="2xl:container 2xl:mx-auto">
-    <h2 class="text-2xl font-bold mb-4 container mx-auto">Soft Water, Hard Facts</h2>
+    <h2 class="text-2xl font-bold mb-4 mx-4 container md:mx-auto">Soft Water, Hard Facts</h2>
     <div class="grid xl:grid-cols-2 mt-4 pb-8 mb-8">
 
       {{ macros.createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null') }}
@@ -59,7 +59,7 @@
       {%- for inhabitant in inhabitants %}
         <li>
           <div class="flex items-center">
-            <img src="{{ inhabitant.imgSrc }}" alt="{{ inhabitant.name }}" class="w-32 h-32 rounded-full mr-4">
+            <img src="{{ inhabitant.imgSrc }}" alt="{{  inhabitant.name }}" class="w-32 h-32 rounded-full mr-4">
             <div>
               <h3 class="text-xl font-bold">{{ inhabitant.name }}
                 {%- if inhabitant.emoji %}

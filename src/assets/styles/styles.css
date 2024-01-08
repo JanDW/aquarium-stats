@@ -67,6 +67,10 @@
     text-wrap: balance;
   }
 
+  p {
+    text-wrap: pretty;
+  }
+
   /* A elements that don't have a class get default styles */
   a:not([class]) {
     color: currentColor;
