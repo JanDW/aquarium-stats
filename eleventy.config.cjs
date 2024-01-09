@@ -1,5 +1,6 @@
 const markdownIt = require('markdown-it');
 const { DateTime } = require('luxon');
+const bundlerPlugin = require("@11ty/eleventy-plugin-bundle");
 const prettier = require('./src/transforms/prettier.js');
 
 module.exports = function (eleventyConfig) {
@@ -39,6 +40,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedShortcode('markdown', (content) => {
     return markdownLib.render(content);
   });
+
+  // Plugins
+  eleventyConfig.addPlugin(bundlerPlugin);
 
   eleventyConfig.addFilter('toHeading', function (value) {
     // Split the string on camelCase boundaries, then capitalize the first letter of each word

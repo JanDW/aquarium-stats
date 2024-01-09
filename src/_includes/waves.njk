@@ -1,0 +1,48 @@
+<div>
+  {%- include "partials/waves.svg" %}
+</div>
+
+{%- css %}
+/*svg*/.waves {
+  --base-speed: 120s;
+  position:relative;
+  width: 100%;
+  height: clamp(100px, 15vh, 150px);
+}
+
+.parallax > use {
+  animation: move-forever var(--base-speed) cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: calc(var(--base-speed) / -12.5);
+  animation-duration: calc(var(--base-speed) / 3.57);
+}
+.parallax > use:nth-child(2) {
+  animation-delay: calc(var(--base-speed) / -8.33);
+  animation-duration: calc(var(--base-speed) / 2.5);
+}
+.parallax > use:nth-child(3) {
+  animation-delay: calc(var(--base-speed) / -6.25);
+  animation-duration: calc(var(--base-speed) / 1.92);
+}
+.parallax > use:nth-child(4) {
+  animation-delay: calc(var(--base-speed) / -5);
+  animation-duration: var(--base-speed);
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+}
+{%- endcss %}

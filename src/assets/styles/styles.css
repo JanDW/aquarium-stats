@@ -8,6 +8,13 @@
   /* https://andy-bell.co.uk/a-more-modern-css-reset/?utm_source=cascade&utm_medium=email&utm_campaign=005-why-web-components */
   /* https://gist.github.com/palashmon/35bda7887eb4bc45459d71eca3dda7a5 */
 
+  :root {
+    --color-waves-first: theme('colors.blue.800');
+    --color-waves-second: theme('colors.blue.600');
+    --color-waves-third: theme('colors.blue.500');
+    --color-waves-fourth: theme('colors.blue.400');
+  }
+
   /* Box sizing rules */
   *,
   *::before,
