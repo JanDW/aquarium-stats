@@ -160,15 +160,15 @@
       {# {{ data[0].days[0] | dump }} #}
       {%- for month in data | reverse %}
         {%- if loop.index == 1 %}
-          {%- set borderClasses = "md:border-r-0 md:rounded-r-none" %}
+          {%- set borderClasses = "max-md:border-b-0 max-md:rounded-b-none md:border-r-0 md:rounded-r-none" %}
         {%- elif loop.index == 2 %}
-          {%- set borderClasses = "md:border-l-1 md:rounded-l-none md:-ml-1 " ~ s.theme.borderColorDivider %}
+          {%- set borderClasses = "max-md:border-t-0 max-md:rounded-t-none md:border-l-1 md:rounded-l-none md:-ml-1 " ~ s.theme.borderColorDivider %}
         {%- endif %}
         <div class="rounded-3xl overflow-clip border-4 {{ s.theme.borderColor }} {{ borderClasses }}">
           <table class="table-auto w-full {{ s.theme.textColor }} font-medium font-mono text-xl">
-            <caption class="pb-4 pt-4 {{ s.theme.bgCaptionColor }} font-semibold font-inter text-2xl">{{ month.monthHumanReadable }}
+            <caption class="py-4 {{ 'max-md:py-0' if loop.index == 2 }} {{ s.theme.bgCaptionColor }} font-semibold font-inter text-2xl">{{ month.monthHumanReadable }}
               <!-- {{ month.year }}--></caption>
-            <thead>
+            <thead class="{{ 'max-md:sr-only' if loop.index == 2 }}">
               <tr class="{{ s.theme.bgHeadColor }}">
                 <th scope="col" class="px-2 py-2 font-medium">Mo</th>
                 <th scope="col" class="px-2 py-2 font-medium">Tu</th>
@@ -229,7 +229,7 @@
   {%- endmacro %}
 
   {%- macro recentData(data) %}
-    <ul class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 rounded-3xl p-2 bg-emerald-600">
+    <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 rounded-3xl p-2 bg-emerald-600">
       {%- for key, value in data %}
       <li class="flex flex-col px-4 text-center bg-emerald-950 pt-12 pb-10 rounded-2xl">
         <div class="whitespace-nowrap flex items-center justify-center mt-3">
