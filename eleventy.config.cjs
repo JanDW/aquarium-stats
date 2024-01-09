@@ -1,5 +1,6 @@
 const markdownIt = require('markdown-it');
 const { DateTime } = require('luxon');
+const prettier = require('./src/transforms/prettier.js');
 
 module.exports = function (eleventyConfig) {
   const mdOptions = {
@@ -66,6 +67,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksFilter('getData', function (value) {
     return this.ctx[value];
   });
+
+  // Transforms
+  eleventyConfig.addTransform('prettier', prettier);
 
   return {
     dir: {
