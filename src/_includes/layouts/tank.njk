@@ -15,7 +15,7 @@
   <header class="hero">
     <div class="hero__image">
       <snow-fall style="--snow-fall-size: 5px">
-        <img src="{{hero.image}}" alt="{{hero.imageAlt}}">
+        <img src="{{hero.image}}" alt="{{hero.imageAlt}}" width="{{hero.imageWidth}}" height="{{hero.imageHeight}}">
       </snow-fall>
     </div>
     <div class="mx-4 hero__content container md:mx-auto">
@@ -28,8 +28,8 @@
 {%- block main %}
 
   <section class="mb-12 container mx-auto">
-  <h2 class="text-2xl font-bold mb-4 mx-4">Goings on</h2>
-  {%- block recentData %}{%- endblock %}
+    <h2 class="text-2xl font-bold mb-4 mx-4">Goings on</h2>
+    {%- block recentData %}{%- endblock %}
   </section>
 
   <section class="2xl:container 2xl:mx-auto">
@@ -67,13 +67,13 @@
                   <span class="text-2xl ml-2">{{ inhabitant.emoji }}</span>
                 {%- endif %}
               </h3>
-              <p class="">
+              <p>
                 <a href="{{ inhabitant.infoLink }}" class="hover:underline">{{ inhabitant.species }}</a>
-                <p class="italic text-sm text-gray-400">{{inhabitant.binomial}}</p>
               </p>
+              <p class="italic text-sm text-gray-400">{{inhabitant.binomial}}</p>
               <p class="text-sm text-gray-400">Since {{ inhabitant.dateAdded | readableDate }}</p>
               {%- if inhabitant.dateDied %}
-              <p class="text-sm text-gray-400">✝ {{ inhabitant.dateDied | readableDate }}</p>
+                <p class="text-sm text-gray-400">✝ {{ inhabitant.dateDied | readableDate }}</p>
               {%- endif %}
             </div>
           </div>
