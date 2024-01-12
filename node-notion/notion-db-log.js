@@ -17,8 +17,8 @@ async function getDatabase(id) {
   console.log(response);
 }
 
-// getDatabase(process.env.NOTION_SHRIMP_DB_ID);
+
 (async () => {
-  getDatabase(process.env.NOTION_SHRIMP_DB_ID);
-  // getDatabase(process.env.NOTION_FISH_DB_ID);
+  getDatabase(process.env.NOTION_FIVE_GALLON_DB_ID);
+  // getDatabase(process.env.NOTION_FIVE_GALLON_DB_ID);
 })();

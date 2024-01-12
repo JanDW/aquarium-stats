@@ -9,7 +9,7 @@ const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
 // 👀 Any changes to the keys, need to be reflected in the fromNotionObject function below, and in the 11tydata.js files
 
-const fishKeys = {
+const tenGallonKeys = {
   ammonia: 'CeXJ',
   nitrites: 'yJhy',
   nitrates: 'T%3Bhu',
@@ -32,7 +32,7 @@ const fishKeys = {
   culture: 'm%40~I'
 };
 
-const shrimpKeys = {
+const fiveGallonKeys = {
   ammonia: 'CeXJ',
   nitrites: 'yJhy',
   nitrates: 'T%3Bhu',
@@ -127,12 +127,12 @@ function fromNotionObject(notionPage, keys) {
 }
 
 (async () => {
-  const fishData = await getAquariumLogPages(process.env.NOTION_FISH_DB_ID, fishKeys);
-  const fishPathToJson = path.join(__dirname, '..', 'src', '_data', 'fishData.json');
-  writeJson(fishPathToJson, fishData);
+  const tenGallonData = await getAquariumLogPages(process.env.NOTION_TEN_GALLON_DB_ID, tenGallonKeys);
+  const tenGallonPathToJson = path.join(__dirname, '..', 'src', '_data', 'tenGallonData.json');
+  writeJson(tenGallonPathToJson, tenGallonData);
 
-  const shrimpData = await getAquariumLogPages(process.env.NOTION_SHRIMP_DB_ID, shrimpKeys);
-  const shrimpPathToJson = path.join(__dirname, '..', 'src', '_data', 'shrimpData.json');
-  writeJson(shrimpPathToJson, shrimpData);
-  module.exports = { fishData, shrimpData };
+  const fiveGallonData = await getAquariumLogPages(process.env.NOTION_FIVE_GALLON_DB_ID, fiveGallonKeys);
+  const fiveGallonPathToJson = path.join(__dirname, '..', 'src', '_data', 'fiveGallonData.json');
+  writeJson(fiveGallonPathToJson, fiveGallonData);
+  module.exports = { tenGallonData, fiveGallonData };
 })();
