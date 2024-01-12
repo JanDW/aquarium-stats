@@ -17,9 +17,11 @@
         <img src="{{hero.image}}" alt="{{hero.imageAlt}}" width="{{hero.imageWidth}}" height="{{hero.imageHeight}}">
       </snow-fall>
     </div>
-    <div class="mx-4 hero__content container md:mx-auto">
+    <div class="hero__content container md:mx-auto">
+      <div class="mx-4">
       <h1 class="lg:max-w-[50%] text-7xl font-black tracking-tighter {{ hero.titleColor }}">{{ hero.title | safe }}</h1>
       <p class="max-w-[75%] lg:max-w-[50%] text-2xl font-bold mt-8">{{ hero.subtitle }}</p>
+      </div>
     </div>
   </header>
 {%- endblock %}

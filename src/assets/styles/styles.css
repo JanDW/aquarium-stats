@@ -127,9 +127,9 @@
     stroke-width: 12px;
   }
 
-  /* BETTA BACKGROUND */
 
-  /* CSS */
+
+  /* HERO CSS */
   .hero {
     display: grid;
     grid-template-areas: 'hero';
