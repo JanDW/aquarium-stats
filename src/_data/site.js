@@ -9,8 +9,8 @@ module.exports = {
   imgDir: '/assets/img/',
   currentYear,
   navigation: [
-    { label: 'Betta tank', url: '/' },
-    { label: 'Shrimp tank', url: '/shrimp/' },
+    { label: '10 gallon', url: '/' },
+    { label: '5 gallon', url: '/five-gallon/' },
   ],
   footerNavigation: [
     { label: 'jandewil.de', url: 'https://jandewil.de/' },

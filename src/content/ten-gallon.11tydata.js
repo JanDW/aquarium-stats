@@ -108,13 +108,13 @@ function getRecentData(data, ...keys) {
 
 module.exports = {
   eleventyComputed: {
-    shrimpCalendarData(data) {
-      const shrimpData = data.shrimpData;
+    tenGallonCalendarData(data) {
+      const tenGallonData = data.tenGallonData;
 
       const daysInCurrentMonth = getDaysInMonth(currentMonth, yearCurrentMonth);
       const currentMonthCalendarData = addDataToCalendar(
         daysInCurrentMonth,
-        shrimpData
+        tenGallonData
       );
       const daysInPreviousMonth = getDaysInMonth(
         previousMonth,
@@ -122,16 +122,16 @@ module.exports = {
       );
       const previousMonthCalendarData = addDataToCalendar(
         daysInPreviousMonth,
-        shrimpData
+        tenGallonData
       );
 
       return [currentMonthCalendarData, previousMonthCalendarData];
     },
-    shrimpRecentData(data) {
-      const shrimpData = data.shrimpData;
+    tenGallonRecentData(data) {
+      const tenGallonData = data.tenGallonData;
       //  for RecentData macro
       const recentData = getRecentData(
-        shrimpData,
+        tenGallonData,
         'ammonia',
         'nitrites',
         'nitrates',

@@ -4,3 +4,5 @@ node_modules
 www
 shrimpData.json
 fishData.json
+src/_data/fiveGallonData.json
+src/_data/tenGallonData.json

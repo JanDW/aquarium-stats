@@ -1,40 +1,61 @@
 ---
-title: Shrimp tank
-permalink: shrimp/
-dataName: shrimpData
+title: Fish Tank
+permalink: /
+dataName: tenGallonData
 hero:
-  image: /assets/img/neocaridina-hero.jpg
-  imageAlt: A close up of a neocaridina shrimp
+  image: /assets/img/rasbora-hero.jpg
+  imageAlt: A blue betta fish swimming in a tank
   imageWidth: 2500
-  imageHeight: 2000
-  imageLink: https://unsplash.com/photos/a-close-up-of-a-shrimp-on-a-plant-6D_tbcL2-98
-  author: theaquariumkeeper2
-  authorLink: https://unsplash.com/@theaquariumkeeper2
-  title: "Shrimp <span class=\"whitespace-nowrap\">T<span class=\"-ml-3\">ank.</span></span>"
-  titleColor: text-orange-600
-  subtitle: A 5 gallon planted tank with neocaridina shrimp and a nerite snail.
+  imageHeight: 1215
+  imageLink: https://unsplash.com/photos/green-and-red-betta-fish-EgyIbEB7n8Y
+  author: Navin Rai
+  authorLink: https://unsplash.com/@nicque
+  title: "Fish <span class=\"whitespace-nowrap\">T<span class=\"-ml-3\">ank.</span></span>"
+  titleColor: text-[aqua]
+  subtitle: A 10 gallon planted tank with Harlequin Rasboras and two snails.
 inhabitants:
-  - name: Orange
-    emoji: 🍊
-    species: Neocaridina Shrimp
-    binomial: Neocaridina davidi
-    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
-    imgSrc: /assets/img/pumpkin-neocaridina.jpg
-    dateAdded: 2023-12-17
-    dateDied: 2024-01-01
-  - name: Zinnia
-    emoji: 🌼
-    species: Neocaridina Shrimp
-    binomial: Neocaridina davidi
-    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
-    imgSrc: /assets/img/pumpkin-neocaridina.jpg
-    dateAdded: 2023-12-17
-  - name: Alexandra
-    emoji: 🏛️
+  - name: Remco
+    emoji: 🚴‍♂️
+    species: Veiltail Betta
+    binomial: Betta splendens
+    infoLink: https://en.wikipedia.org/wiki/Siamese_fighting_fish
+    imgSrc: /assets/img/blue-veiltail-betta.jpg
+    dateAdded: 2023-11-25
+    dateMovedOut: 2023-01-09
+  - name: Tiger
+    emoji: 🐅
     species: Nerite Snail
     binomial: Neritina natalensis Zebra
     infoLink: https://en.wikipedia.org/wiki/Vittina_natalensis
     imgSrc: /assets/img/zebra-nerite.jpeg
+    dateAdded: 2023-11-25
+  - name: Stripes
+    emoji: 🇺🇸
+    species: Nerite Snail
+    binomial: Neritina natalensis Zebra
+    infoLink: https://en.wikipedia.org/wiki/Vittina_natalensis
+    imgSrc: /assets/img/zebra-nerite.jpeg
+    dateAdded: 2023-11-25
+  - name: Pineapple
+    emoji: 🍍
+    species: Harlequin Rasbora
+    binomial: Trigonostigma heteromorpha
+    infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
+    imgSrc: /assets/img/harlequin-rasbora.jpg
+    dateAdded: 2023-12-17
+  - name: Coconut
+    emoji: 🥥
+    species: Harlequin Rasbora
+    binomial: Trigonostigma heteromorpha
+    infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
+    imgSrc: /assets/img/harlequin-rasbora.jpg
+    dateAdded: 2023-12-17
+  - name: Mango
+    emoji: 🥭
+    species: Harlequin Rasbora
+    binomial: Trigonostigma heteromorpha
+    infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
+    imgSrc: /assets/img/harlequin-rasbora.jpg
     dateAdded: 2023-12-17
 calendar:
   waterChange:
@@ -52,7 +73,7 @@ calendar:
       unit: 'litres'
   co2:
     parameter: 'co2'
-    title: 'Added API CO₂ Booster (0.5ml)'
+    title: 'Added API CO₂ Booster (1ml)'
     emoji: '⛽️'
     theme:
       textColor: "text-white"
@@ -64,7 +85,7 @@ calendar:
       active: false
   fertilizer:
     parameter: 'fertilizer'
-    title: 'Added API Leaf Zone (2.5ml)'
+    title: 'Added API Leaf Zone (5ml)'
     emoji: '🍀'
     theme:
       textColor: "text-white"
@@ -113,7 +134,7 @@ calendar:
       unit: 'ml'
   stability:
     parameter: 'stability'
-    title: 'Added Seachem Stability (1ml)'
+    title: 'Added Seachem Stability (2.5ml)'
     emoji: '🧫'
     theme:
       textColor: "text-white"
@@ -137,7 +158,7 @@ calendar:
       active: false
   culture:
     parameter: 'culture'
-    title: 'Added Resurrection Jar Culture (1.5ml)'
+    title: 'Added Resurrection Jar Culture (3ml)'
     emoji: '🪳'
     theme:
       textColor: "text-white"
@@ -150,24 +171,31 @@ calendar:
 ---
 
 {% extends "layouts/tank.njk" %}
+{%- import "macros/macros.njk" as macros %}
 
 {%- block recentData %}
-  {{ macros.recentData(shrimpRecentData) }}
+  {{ macros.recentData(tenGallonRecentData) }}
 {%- endblock %}
 
-{%- block calendars %}
-  {{ macros.calendar(calendar.waterChange, shrimpCalendarData) }}
-  {{ macros.calendar(calendar.prime, shrimpCalendarData) }}
-  {{ macros.calendar(calendar.stability, shrimpCalendarData) }}
-  {{ macros.calendar(calendar.spongeClean, shrimpCalendarData) }}
-  {{ macros.calendar(calendar.fertilizer, shrimpCalendarData) }}
-  {{ macros.calendar(calendar.co2, shrimpCalendarData) }}
-  {{ macros.calendar(calendar.crushedCoral, shrimpCalendarData) }}
-  {{ macros.calendar(calendar.bakingSoda, shrimpCalendarData) }}
-  {{ macros.calendar(calendar.culture, shrimpCalendarData) }}
-{%- endblock %}
 
 {%- set hasInhibitantsContent = true %}
 {%- block inhabitants %}
-  Zinnia is a berried female, so hopefully we'll have some baby shrimp soon!
+  <div class="prose prose-slate prose-lg text-slate-400">
+  {%- markdown %}
+  Three harlequin rasboras is too small a group, so I'll be adding three more soon: Guava, Kiwi, Papaya.
+  {%- endmarkdown %}
+  </div>
 {%- endblock %}
+
+{%- block calendars %}
+  {{ macros.calendar(calendar.waterChange, tenGallonCalendarData) }}
+  {{ macros.calendar(calendar.prime, tenGallonCalendarData) }}
+  {{ macros.calendar(calendar.stability, tenGallonCalendarData) }}
+  {{ macros.calendar(calendar.spongeClean, tenGallonCalendarData) }}
+  {{ macros.calendar(calendar.fertilizer, tenGallonCalendarData) }}
+  {{ macros.calendar(calendar.co2, tenGallonCalendarData) }}
+  {{ macros.calendar(calendar.crushedCoral, tenGallonCalendarData) }}
+  {{ macros.calendar(calendar.bakingSoda, tenGallonCalendarData) }}
+  {{ macros.calendar(calendar.culture, tenGallonCalendarData) }}
+{%- endblock %}
+
