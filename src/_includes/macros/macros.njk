@@ -232,16 +232,16 @@
     <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 rounded-3xl p-2 bg-emerald-600">
       {%- for key, value in data %}
       <li class="flex flex-col px-4 text-center bg-emerald-950 pt-12 pb-10 rounded-2xl">
-        <div class="whitespace-nowrap flex items-center justify-center mt-3">
+        <div class="whitespace-nowrap md:flex md:items-center md:justify-center mt-3">
           <div class="font-semibold tracking-tight text-cyan-400 text-6xl">{{ value.value }}</div>
           {%- if key == 'gh' or key == 'kh' %}
             {%- set unit = 'dKH' %}  
             {%- elif key == 'ph' %}
-            {%- set unit = '' %}
+            {%- set unit = '&nbsp;' %}
             {%- else %}
             {%- set unit = 'ppm' %}
           {%- endif %}
-          <div class="text-cyan-600 text-xl font-medium ml-3">{{ unit }}</div>
+          <div class="text-cyan-600 text-xl font-medium md:ml-3">{{ unit | safe }}</div>
         </div>
         <div class="text-orange-200 text-xl font-bold tracking-widest font-medium mt-6 uppercase font-mono">{{ key }}</div>
         <div class="font-mono text-orange-200/60 text-lg font-base">{{ value.date | shortDate }}</div>
