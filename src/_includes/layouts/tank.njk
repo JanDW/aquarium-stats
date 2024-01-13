@@ -72,10 +72,14 @@
                 <a href="{{ inhabitant.infoLink }}" class="hover:underline">{{ inhabitant.species }}</a>
               </p>
               <p class="italic text-sm text-gray-400">{{inhabitant.binomial}}</p>
-              <p class="text-sm text-gray-400">Since {{ inhabitant.dateAdded | readableDate }}</p>
+              <p class="text-sm text-gray-400">Since {{ inhabitant.dateNew | readableDate }}</p>
               {%- if inhabitant.dateDied %}
                 <p class="text-sm text-gray-400">✝ {{ inhabitant.dateDied | readableDate }}</p>
               {%- endif %}
+              {%- if inhabitant.dateAddedToTank %}
+               <p class="text-sm text-gray-400">Moved to this tank on {{ inhabitant.dateAddedToTank | readableDate }}.</p> 
+              {%- endif %}
+              
             </div>
           </div>
         </li>
