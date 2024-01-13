@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'sans-serif'], // Update this line with your desired font stack
       },
+      screens: {
+        '3xl': '2000px', // Add this line to specify a breakpoint at 2000px
+      },
     },
   },
   plugins: [
