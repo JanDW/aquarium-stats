@@ -17,7 +17,7 @@
         <img src="{{hero.image}}" alt="{{hero.imageAlt}}" width="{{hero.imageWidth}}" height="{{hero.imageHeight}}">
       </snow-fall>
     </div>
-    <div class="hero__content container md:mx-auto">
+    <div class="hero__content mx-[2vw]">
       <div class="mx-4">
       <h1 class="lg:max-w-[50%] text-7xl font-black tracking-tighter {{ hero.titleColor }}">{{ hero.title | safe }}</h1>
       <p class="max-w-[75%] lg:max-w-[50%] text-2xl font-bold mt-8">{{ hero.subtitle }}</p>
@@ -28,14 +28,14 @@
 
 {%- block main %}
 
-  <section class="mb-12 container mx-auto">
+  <section class="mb-12 mx-[2vw]">
     <h2 class="text-2xl font-bold mb-4 mx-4">Goings on</h2>
     {%- block recentData %}{%- endblock %}
   </section>
 
-  <section class="2xl:container 2xl:mx-auto">
-    <h2 class="text-2xl font-bold mb-4 mx-4 container md:mx-auto">Soft Water, Hard Facts</h2>
-    <div class="grid gap-4 xl:grid-cols-2 xl:gap-8 mt-4 pb-8 mb-8 mx-4">
+  <section class="mx-[2vw]">
+    <h2 class="text-2xl font-bold mb-4 mx-4">Soft Water, Hard Facts</h2>
+    <div class="grid gap-4 xl:grid-cols-2 xl:gap-8 mt-4 pb-8 mb-8">
 
       {{ macros.createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null') }}
 
@@ -48,11 +48,11 @@
     </div>
   </section>
 
-  <section class="mx-4 xl:grid xl:grid-cols-2 xl:gap-8 2xl:container 2xl:mx-auto">
+  <section class="mx-[2vw] xl:grid xl:grid-cols-2 xl:gap-8">
     {%- block calendars %}{%- endblock %}
   </section>
 
-  <section class="container mx-auto mt-24 px-4 md:px-0">
+  <section class="mx-[2vw] mt-24">
     <h2 class="text-2xl font-bold mb-4">
       Meet the Lodgers
     </h2>
@@ -92,7 +92,7 @@
     {%- endif %}
   </section>
 
-  {# <section class="mt-24 container mx-auto">
+  {# <section class="mt-24">
     <h2 class="text-2xl font-bold">Water Parameters &amp; Maintenance Log</h2>
     <div class="border border-slate-800 rounded-lg mt-4 mb-8">
       {{ macros.table(dataName | getData) }}
