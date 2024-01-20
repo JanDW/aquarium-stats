@@ -1,8 +1,9 @@
 {# @TODO Responsiveness is not working: https://www.chartjs.org/docs/latest/configuration/responsive.html#important-note #}
 {% macro createChart(divId, chartTitle, yTitle, dataKeys, filterCondition) %}
-  <div class="{{divId}} p-3 bg-slate-800 rounded-3xl relative w-[100%]">
-    <canvas id="{{divId}}"></canvas>
-    <script>
+    <div id="{{divId}}-wrapper" class="{{divId}} p-3 bg-slate-800 rounded-3xl relative min-h-[400px]">
+      <canvas id="{{divId}}"></canvas>
+    </div>
+  <script>
       (() => {
         let data = fullData.filter(item => {{filterCondition}});
         // Limit to last 30 items
@@ -40,6 +41,7 @@
           },
           options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: {
               title: {
                 display: true,
@@ -108,8 +110,7 @@
           }
         });
       })();
-    </script>
-  </div>
+      </script>
 {% endmacro %}
 
 {%- macro table(data) %}
