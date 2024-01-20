@@ -3,21 +3,21 @@ title: Five Gallon Tank
 permalink: five-gallon/
 dataName: fiveGallonData
 hero:
-  image: /assets/img/hero-veiltail-betta-grid.jpg
+  image: /assets/img/hero-neocaridina-davidi-red.jpeg
   imageAlt: A close up of a neocaridina shrimp
   imageWidth: 2500
   imageHeight: 2000
   imageLink: https://unsplash.com/photos/a-close-up-of-a-shrimp-on-a-plant-6D_tbcL2-98
-  author: theaquariumkeeper2
-  authorLink: https://unsplash.com/@theaquariumkeeper2
+  #author: theaquariumkeeper2
+  #authorLink: https://unsplash.com/@theaquariumkeeper2
   title: "5 Gallon <span class=\"whitespace-nowrap\">T<span class=\"-ml-3\">ank.</span></span>"
-  titleColor: text-orange-600
-  subtitle: A dirted, planted tank with neocaridina shrimp, a betta, and a nerite snail.
+  titleColor: text-emerald-400
+  subtitle: A dirted, planted tank with neocaridina shrimp and a nerite snail.
 inhabitants:
   - name: Orange
     emoji: 🍊
     species: Neocaridina shrimp
-    binomial: Neocaridina davidi
+    binomial: Neocaridina davidi "Orange"
     infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
     imgSrc: /assets/img/lodge-pumpkin-neocaridina.jpg
     dateNew: 2023-12-17
@@ -25,7 +25,7 @@ inhabitants:
   - name: Zinnia
     emoji: 🌼
     species: Neocaridina shrimp
-    binomial: Neocaridina davidi
+    binomial: Neocaridina davidi "Orange"
     infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
     imgSrc: /assets/img/lodge-pumpkin-neocaridina.jpg
     dateNew: 2023-12-17
@@ -36,6 +36,41 @@ inhabitants:
     infoLink: https://en.wikipedia.org/wiki/Vittina_natalensis
     imgSrc: /assets/img/lodge-zebra-nerite.jpeg
     dateNew: 2023-12-17
+  - name: Dahlia
+    emoji: 🌼
+    species: Neocaridina shrimp
+    binomial: Neocaridina davidi "Red Cherry"
+    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
+    imgSrc: /assets/img/lodge-red-cherry-neocaridina.jpg
+    dateNew: 2024-01-15
+  - name: Tulip
+    emoji: 🌷
+    species: Neocaridina shrimp
+    binomial: Neocaridina davidi "Red Cherry"
+    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
+    imgSrc: /assets/img/lodge-red-cherry-neocaridina.jpg
+    dateNew: 2024-01-15
+  - name: Poppy
+    emoji: 🥀
+    species: Neocaridina shrimp
+    binomial: Neocaridina davidi "Red Cherry"
+    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
+    imgSrc: /assets/img/lodge-red-cherry-neocaridina.jpg
+    dateNew: 2024-01-15
+  - name: Rose
+    emoji: 🌹
+    species: Neocaridina shrimp
+    binomial: Neocaridina davidi "Red Cherry"
+    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
+    imgSrc: /assets/img/lodge-red-cherry-neocaridina.jpg
+    dateNew: 2024-01-15
+  - name: Cherry
+    emoji: 🍒
+    species: Neocaridina shrimp
+    binomial: Neocaridina davidi "Red Cherry"
+    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
+    imgSrc: /assets/img/lodge-red-cherry-neocaridina.jpg
+    dateNew: 2024-01-15
 calendar:
   waterChange:
     parameter: 'waterChange'
@@ -148,6 +183,8 @@ calendar:
     tooltip:
       active: false
 ---
+
+<!-- @TODO specify water parameters for each species in frontmatter (or some data file) and show alert when the parameters go outside of the acceptable range for that species. -->
 
 {% extends "layouts/tank.njk" %}
 
