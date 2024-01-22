@@ -29,24 +29,22 @@
 {%- block main %}
 
   <section class="mb-12 mx-[2vw] 3xl:mx-auto max-w-[2000px]">
+  {%- block recentData %}
     <h2 class="text-2xl font-bold mb-4 mx-4">Goings on</h2>
-    {%- block recentData %}{%- endblock %}
+  {%- endblock %}
   </section>
-
-  <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px]">
+  
+  {%- if fullData %}
+    <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px]">
     <h2 class="text-2xl font-bold mb-4 mx-4">Soft Water, Hard Facts</h2>
     <div class="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-8 mt-4 pb-8 mb-8">
-
       {{ macros.createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null') }}
-
       {{ macros.createChart('nitrates', 'Nitrates', 'ppm', ['nitrates'], 'item.nitrates != null') }}
-
       {{ macros.createChart('tds', 'TDS', 'ppm', ['tds'], 'item.tds != null') }}
-
       {{ macros.createChart('hardness', 'GH, KH & pH', 'dKH & pH', ['gh','kh','ph'], 'item.gh != null || item.kh !== null || item.ph !== null') }}
-
     </div>
   </section>
+  {%- endif %}
 
   <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px] xl:grid xl:grid-cols-2 xl:gap-8">
     {%- block calendars %}{%- endblock %}

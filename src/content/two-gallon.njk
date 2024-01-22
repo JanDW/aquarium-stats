@@ -3,7 +3,10 @@
 {% extends "layouts/tank.njk" %}
 
 {%- block recentData %}
-  {{ macros.recentData(fiveGallonRecentData) }}
+  {%- if twoGallonRecentData %}
+    {{ super() }}
+    {{ macros.recentData(twoGallonRecentData) }}
+  {%- endif %}
 {%- endblock %}
 
 {%- block calendars %}

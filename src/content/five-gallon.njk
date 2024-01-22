@@ -3,8 +3,12 @@
 {% extends "layouts/tank.njk" %}
 
 {%- block recentData %}
-  {{ macros.recentData(fiveGallonRecentData) }}
-{%- endblock %}
+  {%- if fiveGallonRecentData %}
+    {{ macros.recentData(fiveGallonRecentData) }}
+  {%- endif %}
+{%- endblock %}  
+
+
 
 {%- block calendars %}
   {{ macros.calendar(calendar.waterChange, fiveGallonCalendarData) }}

@@ -2,9 +2,10 @@
 {%- import "macros/macros.njk" as macros %}
 
 {%- block recentData %}
-  {{ macros.recentData(tenGallonRecentData) }}
-{%- endblock %}
-
+  {%- if tenGallonRecentData %}
+    {{ macros.recentData(tenGallonRecentData) }}
+  {%- endif %}
+{%- endblock %}  
 
 {%- set hasInhibitantsContent = true %}
 {%- block inhabitants %}
