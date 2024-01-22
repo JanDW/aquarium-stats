@@ -7,7 +7,7 @@
 {%- endblock %}
 
 {%- block calendars %}
-  {{ macros.calendar(calendar.waterChange, fiveGallonCalendarData) }}
+  {# {{ macros.calendar(calendar.waterChange, fiveGallonCalendarData) }}
   {{ macros.calendar(calendar.prime, fiveGallonCalendarData) }}
   {{ macros.calendar(calendar.stability, fiveGallonCalendarData) }}
   {{ macros.calendar(calendar.spongeClean, fiveGallonCalendarData) }}
@@ -15,8 +15,8 @@
   {{ macros.calendar(calendar.co2, fiveGallonCalendarData) }}
   {{ macros.calendar(calendar.crushedCoral, fiveGallonCalendarData) }}
   {{ macros.calendar(calendar.bakingSoda, fiveGallonCalendarData) }}
-  {{ macros.calendar(calendar.culture, fiveGallonCalendarData) }}
+  {{ macros.calendar(calendar.culture, fiveGallonCalendarData) }} #}
 {%- endblock %}
 
 {%- set hasInhibitantsContent = true %}
-{%- block inhabitants %}Remco moved away from the rasboras as he couldn't stand them.{%- endblock %}
+{%- block inhabitants %}{%- endblock %}

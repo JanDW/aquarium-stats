@@ -13,9 +13,9 @@
 {%- block header %}
   <header class="hero">
     <div class="hero__image">
-      <snow-fall style="--snow-fall-size: 5px">
+      {# <snow-fall style="--snow-fall-size: 5px"> #}
         <img src="{{hero.image}}" alt="{{hero.imageAlt}}" width="{{hero.imageWidth}}" height="{{hero.imageHeight}}">
-      </snow-fall>
+      {# </snow-fall> #}
     </div>
     <div class="hero__content px-[2vw] 3xl:mx-auto max-w-[2000px] w-full">
       <div>
@@ -52,26 +52,32 @@
     {%- block calendars %}{%- endblock %}
   </section>
 
-  <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px] mt-24">
+  <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px] mt-12">
     <h2 class="text-2xl font-bold mb-4">
       The inhabitants
     </h2>
     {# bg-gradient-to-br from-sky-900/40 to-emerald-600/70 py-8 px-12 rounded-2xl border-green-300 border-8 #}
-    <ul class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
+    <ul class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 gap-y-6">
       {%- for inhabitant in inhabitants %}
+        {%- set inhabitantSpecies = {} %}
+        {%- for specie in species %}
+          {% if inhabitant.species == specie.name %}
+            {%- set inhabitantSpecies = specie %}
+          {% endif %}
+        {%- endfor %}
         <li>
           <div class="flex items-center">
-            <img src="{{ inhabitant.imgSrc }}" alt="{{  inhabitant.name }}" class="w-32 h-32 rounded-full mr-4">
+            <img src="{{ inhabitantSpecies.imgSrc }}" alt="{{  inhabitantSpecies.name }}" class="w-32 h-32 rounded-3xl mr-4 leading-none">
             <div>
-              <h3 class="text-xl font-bold">{{ inhabitant.name }}
+              <h3 class="text-xl font-bold">{{ inhabitantSpecies.name }}
                 {%- if inhabitant.emoji %}
                   <span class="text-2xl ml-2">{{ inhabitant.emoji }}</span>
                 {%- endif %}
               </h3>
               <p>
-                <a href="{{ inhabitant.infoLink }}" class="hover:underline">{{ inhabitant.species }}</a>
+                <a href="{{ inhabitantSpecies.infoLink }}" class="hover:underline">{{ inhabitant.species }}</a>
               </p>
-              <p class="italic text-sm text-gray-400">{{inhabitant.binomial}}</p>
+              <p class="italic text-sm text-gray-400">{{inhabitantSpecies.binomial}}</p>
               <p class="text-sm text-gray-400">Since {{ inhabitant.dateNew | readableDate }}</p>
               {%- if inhabitant.dateDied %}
                 <p class="text-sm text-gray-400">✝ {{ inhabitant.dateDied | readableDate }}</p>

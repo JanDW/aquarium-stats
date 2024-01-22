@@ -1,0 +1,175 @@
+title: Two Gallon Bowl
+permalink: two-gallon/
+dataName: 
+hero:
+  image: /assets/img/hero-neocaridina-davidi-red.jpeg
+  imageAlt: A close up of a neocaridina shrimp
+  imageWidth: 2500
+  imageHeight: 2000
+  imageLink: https://unsplash.com/photos/a-close-up-of-a-shrimp-on-a-plant-6D_tbcL2-98
+  #author: theaquariumkeeper2
+  #authorLink: https://unsplash.com/@theaquariumkeeper2
+  title: "2 Gallon Bowl."
+  titleColor: text-red-500
+  subtitle: A dirted, planted bowl with neocaridina shrimp and a few bladder snails.
+tank:
+  height: unknown
+  width: unknown
+  length: unknown
+  volume: 2
+  dateStart: 2024-01-20
+plants: unknown
+inhabitants:
+  # - name: Orange
+  #  emoji: 🍊
+  #  species: Neocaridina shrimp
+  #  binomial: Neocaridina davidi "Orange"
+  #  infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
+  #  imgSrc: /assets/img/lodge-pumpkin-neocaridina.jpg
+  #  dateNew: 2023-12-17
+  #  dateDied: 2024-01-01
+  - name: Zinnia
+    emoji: 🌼
+    species: Orange shrimp
+    dateNew: 2023-12-17
+  - name: Dahlia
+    emoji: 🌼
+    species: Red Cherry shrimp
+    dateNew: 2024-01-15
+  - name: Poppy
+    emoji: 🥀
+    species: Red Cherry shrimp
+    dateNew: 2024-01-15
+  - name: Rose
+    emoji: 🌹
+    species: Red Cherry shrimp
+    dateNew: 2024-01-15
+  - name: Cherry
+    emoji: 🍒
+    species: Red Cherry shrimp
+    dateNew: 2024-01-15
+species:
+  - name: Bladder snail
+    emoji: 🐌
+    binomial: Physella acuta
+    infoLink: https://en.wikipedia.org/wiki/Physella_acuta
+    imgSrc: /assets/img/lodge-bladder-snail.jpg
+  - name: Red Cherry shrimp
+    binomial: Neocaridina davidi "Red Cherry"
+    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
+    imgSrc: /assets/img/lodge-red-cherry-neocaridina.jpg
+  - name: Orange shrimp
+    binomial: Neocaridina davidi "Orange"
+    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
+    imgSrc: /assets/img/lodge-pumpkin-neocaridina.jpg
+calendar:
+  waterChange:
+    parameter: 'waterChange'
+    title: 'Water Change'
+    emoji: '🪣'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-teal-700"
+      bgHeadColor: "bg-teal-800"
+      borderColor: "border-teal-900"
+      borderColorDivider: "md:border-l-teal-900/25"
+    tooltip:
+      active: true
+      unit: 'litres'
+  co2:
+    parameter: 'co2'
+    title: 'Added API CO₂ Booster (0.5ml)'
+    emoji: '⛽️'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-rose-700"
+      bgHeadColor: "bg-rose-800"
+      borderColor: "border-rose-900"
+      borderColorDivider: "md:border-l-rose-900/25"
+    tooltip:
+      active: false
+  fertilizer:
+    parameter: 'fertilizer'
+    title: 'Added API Leaf Zone (2.5ml)'
+    emoji: '🍀'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-green-700"
+      bgHeadColor: "bg-green-800"
+      borderColor: "border-green-900"
+      borderColorDivider: "md:border-l-green-900/25"
+    tooltip:
+      active: false
+  spongeClean:
+    parameter: 'cleanedFilter'
+    title: 'Cleaned Sponge Filter'
+    emoji: '🧽'
+    theme:
+      textColor: "text-slate-900"
+      bgCaptionColor: "bg-yellow-500"
+      bgHeadColor: "bg-yellow-600"
+      borderColor: "border-yellow-900"
+      borderColorDivider: "md:border-l-yellow-900/25"
+    tooltip:
+      active: false
+  crushedCoral:
+    parameter: 'crushedCoral'
+    title: 'Added Crushed Coral'
+    emoji: '🪸'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-fuchsia-700"
+      bgHeadColor: "bg-fuchsia-800"
+      borderColor: "border-fuchsia-900"
+      borderColorDivider: "md:border-l-fuchsia-900/25"
+    tooltip:
+      active: false
+  prime:
+    parameter: 'prime'
+    title: 'Added Seachem Prime'
+    emoji: '🦺'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-red-700"
+      bgHeadColor: "bg-red-800"
+      borderColor: "border-red-900"
+      borderColorDivider: "md:border-l-red-900/25"
+    tooltip:
+      active: true
+      unit: 'ml'
+  stability:
+    parameter: 'stability'
+    title: 'Added Seachem Stability (1ml)'
+    emoji: '🧫'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-blue-700"
+      bgHeadColor: "bg-blue-800"
+      borderColor: "border-blue-900"
+      borderColorDivider: "md:border-l-blue-900/25"
+    tooltip:
+      active: false
+  bakingSoda:
+    parameter: 'bakingSoda'
+    title: 'Added Baking Soda'
+    emoji: '🧫'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-orange-700"
+      bgHeadColor: "bg-orange-800"
+      borderColor: "border-orange-900"
+      borderColorDivider: "md:border-l-orange-900/25"
+    tooltip:
+      active: false
+  culture:
+    parameter: 'culture'
+    title: 'Added Resurrection Jar Culture (1.5ml)'
+    emoji: '🪳'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-indigo-700"
+      bgHeadColor: "bg-indigo-800"
+      borderColor: "border-indigo-900"
+      borderColorDivider: "md:border-l-indigo-900/25"
+    tooltip:
+      active: false

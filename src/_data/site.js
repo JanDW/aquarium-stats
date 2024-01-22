@@ -11,6 +11,7 @@ module.exports = {
   navigation: [
     { label: '10 gallon', url: '/' },
     { label: '5 gallon', url: '/five-gallon/' },
+    { label: '2 gallon', url: '/two-gallon/' },
   ],
   footerNavigation: [
     { label: 'jandewil.de', url: 'https://jandewil.de/' },

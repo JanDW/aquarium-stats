@@ -1,0 +1,167 @@
+title: Ten Gallon Tank
+permalink: /
+dataName: tenGallonData
+hero:
+  image: /assets/img/hero-rasbora.jpg
+  imageAlt: A blue betta fish swimming in a tank
+  imageWidth: 2500
+  imageHeight: 1215
+  #imageLink: https://unsplash.com/photos/green-and-red-betta-fish-EgyIbEB7n8Y
+  #author: Navin Rai
+  #authorLink: https://unsplash.com/@nicque
+  title: "10 Gallon <span class=\"whitespace-nowrap\">T<span class=\"-ml-3\">ank.</span></span>"
+  titleColor: text-[aqua]
+  subtitle: A dirted, planted tank with harlequin rasbora and two nerite snails.
+inhabitants:
+  - name: Tiger
+    emoji: 🐅
+    species: Nerite Snail
+    dateNew: 2023-11-25
+  - name: Stripes
+    emoji: 🇺🇸
+    species: Nerite Snail
+    dateNew: 2023-11-25
+  - name: Pineapple
+    emoji: 🍍
+    species: Harlequin Rasbora
+    dateNew: 2023-12-17
+  - name: Coconut
+    emoji: 🥥
+    species: Harlequin Rasbora
+    dateNew: 2023-12-17
+  - name: Mango
+    emoji: 🥭
+    species: Harlequin Rasbora
+    dateNew: 2023-12-17
+  - name: Papaya
+    emoji: 🥭
+    species: Harlequin Rasbora
+    dateNew: 2024-01-15
+  - name: Kiwi
+    emoji: 🥝
+    species: Harlequin Rasbora
+    dateNew: 2024-01-15
+  - name: Guava
+    emoji: 🥭
+    species: Harlequin Rasbora
+    dateNew: 2024-01-15
+species:
+  - name: Harlequin Rasbora
+    binomial: Trigonostigma heteromorpha
+    infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
+    imgSrc: /assets/img/lodge-harlequin-rasbora.jpg
+  - name: Nerite Snail
+    binomial: Neritina natalensis Zebra
+    infoLink: https://en.wikipedia.org/wiki/Vittina_natalensis
+    imgSrc: /assets/img/lodge-zebra-nerite.jpeg
+calendar:
+  waterChange:
+    parameter: 'waterChange'
+    title: 'Water Change'
+    emoji: '🪣'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-teal-700"
+      bgHeadColor: "bg-teal-800"
+      borderColor: "border-teal-900"
+      borderColorDivider: "md:border-l-teal-900/25"
+    tooltip:
+      active: true
+      unit: 'litres'
+  co2:
+    parameter: 'co2'
+    title: 'Added API CO₂ Booster (1ml)'
+    emoji: '⛽️'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-rose-700"
+      bgHeadColor: "bg-rose-800"
+      borderColor: "border-rose-900"
+      borderColorDivider: "md:border-l-rose-900/25"
+    tooltip:
+      active: false
+  fertilizer:
+    parameter: 'fertilizer'
+    title: 'Added API Leaf Zone (5ml)'
+    emoji: '🍀'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-green-700"
+      bgHeadColor: "bg-green-800"
+      borderColor: "border-green-900"
+      borderColorDivider: "md:border-l-green-900/25"
+    tooltip:
+      active: false
+  spongeClean:
+    parameter: 'cleanedFilter'
+    title: 'Cleaned Sponge Filter'
+    emoji: '🧽'
+    theme:
+      textColor: "text-slate-900"
+      bgCaptionColor: "bg-yellow-500"
+      bgHeadColor: "bg-yellow-600"
+      borderColor: "border-yellow-900"
+      borderColorDivider: "md:border-l-yellow-900/25"
+    tooltip:
+      active: false
+  crushedCoral:
+    parameter: 'crushedCoral'
+    title: 'Added Crushed Coral'
+    emoji: '🪸'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-fuchsia-700"
+      bgHeadColor: "bg-fuchsia-800"
+      borderColor: "border-fuchsia-900"
+      borderColorDivider: "md:border-l-fuchsia-900/25"
+    tooltip:
+      active: false
+  prime:
+    parameter: 'prime'
+    title: 'Added Seachem Prime'
+    emoji: '🦺'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-red-700"
+      bgHeadColor: "bg-red-800"
+      borderColor: "border-red-900"
+      borderColorDivider: "md:border-l-red-900/25"
+    tooltip:
+      active: true
+      unit: 'ml'
+  stability:
+    parameter: 'stability'
+    title: 'Added Seachem Stability (2.5ml)'
+    emoji: '🧫'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-blue-700"
+      bgHeadColor: "bg-blue-800"
+      borderColor: "border-blue-900"
+      borderColorDivider: "md:border-l-blue-900/25"
+    tooltip:
+      active: false
+  bakingSoda:
+    parameter: 'bakingSoda'
+    title: 'Added Baking Soda'
+    emoji: '🧫'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-orange-700"
+      bgHeadColor: "bg-orange-800"
+      borderColor: "border-orange-900"
+      borderColorDivider: "md:border-l-orange-900/25"
+    tooltip:
+      active: false
+  culture:
+    parameter: 'culture'
+    title: 'Added Resurrection Jar Culture (3ml)'
+    emoji: '🪳'
+    theme:
+      textColor: "text-white"
+      bgCaptionColor: "bg-indigo-700"
+      bgHeadColor: "bg-indigo-800"
+      borderColor: "border-indigo-900"
+      borderColorDivider: "md:border-l-indigo-900/25"
+    tooltip:
+      active: false
