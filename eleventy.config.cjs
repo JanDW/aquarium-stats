@@ -1,5 +1,6 @@
 const markdownIt = require('markdown-it');
 const { DateTime } = require('luxon');
+const yaml = require("js-yaml");
 const bundlerPlugin = require("@11ty/eleventy-plugin-bundle");
 const prettier = require('./src/transforms/prettier.js');
 
@@ -71,6 +72,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksFilter('getData', function (value) {
     return this.ctx[value];
   });
+
+
+  // Add Custom Data Extensions YAML
+  eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 
   // Transforms
   eleventyConfig.addTransform('prettier', prettier);
