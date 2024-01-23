@@ -10,15 +10,16 @@ const notion = new Client({ auth: process.env.NOTION_TOKEN });
  * @param {string} id - The ID of the Notion database to retrieve.
  * @returns {Promise<Object>} A promise that resolves to the retrieved Notion database.
  */
-async function getDatabase(id) {
+async function getDatabase(id, idReadable) {
   const response = await notion.databases.retrieve({
     database_id: id,
   });
-  console.log(response);
+  console.log(idReadable, response);
 }
 
-
+// Run in VS Code debugger
 (async () => {
-  getDatabase(process.env.NOTION_FIVE_GALLON_DB_ID);
-  // getDatabase(process.env.NOTION_FIVE_GALLON_DB_ID);
+  await getDatabase(process.env.NOTION_FIVE_GALLON_DB_ID, '5 gallon');
+  await getDatabase(process.env.NOTION_TEN_GALLON_DB_ID, '10 gallon');
+  debugger;
 })();
