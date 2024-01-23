@@ -1,5 +1,3 @@
-<!-- @TODO specify water parameters for each species in frontmatter (or some data file) and show alert when the parameters go outside of the acceptable range for that species. -->
-
 {% extends "layouts/tank.njk" %}
 
 {%- block recentData %}
@@ -10,15 +8,15 @@
 {%- endblock %}
 
 {%- block calendars %}
-  {# {{ macros.calendar(calendar.waterChange, fiveGallonCalendarData) }}
-  {{ macros.calendar(calendar.prime, fiveGallonCalendarData) }}
-  {{ macros.calendar(calendar.stability, fiveGallonCalendarData) }}
-  {{ macros.calendar(calendar.spongeClean, fiveGallonCalendarData) }}
-  {{ macros.calendar(calendar.fertilizer, fiveGallonCalendarData) }}
-  {{ macros.calendar(calendar.co2, fiveGallonCalendarData) }}
-  {{ macros.calendar(calendar.crushedCoral, fiveGallonCalendarData) }}
-  {{ macros.calendar(calendar.bakingSoda, fiveGallonCalendarData) }}
-  {{ macros.calendar(calendar.culture, fiveGallonCalendarData) }} #}
+  {# {{ macros.calendar(calendar.waterChange, twoGallonCalendarData) }}
+  {{ macros.calendar(calendar.prime, twoGallonCalendarData) }}
+  {{ macros.calendar(calendar.stability, twoGallonCalendarData) }}
+  {{ macros.calendar(calendar.spongeClean, twoGallonCalendarData) }}
+  {{ macros.calendar(calendar.fertilizer, twoGallonCalendarData) }}
+  {{ macros.calendar(calendar.co2, twoGallonCalendarData) }}
+  {{ macros.calendar(calendar.crushedCoral, twoGallonCalendarData) }}
+  {{ macros.calendar(calendar.bakingSoda, twoGallonCalendarData) }}
+  {{ macros.calendar(calendar.culture, twoGallonCalendarData) }} #}
 {%- endblock %}
 
 {%- set hasInhibitantsContent = true %}

@@ -1,14 +1,11 @@
-<!-- @TODO specify water parameters for each species in frontmatter (or some data file) and show alert when the parameters go outside of the acceptable range for that species. -->
-
 {% extends "layouts/tank.njk" %}
 
 {%- block recentData %}
   {%- if fiveGallonRecentData %}
+    {{ super() }}
     {{ macros.recentData(fiveGallonRecentData) }}
   {%- endif %}
 {%- endblock %}  
-
-
 
 {%- block calendars %}
   {{ macros.calendar(calendar.waterChange, fiveGallonCalendarData) }}
