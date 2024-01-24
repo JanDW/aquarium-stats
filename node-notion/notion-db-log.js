@@ -19,6 +19,7 @@ async function getDatabase(id, idReadable) {
 
 // Run in VS Code debugger
 (async () => {
+  await getDatabase(process.env.NOTION_TWO_GALLON_DB_ID, '2 gallon');
   await getDatabase(process.env.NOTION_FIVE_GALLON_DB_ID, '5 gallon');
   await getDatabase(process.env.NOTION_TEN_GALLON_DB_ID, '10 gallon');
   debugger;

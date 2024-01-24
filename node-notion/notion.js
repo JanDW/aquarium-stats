@@ -9,7 +9,7 @@ const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
 // 👀 Any changes to the keys, need to be reflected in the fromNotionObject function below, and in the 11tydata.js files
 
-const tenGallonKeys = {
+const twoGallonKeys = {
   ammonia: 'CeXJ',
   nitrites: 'yJhy',
   nitrates: 'T%3Bhu',
@@ -17,20 +17,20 @@ const tenGallonKeys = {
   chlorine: 'za_R',
   kh: 'p~%3C%3D',
   ph: 'Nc%3A%5C',
-  tds: 'ikhI',
+  tds: '%7C~xd',
   prime: '%3Cz~N',
   waterChange: '%3C%5EmE',
   stability: '%7BBBc',
-  co2: 'Eo%5Be',
+  co2: 'THso',
   bakingSoda: 'JBgL',
-  cleanedFilter: 'A%7BFF',
-  crushedCoral: 'PKyZ',
-  fertilizer: 'yOKq',
+  cleanedFilter: '%5DUZh',
+  crushedCoral: 'IRJF',
+  fertilizer: 'zPDM',
   notes: 'title',
   date: 'GuZ%3E',
-  spongeClean: '%A%7BFF',
-  culture: 'm%40~I'
-};
+  spongeClean: '%5DUZh',
+  culture: 'KMGu'
+}
 
 const fiveGallonKeys = {
   ammonia: 'CeXJ',
@@ -54,6 +54,29 @@ const fiveGallonKeys = {
   spongeClean: '%5DUZh',
   culture: 'KMGu'
 }
+
+const tenGallonKeys = {
+  ammonia: 'CeXJ',
+  nitrites: 'yJhy',
+  nitrates: 'T%3Bhu',
+  gh: '%7Do%3Bs',
+  chlorine: 'za_R',
+  kh: 'p~%3C%3D',
+  ph: 'Nc%3A%5C',
+  tds: 'ikhI',
+  prime: '%3Cz~N',
+  waterChange: '%3C%5EmE',
+  stability: '%7BBBc',
+  co2: 'Eo%5Be',
+  bakingSoda: 'JBgL',
+  cleanedFilter: 'A%7BFF',
+  crushedCoral: 'PKyZ',
+  fertilizer: 'yOKq',
+  notes: 'title',
+  date: 'GuZ%3E',
+  spongeClean: '%A%7BFF',
+  culture: 'm%40~I'
+};
 
 /**
  * Fetches and transforms aquarium log pages from a Notion database.
@@ -127,12 +150,18 @@ function fromNotionObject(notionPage, keys) {
 }
 
 (async () => {
-  const tenGallonData = await getAquariumLogPages(process.env.NOTION_TEN_GALLON_DB_ID, tenGallonKeys);
-  const tenGallonPathToJson = path.join(__dirname, '..', 'src', '_data', 'tenGallonData.json');
-  writeJson(tenGallonPathToJson, tenGallonData);
+
+  const twoGallonData = await getAquariumLogPages(process.env.NOTION_TWO_GALLON_DB_ID, twoGallonKeys);
+  const twoGallonPathToJson = path.join(__dirname, '..', 'src', '_data', 'twoGallonData.json');
+  writeJson(twoGallonPathToJson, twoGallonData);
 
   const fiveGallonData = await getAquariumLogPages(process.env.NOTION_FIVE_GALLON_DB_ID, fiveGallonKeys);
   const fiveGallonPathToJson = path.join(__dirname, '..', 'src', '_data', 'fiveGallonData.json');
   writeJson(fiveGallonPathToJson, fiveGallonData);
+
+  const tenGallonData = await getAquariumLogPages(process.env.NOTION_TEN_GALLON_DB_ID, tenGallonKeys);
+  const tenGallonPathToJson = path.join(__dirname, '..', 'src', '_data', 'tenGallonData.json');
+  writeJson(tenGallonPathToJson, tenGallonData);
+
   module.exports = { tenGallonData, fiveGallonData };
 })();
