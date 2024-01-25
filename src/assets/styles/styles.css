@@ -230,6 +230,17 @@
     padding-top: 0.5rem;
     white-space: nowrap;
   }
+  .to-top-link {
+    background: theme('colors.slate.950');
+    border-radius: 9999px;
+    bottom: 1rem;
+    color: theme('colors.slate.200');
+    font-size: theme('fontSize.xl');
+    margin-top: 110vh;
+    padding: 10px;
+    position: sticky;
+    right: 1rem;
+  }
 }
 
 @layer utilities {

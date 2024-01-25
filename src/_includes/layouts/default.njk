@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" id="top">
   <head>
     {% block head %}
       {% include 'head.njk' %}
@@ -17,5 +17,6 @@
     {%- block footer %}
       {% include 'footer.njk' %}
     {%- endblock %}
+    <a href="#top" class="to-top-link rounded-full">Scroll <span aria-hidden>↑</span> <span class="sr-only ">to top of page.</span> </a>
   </body>
 </html>
