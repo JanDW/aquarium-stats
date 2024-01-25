@@ -1,17 +1,14 @@
 {% extends "layouts/default.njk" %}
+
 {%- import "macros/macros.njk" as macros %}
 
 {%- set tankData = dataName | getData %}
 {%- set recentTankData = recentDataName | getData %}
 {%- set calendarTankData = calendarDataName | getData %}
 
-{%- block scripts %}
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  {# ↓ Supply data on client side for charts #}
-  <script>
-    const fullData = {{ tankData | reverse | dump | safe }};
-  </script>
-{%- endblock %}
+{% js %}
+  const fullData = {{ tankData | reverse | dump | safe }};
+{% endjs %}
 
 {%- block header %}
   {% include 'hero-header.njk' %}

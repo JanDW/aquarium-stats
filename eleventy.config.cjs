@@ -22,7 +22,7 @@ module.exports = function (eleventyConfig) {
     'src/assets/img',
     { 'src/assets/siteroot': '/' },
     {
-      'node_modules/chart.js/dist/chart.js': 'assets/scripts/chart.js',
+      'node_modules/chart.js/dist/chart.umd.js': 'assets/scripts/chart.umd.js',
     },
     {
       'node_modules/@11ty/is-land/is-land.js': 'assets/scripts/is-land.js',

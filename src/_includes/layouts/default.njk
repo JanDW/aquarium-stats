@@ -4,7 +4,6 @@
     {% block head %}
       {% include 'head.njk' %}
     {% endblock %}
-    {%- block scripts %}{%- endblock %}
   </head>
   <body {% if bodyClasses %}class="{{ bodyClasses }}"{%- endif -%}>
     {% block global_nav %}

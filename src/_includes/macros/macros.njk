@@ -3,113 +3,113 @@
       <canvas id="{{divId}}"></canvas>
     </div>
   <script>
-      (() => {
-        let data = fullData.filter(item => {{filterCondition}});
-        // Limit to last 30 items
-        // data = data.slice(-30);
-        const labels = data.map(item => {
-          const [year, month, day] = item
-            .date
-            .split('-')
-            .map(Number);
-          const date = new Date(year, month - 1, day);
-          return date.toLocaleDateString('en-US', {
-            month: 'short',
-            day: 'numeric'
-          });
+    window.addEventListener('chartjsLoaded', function() {
+      let data = fullData.filter(item => {{filterCondition}});
+      // Limit to last 30 items
+      // data = data.slice(-30);
+      const labels = data.map(item => {
+        const [year, month, day] = item
+          .date
+          .split('-')
+          .map(Number);
+        const date = new Date(year, month - 1, day);
+        return date.toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric'
         });
-        const datasets = {{dataKeys | dump | safe}}.map(key => {
-          return {
-            label: key,
-            data: data.map(item => item[key]),
-            fill: true,
-            tension: 0.1,
-            spanGaps: true
-          };
-        });
+      });
+      const datasets = {{dataKeys | dump | safe}}.map(key => {
+        return {
+          label: key,
+          data: data.map(item => item[key]),
+          fill: true,
+          tension: 0.1,
+          spanGaps: true
+        };
+      });
 
-        // Create the chart
-        const ctx = document
-          .getElementById('{{divId}}')
-          .getContext('2d');
-        new Chart(ctx, {
-          type: 'line',
-          data: {
-            labels: labels,
-            datasets: datasets
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              title: {
-                display: true,
-                text: '{{chartTitle | safe}}',
+      // Create the chart
+      const ctx = document
+        .getElementById('{{divId}}')
+        .getContext('2d');
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: datasets
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            title: {
+              display: true,
+              text: '{{chartTitle | safe}}',
+              color: '#ffffff',
+              font: {
+                size: 20
+              }
+            },
+            tooltip: {
+              mode: 'index',
+              intersect: false
+            },
+            hover: {
+              mode: 'nearest',
+              intersect: true
+            },
+            legend: {
+              display: {{ (dataKeys.length > 1) }},
+              position: 'bottom',
+              labels: {
                 color: '#ffffff',
                 font: {
-                  size: 20
+                  size: 16
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              display: true,
+              title: {
+                display: true,
+                text: 'Date',
+                color: 'rgb(148 163 184)',
+                font: {
+                  size: 16
                 }
               },
-              tooltip: {
-                mode: 'index',
-                intersect: false
-              },
-              hover: {
-                mode: 'nearest',
-                intersect: true
-              },
-              legend: {
-                display: {{ (dataKeys.length > 1) }},
-                position: 'bottom',
-                labels: {
-                  color: '#ffffff',
-                  font: {
-                    size: 16
-                  }
+              ticks: {
+                color: '#ffffff',
+                font: {
+                  size: 16
                 }
               }
             },
-            scales: {
-              x: {
+            y: {
+              display: true,
+              title: {
                 display: true,
-                title: {
-                  display: true,
-                  text: 'Date',
-                  color: 'rgb(148 163 184)',
-                  font: {
-                    size: 16
-                  }
-                },
-                ticks: {
-                  color: '#ffffff',
-                  font: {
-                    size: 16
-                  }
+                text: '{{yTitle | safe}}',
+                color: 'rgb(148 163 184)',
+                font: {
+                  size: 16
                 }
               },
-              y: {
-                display: true,
-                title: {
-                  display: true,
-                  text: '{{yTitle | safe}}',
-                  color: 'rgb(148 163 184)',
-                  font: {
-                    size: 16
-                  }
-                },
-                min: 0,
-                ticks: {
-                  color: '#ffffff',
-                  font: {
-                    size: 16
-                  }
+              min: 0,
+              ticks: {
+                color: '#ffffff',
+                font: {
+                  size: 16
                 }
               }
             }
           }
-        });
-      })();
-      </script>
+        }
+      });
+    });
+  </script>
 {% endmacro %}
 
 {%- macro table(data) %}
