@@ -75,7 +75,7 @@
             {%- endfor %}
             <li>
               <div class="flex items-center">
-                <img src="{{ inhabitantSpecies.imgSrc }}" alt="{{  inhabitantSpecies.name }}" class="w-32 h-32 rounded-3xl mr-4 leading-none">
+                <img src="{{ inhabitantSpecies.imgSrc }}" alt="{{  inhabitantSpecies.name }}" class="w-32 h-32 rounded-3xl mr-4 leading-none" lazy>
                 <div>
                   <h3 class="text-xl font-bold">{{ inhabitant.name }}
                     {%- if inhabitant.emoji %}
