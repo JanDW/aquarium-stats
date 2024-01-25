@@ -1,100 +1,94 @@
 {% extends "layouts/default.njk" %}
 {%- import "macros/macros.njk" as macros %}
 
+{%- set tankData = dataName | getData %}
+{%- set recentTankData = recentDataName | getData %}
+
 {%- block scripts %}
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+  {# ↓ Supply data on client side for charts #}
   <script>
-    // The createChart macro requires this data object.
-    const fullData = {{ dataName | getData | reverse | dump | safe }};
+    const fullData = {{ tankData | reverse | dump | safe }};
   </script>
 {%- endblock %}
 
 {%- block header %}
-  <header class="hero">
-    <div class="hero__image">
-      {# <snow-fall style="--snow-fall-size: 5px"> #}
-        <img src="{{hero.image}}" alt="{{hero.imageAlt}}" width="{{hero.imageWidth}}" height="{{hero.imageHeight}}">
-      {# </snow-fall> #}
-    </div>
-    <div class="hero__content px-[2vw] 3xl:mx-auto max-w-[2000px] w-full">
-      <div>
-      <h1 class="lg:max-w-[50%] text-7xl font-black tracking-tighter {{ hero.titleColor }}">{{ hero.title | safe }}</h1>
-      <p class="max-w-[75%] lg:max-w-[50%] text-2xl font-bold mt-8">{{ hero.subtitle }}</p>
-      </div>
-    </div>
-  </header>
+  {% include 'hero-header.njk' %}
 {%- endblock %}
 
 {%- block main %}
 
-  <section class="mb-12 mx-[2vw] 3xl:mx-auto max-w-[2000px]">
   {%- block recentData %}
-    <h2 class="text-2xl font-bold mb-4 mx-4">Goings on</h2>
+    {%- if recentTankData %}
+      {{ macros.recentData(recentTankData) }}
+    {%- endif %}
   {%- endblock %}
-  </section>
-  
-  {%- if fullData %}
-    <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px]">
-    <h2 class="text-2xl font-bold mb-4 mx-4">Soft Water, Hard Facts</h2>
-    <div class="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-8 mt-4 pb-8 mb-8">
-      {{ macros.createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null') }}
-      {{ macros.createChart('nitrates', 'Nitrates', 'ppm', ['nitrates'], 'item.nitrates != null') }}
-      {{ macros.createChart('tds', 'TDS', 'ppm', ['tds'], 'item.tds != null') }}
-      {{ macros.createChart('hardness', 'GH, KH & pH', 'dKH & pH', ['gh','kh','ph'], 'item.gh != null || item.kh !== null || item.ph !== null') }}
-    </div>
-  </section>
-  {%- endif %}
+
+  {%- block charts %}
+    {%- if tankData  %}
+      <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px]">
+        <h2 class="text-2xl font-bold mb-4 mx-4">Soft Water, Hard Facts</h2>
+        <div class="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-8 mt-4 pb-8 mb-8">
+          {{ macros.createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null') }}
+          {{ macros.createChart('nitrates', 'Nitrates', 'ppm', ['nitrates'], 'item.nitrates != null') }}
+          {{ macros.createChart('tds', 'TDS', 'ppm', ['tds'], 'item.tds != null') }}
+          {{ macros.createChart('hardness', 'GH, KH & pH', 'dKH & pH', ['gh','kh','ph'], 'item.gh != null || item.kh !== null || item.ph !== null') }}
+        </div>
+      </section>
+    {%- endif %}
+  {%- endblock %}
 
   <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px] xl:grid xl:grid-cols-2 xl:gap-8">
     {%- block calendars %}{%- endblock %}
   </section>
 
-  <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px] mt-12">
-    <h2 class="text-2xl font-bold mb-4">
+  {%- if inhabitants %}
+    <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px] mt-12">
+      <h2 class="text-2xl font-bold mb-4">
       The inhabitants
     </h2>
-    {# bg-gradient-to-br from-sky-900/40 to-emerald-600/70 py-8 px-12 rounded-2xl border-green-300 border-8 #}
-    <ul class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 gap-y-6">
-      {%- for inhabitant in inhabitants %}
-        {%- set inhabitantSpecies = {} %}
-        {%- for specie in species %}
-          {% if inhabitant.species == specie.name %}
-            {%- set inhabitantSpecies = specie %}
-          {% endif %}
-        {%- endfor %}
-        <li>
-          <div class="flex items-center">
-            <img src="{{ inhabitantSpecies.imgSrc }}" alt="{{  inhabitantSpecies.name }}" class="w-32 h-32 rounded-3xl mr-4 leading-none">
-            <div>
-              <h3 class="text-xl font-bold">{{ inhabitantSpecies.name }}
-                {%- if inhabitant.emoji %}
-                  <span class="text-2xl ml-2">{{ inhabitant.emoji }}</span>
+      {# bg-gradient-to-br from-sky-900/40 to-emerald-600/70 py-8 px-12 rounded-2xl border-green-300 border-8 #}
+      <ul class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 gap-y-6">
+        {%- for inhabitant in inhabitants %}
+          {%- set inhabitantSpecies = {} %}
+          {%- for specie in species %}
+            {% if inhabitant.species == specie.name %}
+              {%- set inhabitantSpecies = specie %}
+            {% endif %}
+          {%- endfor %}
+          <li>
+            <div class="flex items-center">
+              <img src="{{ inhabitantSpecies.imgSrc }}" alt="{{  inhabitantSpecies.name }}" class="w-32 h-32 rounded-3xl mr-4 leading-none">
+              <div>
+                <h3 class="text-xl font-bold">{{ inhabitant.name }}
+                  {%- if inhabitant.emoji %}
+                    <span class="text-2xl ml-2">{{ inhabitant.emoji }}</span>
+                  {%- endif %}
+                </h3>
+                <p>
+                  <a href="{{ inhabitantSpecies.infoLink }}" class="hover:underline">{{ inhabitant.species }}</a>
+                </p>
+                <p class="italic text-sm text-gray-400">{{inhabitantSpecies.binomial}}</p>
+                <p class="text-sm text-gray-400">Since {{ inhabitant.dateNew | readableDate }}</p>
+                {%- if inhabitant.dateDied %}
+                  <p class="text-sm text-gray-400">✝ {{ inhabitant.dateDied | readableDate }}</p>
                 {%- endif %}
-              </h3>
-              <p>
-                <a href="{{ inhabitantSpecies.infoLink }}" class="hover:underline">{{ inhabitant.species }}</a>
-              </p>
-              <p class="italic text-sm text-gray-400">{{inhabitantSpecies.binomial}}</p>
-              <p class="text-sm text-gray-400">Since {{ inhabitant.dateNew | readableDate }}</p>
-              {%- if inhabitant.dateDied %}
-                <p class="text-sm text-gray-400">✝ {{ inhabitant.dateDied | readableDate }}</p>
-              {%- endif %}
-              {%- if inhabitant.dateAddedToTank %}
-               <p class="text-sm text-gray-400">Moved to this tank on {{ inhabitant.dateAddedToTank | readableDate }}.</p> 
-              {%- endif %}
+                {%- if inhabitant.dateAddedToTank %}
+                  <p class="text-sm text-gray-400">Moved to this tank on {{ inhabitant.dateAddedToTank | readableDate }}.</p>
+                {%- endif %}
 
+              </div>
             </div>
-          </div>
-        </li>
-      {%- endfor %}
-    </ul>
-    {%- if hasInhibitantsContent %}
-      <div class="mt-8 text-slate-400">
-        {%- block inhabitants %}{%- endblock %}
-      </div>
-    {%- endif %}
-  </section>
+          </li>
+        {%- endfor %}
+      </ul>
+      {%- if hasInhibitantsContent %}
+        <div class="mt-8 text-slate-400">
+          {%- block inhabitants %}{%- endblock %}
+        </div>
+      {%- endif %}
+    </section>
+  {%- endif %}
 
   {# <section class="mt-24">
     <div class="mx-[2vw]">
@@ -104,5 +98,4 @@
       </div>
     </div>
   </section> #}
-
 {%- endblock %}

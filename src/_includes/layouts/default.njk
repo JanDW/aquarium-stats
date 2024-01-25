@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
   <head>
-  {% block head %}
-    {% include 'head.njk' %}
-  {% endblock %}
-  {%- block scripts %}{%- endblock %}
+    {% block head %}
+      {% include 'head.njk' %}
+    {% endblock %}
+    {%- block scripts %}{%- endblock %}
   </head>
   <body {% if bodyClasses %}class="{{ bodyClasses }}"{%- endif -%}>
     {% block global_nav %}
       {% include 'global-nav.njk' %}
     {% endblock %}
-    {%- block header %}
-    
-    {%- endblock %}
+    {%- block header %}{%- endblock %}
     <main id="main" class="{{ mainClasses }}">
       {%- block main %}{%- endblock %}
     </main>
-    {% include 'footer.njk' %}
+    {%- block footer %}
+      {% include 'footer.njk' %}
+    {%- endblock %}
   </body>
 </html>
