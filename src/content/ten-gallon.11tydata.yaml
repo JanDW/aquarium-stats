@@ -1,6 +1,8 @@
 title: Ten Gallon Tank
 permalink: /
 dataName: tenGallonData
+recentDataName: tenGallonRecentData
+calendarDataName: tenGallonCalendarData
 hero:
   image: /assets/img/hero-rasbora.jpg
   imageAlt: A blue betta fish swimming in a tank

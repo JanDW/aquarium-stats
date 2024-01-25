@@ -1,6 +1,8 @@
 title: Two Gallon Bowl
 permalink: two-gallon/
 dataName: twoGallonData
+recentDataName: twoGallonRecentData
+calendarDataName: twoGallonCalendarData
 hero:
   image: /assets/img/hero-neocaridina-davidi-red.jpeg
   imageAlt: A close up of a neocaridina shrimp
@@ -78,7 +80,7 @@ calendar:
       unit: 'litres'
   co2:
     parameter: 'co2'
-    title: 'Added API CO₂ Booster (0.5ml)'
+    title: 'Added API CO₂ Booster (0.2ml)'
     emoji: '⛽️'
     theme:
       textColor: "text-white"
@@ -90,7 +92,7 @@ calendar:
       active: false
   fertilizer:
     parameter: 'fertilizer'
-    title: 'Added API Leaf Zone (2.5ml)'
+    title: 'Added API Leaf Zone (1ml)'
     emoji: '🍀'
     theme:
       textColor: "text-white"
@@ -139,7 +141,7 @@ calendar:
       unit: 'ml'
   stability:
     parameter: 'stability'
-    title: 'Added Seachem Stability (1ml)'
+    title: 'Added Seachem Stability (0.5ml)'
     emoji: '🧫'
     theme:
       textColor: "text-white"
@@ -163,7 +165,7 @@ calendar:
       active: false
   culture:
     parameter: 'culture'
-    title: 'Added Resurrection Jar Culture (1.5ml)'
+    title: 'Added Resurrection Jar Culture (1ml)'
     emoji: '🪳'
     theme:
       textColor: "text-white"

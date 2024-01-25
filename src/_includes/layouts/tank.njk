@@ -3,6 +3,7 @@
 
 {%- set tankData = dataName | getData %}
 {%- set recentTankData = recentDataName | getData %}
+{%- set calendarTankData = calendarDataName | getData %}
 
 {%- block scripts %}
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -19,72 +20,95 @@
 {%- block main %}
 
   {%- block recentData %}
-    {%- if recentTankData %}
-      {{ macros.recentData(recentTankData) }}
-    {%- endif %}
-  {%- endblock %}
-
-  {%- block charts %}
-    {%- if tankData  %}
-      <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px]">
-        <h2 class="text-2xl font-bold mb-4 mx-4">Soft Water, Hard Facts</h2>
-        <div class="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-8 mt-4 pb-8 mb-8">
-          {{ macros.createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null') }}
-          {{ macros.createChart('nitrates', 'Nitrates', 'ppm', ['nitrates'], 'item.nitrates != null') }}
-          {{ macros.createChart('tds', 'TDS', 'ppm', ['tds'], 'item.tds != null') }}
-          {{ macros.createChart('hardness', 'GH, KH & pH', 'dKH & pH', ['gh','kh','ph'], 'item.gh != null || item.kh !== null || item.ph !== null') }}
-        </div>
+    {%- if recentTankData  %}
+      <section class="mb-12 mx-[2vw] 3xl:mx-auto max-w-[2000px]">
+        <h2 class="text-2xl font-bold mb-4 mx-4">Goings on</h2>
+        {{ macros.recentData(recentTankData) }}
       </section>
     {%- endif %}
   {%- endblock %}
 
-  <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px] xl:grid xl:grid-cols-2 xl:gap-8">
-    {%- block calendars %}{%- endblock %}
-  </section>
+  {# ↓ This block should only exist when there is data, override block should just be the graphs #}
 
-  {%- if inhabitants %}
+  {%- if tankData  %}
+      <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px]">
+        <h2 class="text-2xl font-bold mb-4 mx-4">Soft Water, Hard Facts</h2>
+        <div class="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-8 mt-4 pb-8 mb-8">
+        {%- block charts %}
+          {{ macros.createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null') }}
+          {{ macros.createChart('nitrates', 'Nitrates', 'ppm', ['nitrates'], 'item.nitrates != null') }}
+          {{ macros.createChart('tds', 'TDS', 'ppm', ['tds'], 'item.tds != null') }}
+          {{ macros.createChart('hardness', 'GH, KH & pH', 'dKH & pH', ['gh','kh','ph'], 'item.gh != null || item.kh !== null || item.ph !== null') }}
+        {%- endblock %}
+        </div>
+      </section>
+  {%- endif %}
+
+  {# ↓ This block should only exist when there is data, override block should just be the graphs #}
+
+  {%- if tankData %}
+    <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px] xl:grid xl:grid-cols-2 xl:gap-8">
+      {%- block calendars %}
+          {{ macros.calendar(calendar.waterChange, calendarTankData) }}
+          {{ macros.calendar(calendar.prime, calendarTankData) }}
+          {{ macros.calendar(calendar.stability, calendarTankData) }}
+          {{ macros.calendar(calendar.spongeClean, calendarTankData) }}
+          {{ macros.calendar(calendar.fertilizer, calendarTankData) }}
+          {{ macros.calendar(calendar.co2, calendarTankData) }}
+          {{ macros.calendar(calendar.crushedCoral, calendarTankData) }}
+          {{ macros.calendar(calendar.bakingSoda, calendarTankData) }}
+          {{ macros.calendar(calendar.culture, calendarTankData) }}
+      {%- endblock %}
+    </section>
+  {%- endif %}
+
+  {%- if inhabitants or hasInhibitantsNote %}
     <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px] mt-12">
       <h2 class="text-2xl font-bold mb-4">
-      The inhabitants
-    </h2>
-      {# bg-gradient-to-br from-sky-900/40 to-emerald-600/70 py-8 px-12 rounded-2xl border-green-300 border-8 #}
-      <ul class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 gap-y-6">
-        {%- for inhabitant in inhabitants %}
-          {%- set inhabitantSpecies = {} %}
-          {%- for specie in species %}
-            {% if inhabitant.species == specie.name %}
-              {%- set inhabitantSpecies = specie %}
-            {% endif %}
-          {%- endfor %}
-          <li>
-            <div class="flex items-center">
-              <img src="{{ inhabitantSpecies.imgSrc }}" alt="{{  inhabitantSpecies.name }}" class="w-32 h-32 rounded-3xl mr-4 leading-none">
-              <div>
-                <h3 class="text-xl font-bold">{{ inhabitant.name }}
-                  {%- if inhabitant.emoji %}
-                    <span class="text-2xl ml-2">{{ inhabitant.emoji }}</span>
+        The inhabitants
+      </h2>
+      {%- if inhabitants %}
+        <ul class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 gap-y-6">
+          {%- for inhabitant in inhabitants %}
+            {%- set inhabitantSpecies = {} %}
+            {%- for specie in species %}
+              {% if inhabitant.species == specie.name %}
+                {%- set inhabitantSpecies = specie %}
+              {% endif %}
+            {%- endfor %}
+            <li>
+              <div class="flex items-center">
+                <img src="{{ inhabitantSpecies.imgSrc }}" alt="{{  inhabitantSpecies.name }}" class="w-32 h-32 rounded-3xl mr-4 leading-none">
+                <div>
+                  <h3 class="text-xl font-bold">{{ inhabitant.name }}
+                    {%- if inhabitant.emoji %}
+                      <span class="text-2xl ml-2">{{ inhabitant.emoji }}</span>
+                    {%- endif %}
+                  </h3>
+                  <p>
+                    <a href="{{ inhabitantSpecies.infoLink }}" class="hover:underline">{{ inhabitant.species }}</a>
+                  </p>
+                  <p class="italic text-sm text-gray-400">{{inhabitantSpecies.binomial}}</p>
+                  <p class="text-sm text-gray-400">Since {{ inhabitant.dateNew | readableDate }}</p>
+                  {%- if inhabitant.dateDied %}
+                    <p class="text-sm text-gray-400">✝ {{ inhabitant.dateDied | readableDate }}</p>
                   {%- endif %}
-                </h3>
-                <p>
-                  <a href="{{ inhabitantSpecies.infoLink }}" class="hover:underline">{{ inhabitant.species }}</a>
-                </p>
-                <p class="italic text-sm text-gray-400">{{inhabitantSpecies.binomial}}</p>
-                <p class="text-sm text-gray-400">Since {{ inhabitant.dateNew | readableDate }}</p>
-                {%- if inhabitant.dateDied %}
-                  <p class="text-sm text-gray-400">✝ {{ inhabitant.dateDied | readableDate }}</p>
-                {%- endif %}
-                {%- if inhabitant.dateAddedToTank %}
-                  <p class="text-sm text-gray-400">Moved to this tank on {{ inhabitant.dateAddedToTank | readableDate }}.</p>
-                {%- endif %}
+                  {%- if inhabitant.dateAddedToTank %}
+                    <p class="text-sm text-gray-400">Moved to this tank on {{ inhabitant.dateAddedToTank | readableDate }}.</p>
+                  {%- endif %}
 
+                </div>
               </div>
-            </div>
-          </li>
-        {%- endfor %}
-      </ul>
-      {%- if hasInhibitantsContent %}
-        <div class="mt-8 text-slate-400">
-          {%- block inhabitants %}{%- endblock %}
+            </li>
+          {%- endfor %}
+        </ul>
+      {%- endif %}
+      {# There is no way to check if a child template passes anything via a block, so need a variable to determine if we need this wrapping structure #}
+      {%- if hasInhibitantsNote %}
+        <div class="text-slate-400 mt-8">
+          {%- markdown %}
+            {%- block inhabitantsNote %}{%- endblock %}
+          {%- endmarkdown %}
         </div>
       {%- endif %}
     </section>

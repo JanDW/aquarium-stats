@@ -1,23 +1,9 @@
 {% extends "layouts/tank.njk" %}
 
-{%- block recentData %}
-  {%- if twoGallonRecentData %}
-    {{ super() }}
-    {{ macros.recentData(twoGallonRecentData) }}
-  {%- endif %}
-{%- endblock %}
-
 {%- block calendars %}
   {{ macros.calendar(calendar.waterChange, twoGallonCalendarData) }}
-  {# {{ macros.calendar(calendar.prime, twoGallonCalendarData) }} #}
   {{ macros.calendar(calendar.stability, twoGallonCalendarData) }}
-  {# {{ macros.calendar(calendar.spongeClean, twoGallonCalendarData) }} #}
   {{ macros.calendar(calendar.fertilizer, twoGallonCalendarData) }}
   {{ macros.calendar(calendar.co2, twoGallonCalendarData) }}
-  {# {{ macros.calendar(calendar.crushedCoral, twoGallonCalendarData) }}
-  {{ macros.calendar(calendar.bakingSoda, twoGallonCalendarData) }} #}
   {{ macros.calendar(calendar.culture, twoGallonCalendarData) }}
 {%- endblock %}
-
-{%- set hasInhibitantsContent = true %}
-{%- block inhabitants %}{%- endblock %}
