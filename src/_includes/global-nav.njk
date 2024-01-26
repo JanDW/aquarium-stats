@@ -12,13 +12,11 @@
     <ul class="flex flex-col sm:flex-row max-sm:items-end sm:items-center text-slate-400  text-lg  font-medium max-sm:divide-y max-sm:divide-slate-800  list-none" role="list">
       {% for item in site.navigation %}
         {%- set paddingY = 'max-sm:pt-0 max-sm:pb-3' if loop.first else 'max-sm:py-3'  %}
-        <li class="px-8 {{ paddingY }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
-          {%- if item.url != page.url %}
-            <a href="{{ item.url }}">
-            {%- endif %}
-            {{ item.label }}
-            {%- if item.url != page.url %}
-            </a>
+        <li class="contents" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+          {%- if item.url == page.url %}
+            <span class="px-8 {{ paddingY }}">{{ item.label }}</span>
+          {%- else  %}
+            <a class="px-8 {{ paddingY }}" href="{{ item.url }}">{{ item.label }}</a>
           {%- endif %}
         </li>
       {% endfor %}
