@@ -245,10 +245,10 @@
     bottom: 1rem;
     color: theme('colors.slate.200');
     font-size: theme('fontSize.xl');
+    left: 1rem;
     margin-top: 110vh;
     padding: 10px;
     position: sticky;
-    right: 1rem;
   }
 }
 
