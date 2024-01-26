@@ -44,7 +44,8 @@
   {# ↓ This block should only exist when there is data, override block should just be the graphs #}
 
   {%- if tankData %}
-    <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px] xl:grid xl:grid-cols-2 xl:gap-8">
+    <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px]">
+      <div class="xl:grid xl:grid-cols-2 xl:gap-8">
       {%- block calendars %}
           {{ macros.calendar(calendar.waterChange, calendarTankData) }}
           {{ macros.calendar(calendar.prime, calendarTankData) }}
@@ -56,6 +57,10 @@
           {{ macros.calendar(calendar.bakingSoda, calendarTankData) }}
           {{ macros.calendar(calendar.culture, calendarTankData) }}
       {%- endblock %}
+      </div>
+      <footer>
+        <p class="text-slate-400 mt-6"> <a href="https://productive-hen-976.notion.site/{{ processEnv[notionSourceDb] }}" class="underline">View source data in Notion →</a></p>
+      </footer>
     </section>
   {%- endif %}
 

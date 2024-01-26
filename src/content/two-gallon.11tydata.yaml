@@ -3,6 +3,7 @@ permalink: two-gallon/
 dataName: twoGallonData
 recentDataName: twoGallonRecentData
 calendarDataName: twoGallonCalendarData
+notionSourceDb: twoGallonId 
 hero:
   image: /assets/img/hero-neocaridina-davidi-red.jpeg
   imageAlt: A close up of a neocaridina shrimp
