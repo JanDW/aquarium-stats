@@ -29,8 +29,8 @@ const twoGallonKeys = {
   notes: 'title',
   date: 'GuZ%3E',
   spongeClean: '%5DUZh',
-  culture: 'KMGu'
-}
+  culture: 'KMGu',
+};
 
 const fiveGallonKeys = {
   ammonia: 'CeXJ',
@@ -52,8 +52,8 @@ const fiveGallonKeys = {
   notes: 'title',
   date: 'GuZ%3E',
   spongeClean: '%5DUZh',
-  culture: 'KMGu'
-}
+  culture: 'KMGu',
+};
 
 const tenGallonKeys = {
   ammonia: 'CeXJ',
@@ -75,7 +75,7 @@ const tenGallonKeys = {
   notes: 'title',
   date: 'GuZ%3E',
   spongeClean: '%A%7BFF',
-  culture: 'm%40~I'
+  culture: 'm%40~I',
 };
 
 /**
@@ -97,7 +97,7 @@ async function getAquariumLogPages(id, keys) {
       },
     ],
   });
-  return notionPages.results.map(page => fromNotionObject(page, keys));
+  return notionPages.results.map((page) => fromNotionObject(page, keys));
 }
 
 /**
@@ -150,17 +150,43 @@ function fromNotionObject(notionPage, keys) {
 }
 
 (async () => {
-
-  const twoGallonData = await getAquariumLogPages(process.env.NOTION_TWO_GALLON_DB_ID, twoGallonKeys);
-  const twoGallonPathToJson = path.join(__dirname, '..', 'src', '_data', 'twoGallonData.json');
+  const twoGallonData = await getAquariumLogPages(
+    process.env.NOTION_TWO_GALLON_DB_ID,
+    twoGallonKeys
+  );
+  const twoGallonPathToJson = path.join(
+    __dirname,
+    '..',
+    'src',
+    '_data',
+    'twoGallonData.json'
+  );
   writeJson(twoGallonPathToJson, twoGallonData);
 
-  const fiveGallonData = await getAquariumLogPages(process.env.NOTION_FIVE_GALLON_DB_ID, fiveGallonKeys);
-  const fiveGallonPathToJson = path.join(__dirname, '..', 'src', '_data', 'fiveGallonData.json');
+  const fiveGallonData = await getAquariumLogPages(
+    process.env.NOTION_FIVE_GALLON_DB_ID,
+    fiveGallonKeys
+  );
+  const fiveGallonPathToJson = path.join(
+    __dirname,
+    '..',
+    'src',
+    '_data',
+    'fiveGallonData.json'
+  );
   writeJson(fiveGallonPathToJson, fiveGallonData);
 
-  const tenGallonData = await getAquariumLogPages(process.env.NOTION_TEN_GALLON_DB_ID, tenGallonKeys);
-  const tenGallonPathToJson = path.join(__dirname, '..', 'src', '_data', 'tenGallonData.json');
+  const tenGallonData = await getAquariumLogPages(
+    process.env.NOTION_TEN_GALLON_DB_ID,
+    tenGallonKeys
+  );
+  const tenGallonPathToJson = path.join(
+    __dirname,
+    '..',
+    'src',
+    '_data',
+    'tenGallonData.json'
+  );
   writeJson(tenGallonPathToJson, tenGallonData);
 
   module.exports = { tenGallonData, fiveGallonData };

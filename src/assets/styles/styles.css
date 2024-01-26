@@ -232,11 +232,10 @@
 
   /* GLOBAL NAV */
 
-  .global-nav [aria-current="page"]:not([data-home]) {
+  .global-nav [aria-current='page']:not([data-home]) {
     color: theme('colors.slate.100');
   }
 
-  
   /* TO TOP LINK */
 
   .to-top-link {
@@ -257,5 +256,3 @@
     font-family: 'Inter', sans-serif;
   }
 }
-
-

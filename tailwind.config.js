@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.njk', './src/**/*.md', './src/**/*.yaml', './src/**/*.js'],
+  content: [
+    './src/**/*.njk',
+    './src/**/*.md',
+    './src/**/*.yaml',
+    './src/**/*.js',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -11,7 +16,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/typography')],
 };

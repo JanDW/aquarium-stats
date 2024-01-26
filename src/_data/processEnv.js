@@ -6,4 +6,3 @@ module.exports = () => ({
   fiveGallonId: process.env.NOTION_FIVE_GALLON_DB_ID,
   tenGallonId: process.env.NOTION_TEN_GALLON_DB_ID,
 });
- 

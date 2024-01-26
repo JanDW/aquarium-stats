@@ -28,17 +28,17 @@
   {# ↓ This block should only exist when there is data, override block should just be the graphs #}
 
   {%- if tankData  %}
-      <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px]">
-        <h2 class="text-2xl font-bold mb-4 mx-4">Soft Water, Hard Facts</h2>
-        <div class="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-8 mt-4 pb-8 mb-8">
+    <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px]">
+      <h2 class="text-2xl font-bold mb-4 mx-4">Soft Water, Hard Facts</h2>
+      <div class="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-8 mt-4 pb-8 mb-8">
         {%- block charts %}
           {{ macros.createChart('nitriteCycle', 'Ammonia and Nitrites', 'ppm', ['ammonia', 'nitrites'], 'item.ammonia != null || item.nitrites != null') }}
           {{ macros.createChart('nitrates', 'Nitrates', 'ppm', ['nitrates'], 'item.nitrates != null') }}
           {{ macros.createChart('tds', 'TDS', 'ppm', ['tds'], 'item.tds != null') }}
           {{ macros.createChart('hardness', 'GH, KH & pH', 'dKH & pH', ['gh','kh','ph'], 'item.gh != null || item.kh !== null || item.ph !== null') }}
         {%- endblock %}
-        </div>
-      </section>
+      </div>
+    </section>
   {%- endif %}
 
   {# ↓ This block should only exist when there is data, override block should just be the graphs #}
@@ -46,7 +46,7 @@
   {%- if tankData %}
     <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px]">
       <div class="xl:grid xl:grid-cols-2 xl:gap-8">
-      {%- block calendars %}
+        {%- block calendars %}
           {{ macros.calendar(calendar.waterChange, calendarTankData) }}
           {{ macros.calendar(calendar.prime, calendarTankData) }}
           {{ macros.calendar(calendar.stability, calendarTankData) }}
@@ -56,10 +56,12 @@
           {{ macros.calendar(calendar.crushedCoral, calendarTankData) }}
           {{ macros.calendar(calendar.bakingSoda, calendarTankData) }}
           {{ macros.calendar(calendar.culture, calendarTankData) }}
-      {%- endblock %}
+        {%- endblock %}
       </div>
       <footer>
-        <small class="text-slate-400 mt-2"> <a href="https://productive-hen-976.notion.site/{{ processEnv[notionSourceDb] }}" class="underline text-sm">View source data in Notion →</a></small>
+        <small class="text-slate-400 mt-2">
+          <a href="https://productive-hen-976.notion.site/{{ processEnv[notionSourceDb] }}" class="underline text-sm">View source data in Notion →</a>
+        </small>
       </footer>
     </section>
   {%- endif %}
@@ -109,7 +111,7 @@
       {%- if hasInhibitantsNote %}
         <div class="text-slate-400 mt-8">
           {%- markdown %}
-            {%- block inhabitantsNote %}{%- endblock %}
+          {%- block inhabitantsNote %}{%- endblock %}
           {%- endmarkdown %}
         </div>
       {%- endif %}

@@ -1,4 +1,4 @@
-name: "Deploy-Netlify"
+name: 'Deploy-Netlify'
 
 on:
   schedule:

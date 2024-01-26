@@ -1,7 +1,7 @@
 const markdownIt = require('markdown-it');
 const { DateTime } = require('luxon');
-const yaml = require("js-yaml");
-const bundlerPlugin = require("@11ty/eleventy-plugin-bundle");
+const yaml = require('js-yaml');
+const bundlerPlugin = require('@11ty/eleventy-plugin-bundle');
 const prettier = require('./src/transforms/prettier.js');
 
 module.exports = function (eleventyConfig) {
@@ -33,14 +33,15 @@ module.exports = function (eleventyConfig) {
     },
   ];
 
-  stuffToCopy.forEach(stuff => {
-  eleventyConfig.addPassthroughCopy(stuff);
-});
+  stuffToCopy.forEach((stuff) => {
+    eleventyConfig.addPassthroughCopy(stuff);
+  });
 
   // Shortcodes
   eleventyConfig.addPairedShortcode('markdown', (content) => {
     return markdownLib.render(content);
   });
+
 
   // Plugins
   eleventyConfig.addPlugin(bundlerPlugin);
@@ -73,9 +74,8 @@ module.exports = function (eleventyConfig) {
     return this.ctx[value];
   });
 
-
   // Add Custom Data Extensions YAML
-  eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
+  eleventyConfig.addDataExtension('yaml', (contents) => yaml.load(contents));
 
   // Transforms
   eleventyConfig.addTransform('prettier', prettier);
