@@ -1,9 +1,9 @@
 {% macro createChart(divId, chartTitle, yTitle, dataKeys, filterCondition) %}
-    <div id="{{divId}}-wrapper" class="{{divId}} p-3 bg-slate-800 rounded-3xl relative min-h-[400px]">
-      <canvas id="{{divId}}"></canvas>
-    </div>
+  <div id="{{divId}}-wrapper" class="{{divId}} p-3 bg-slate-800 rounded-3xl relative min-h-[400px]">
+    <canvas id="{{divId}}"></canvas>
+  </div>
   <script>
-    window.addEventListener('chartjsLoaded', function() {
+    window.addEventListener('chartjsLoaded', function () {
       let data = fullData.filter(item => {{filterCondition}});
       // Limit to last 30 items
       // data = data.slice(-30);
@@ -167,7 +167,9 @@
         <div class="rounded-3xl overflow-clip border-4 {{ s.theme.borderColor }} {{ borderClasses }}">
           <table class="table-auto w-full {{ s.theme.textColor }} font-medium font-mono text-xl">
             <caption class="py-4 {{ 'max-md:py-0' if loop.index == 2 }} {{ s.theme.bgCaptionColor }} font-semibold font-inter text-2xl">{{ month.monthHumanReadable }}
-              <!-- {{ month.year }}--></caption>
+
+              <!-- {{ month.year }}-->
+            </caption>
             <thead class="{{ 'max-md:sr-only' if loop.index == 2 }}">
               <tr class="{{ s.theme.bgHeadColor }}">
                 <th scope="col" class="px-2 py-2 font-medium">Mo</th>
@@ -206,46 +208,46 @@
                       <span>{{day.day}}</span>
                     </time>
                   </sl-tooltip>
-                    </td>
-                    {% set counter = counter + 1 %}
-                  {%- endfor %}
-                  {%- for i in range(0, month.daysToAppend) %}
-                    <td class="px-2"></td>
-                    {% set counter = counter + 1 %}
-                  {%- endfor %}
-                  {% if counter != 0 %}
-                  </tr>
-                {% endif %}
-              </tbody>
-            </table>
-          </div>
-
-          <!-- /.rounded-3xl -->
-        {%- endfor %}
+                </td>
+                {% set counter = counter + 1 %}
+              {%- endfor %}
+              {%- for i in range(0, month.daysToAppend) %}
+                <td class="px-2"></td>
+                {% set counter = counter + 1 %}
+              {%- endfor %}
+              {% if counter != 0 %}
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
       </div>
 
-      <!-- /.two-up-grid -->
-    </div>
-  {%- endmacro %}
+      <!-- /.rounded-3xl -->
+    {%- endfor %}
+  </div>
 
-  {%- macro recentData(data) %}
-    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 rounded-2xl sm:rounded-3xl p-2 bg-emerald-600">
-      {%- for key, value in data %}
-      <li class="flex sm:flex-col max-sm:gap-x-8 p-5 text-center bg-emerald-950 sm:pt-12 sm:pb-10 rounded-2xl max-sm:items-center">
-        <div class="whitespace-nowrap max-sm:flex md:flex items-center justify-center sm:mt-3">
-          <div class="font-semibold tracking-tight text-cyan-400 text-4xl sm:text-6xl">{{ value.value }}</div>
-          {%- if key == 'gh' or key == 'kh' %}
-            {%- set unit = 'dKH' %}  
-            {%- elif key == 'ph' %}
-            {%- set unit = '&nbsp;' %}
-            {%- else %}
-            {%- set unit = 'ppm' %}
-          {%- endif %}
-          <div class="text-cyan-600 text-lg font-medium max-sm:ml-3 md:ml-3">{{ unit | safe }}</div>
-        </div>
-        <div class="text-orange-200 text-xl font-bold tracking-wider md:tracking-widest font-medium sm:mt-6 uppercase font-mono max-sm:ml-auto">{{ key }}</div>
-        <div class="font-mono text-orange-200/60 text-xl font-base">{{ value.date | shortDate }}</div>
-      </li>
-      {%- endfor %}
-    </ul>
-  {%- endmacro %}
+  <!-- /.two-up-grid -->
+</div>
+{%- endmacro %}
+
+{%- macro recentData(data) %}
+<ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 rounded-2xl sm:rounded-3xl p-2 bg-emerald-600">
+  {%- for key, value in data %}
+    <li class="flex sm:flex-col max-sm:gap-x-8 p-5 text-center bg-emerald-950 sm:pt-12 sm:pb-10 rounded-2xl max-sm:items-center">
+      <div class="whitespace-nowrap max-sm:flex md:flex items-center justify-center sm:mt-3">
+        <div class="font-semibold tracking-tight text-cyan-400 text-4xl sm:text-6xl">{{ value.value }}</div>
+        {%- if key == 'gh' or key == 'kh' %}
+          {%- set unit = 'dKH' %}
+        {%- elif key == 'ph' %}
+          {%- set unit = '&nbsp;' %}
+        {%- else %}
+          {%- set unit = 'ppm' %}
+        {%- endif %}
+        <div class="text-cyan-500 text-lg font-medium max-sm:ml-3 md:ml-3">{{ unit | safe }}</div>
+      </div>
+      <div class="text-orange-200 text-xl font-bold tracking-wider md:tracking-widest font-medium sm:mt-6 uppercase font-mono max-sm:ml-auto">{{ key }}</div>
+      <div class="font-mono text-orange-200/60 text-xl font-base">{{ value.date | shortDate }}</div>
+    </li>
+  {%- endfor %}
+</ul>
+{%- endmacro %}
