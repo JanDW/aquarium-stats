@@ -1,24 +1,22 @@
 {%- set isHomepage = page.url == "/" -%}
 
 <header class="mx-[2vw] 3xl:mx-auto max-w-[2000px] px-[2vw]">
-  <nav class="global-nav py-4">  
-    <ul role="list" class="list-none flex items-center flex-row text-lg font-medium">
-      <li class="m-i-st-0 me-auto" data-home {{ 'aria-current=page' if isHomepage }}>
-        {%- if not isHomepage %}
-        <a href="/">
-        {%- endif %}
-          {% include "partials/jdw-logo.svg" %}
-        {%- if not isHomepage %}
-        </a>
-        {%- endif %}
-      </li>
+  <nav class="global-nav flex py-4">
+    <div class="ms-0 me-auto" data-home {{ 'aria-current=page' if isHomepage }}>
+      {%- if isHomepage %}
+        {% include "partials/jdw-logo.svg" %}
+      {%- else  %}
+        <a href="/">{% include "partials/jdw-logo.svg" %}</a>
+      {%- endif %}
+    </div>
+    <ul class="flex flex-col sm:flex-row max-sm:items-end sm:items-center text-slate-400  text-lg  font-medium max-sm:divide-y max-sm:divide-slate-600  list-none" role="list">
       {% for item in site.navigation %}
-        <li class="px-6" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+        <li class="px-8 max-sm:py-3" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
           {%- if item.url != page.url %}
             <a href="{{ item.url }}">
-          {%- endif %}
-          {{ item.label }}
-          {%- if item.url != page.url %}
+            {%- endif %}
+            {{ item.label }}
+            {%- if item.url != page.url %}
             </a>
           {%- endif %}
         </li>
