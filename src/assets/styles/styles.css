@@ -9,10 +9,10 @@
   /* https://gist.github.com/palashmon/35bda7887eb4bc45459d71eca3dda7a5 */
 
   :root {
-    --color-waves-first: theme('colors.blue.800');
-    --color-waves-second: theme('colors.blue.600');
-    --color-waves-third: theme('colors.blue.500');
-    --color-waves-fourth: theme('colors.blue.400');
+    --color-waves-first: theme("colors.blue.800");
+    --color-waves-second: theme("colors.blue.600");
+    --color-waves-third: theme("colors.blue.500");
+    --color-waves-fourth: theme("colors.blue.400");
   }
 
   /* Box sizing rules */
@@ -45,8 +45,8 @@
   }
 
   /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-  ul[role='list'],
-  ol[role='list'] {
+  ul[role="list"],
+  ol[role="list"] {
     list-style: none;
   }
 
@@ -124,14 +124,14 @@
 @layer components {
   /* LOGO */
   .home .jandw-logo path {
-    stroke: theme('colors.teal.500');
+    stroke: theme("colors.teal.500");
     stroke-width: 12px;
   }
 
   /* HERO CSS */
   .hero {
     display: grid;
-    grid-template-areas: 'hero';
+    grid-template-areas: "hero";
     isolation: isolate;
   }
 
@@ -146,15 +146,15 @@
   }
 
   .hero__image::after {
-    background: radial-gradient(transparent, theme('colors.slate.900') 90%),
+    background: radial-gradient(transparent, theme("colors.slate.900") 90%),
       linear-gradient(
         to bottom,
-        theme('colors.slate.900'),
+        theme("colors.slate.900"),
         transparent 30%,
         transparent 70%,
-        theme('colors.slate.900') 100%
+        theme("colors.slate.900") 100%
       );
-    content: '';
+    content: "";
     inset: 0;
     pointer-events: none;
     position: absolute;
@@ -188,7 +188,7 @@
   .table__caption {
     caption-side: bottom;
     color: #718096;
-    color: theme('colors.slate.500');
+    color: theme("colors.slate.500");
     font-style: italic;
     padding-bottom: 1.5rem;
     padding-top: 1rem;
@@ -197,7 +197,7 @@
 
   .table__header-row {
     background-color: #2a4365;
-    background-color: theme('colors.slate.800');
+    background-color: theme("colors.slate.800");
     text-align: left;
   }
 
@@ -215,7 +215,7 @@
 
   .table__body-row--dark {
     background-color: rgba(26, 32, 44, 0.25);
-    background-color: theme('colors.slate.900');
+    background-color: theme("colors.slate.900");
   }
 
   .table__body-row--light {
@@ -232,27 +232,45 @@
 
   /* GLOBAL NAV */
 
-  .global-nav [aria-current='page']:not([data-home]) {
-    color: theme('colors.slate.100');
+  .global-nav [aria-current="page"]:not([data-home]) {
+    color: theme("colors.slate.100");
   }
 
   /* TO TOP LINK */
 
   .to-top-link {
-    background: theme('colors.slate.950');
+    background: theme("colors.slate.950");
     border-radius: 9999px;
     bottom: 1rem;
-    color: theme('colors.slate.200');
-    font-size: theme('fontSize.xl');
+    color: theme("colors.slate.200");
+    font-size: theme("fontSize.xl");
     left: 1rem;
     margin-top: 110vh;
     padding: 10px;
     position: sticky;
   }
+  /* REEL */
+
+  /* @media (width < theme("screens.xl")) { */
+  .reel {
+    display: grid;
+    gap: 1rem;
+    grid-auto-columns: 85%;
+    grid-auto-flow: column;
+    overflow-x: scroll;
+    padding: 1rem;
+    scroll-padding: 1rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .reel > * {
+    scroll-snap-align: start;
+  }
+  /* } */
 }
 
 @layer utilities {
   .font-inter {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
 }

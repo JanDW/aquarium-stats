@@ -21,6 +21,7 @@
   - [Add a minifier](https://www.11ty.dev/docs/quicktips/inline-js/)
 
 - Move keys for notion data to a centralized spot (one source of truth)
+- Mark current date in calendars (add [aria-current](https://css-tricks.com/making-calendars-with-accessibility-and-internationalization-in-mind/#comment-1803217))
 
 ### Someday
 
