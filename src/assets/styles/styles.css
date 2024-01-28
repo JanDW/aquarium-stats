@@ -255,7 +255,7 @@
   .reel {
     display: grid;
     gap: 1rem;
-    grid-auto-columns: 85%;
+    grid-auto-columns: 90%;
     grid-auto-flow: column;
     overflow-x: scroll;
     padding: 1rem;
