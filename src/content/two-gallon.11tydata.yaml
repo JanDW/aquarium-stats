@@ -62,7 +62,7 @@ inhabitants:
   - name: Bladder Snails
     emoji: 🐌
     species: Bladder snail
-    dateNew: 2024-02-03
+    dateNew: 2023-12-17
 calendar:
   waterChange:
     parameter: "waterChange"
