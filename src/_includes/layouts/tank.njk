@@ -45,7 +45,7 @@
 
   {%- if tankData %}
     <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px]">
-      <div class="xl:grid xl:grid-cols-2 xl:gap-8">
+      <div class="max-xl:reel xl:grid xl:grid-cols-2 xl:gap-8">
         {%- block calendars %}
           {{ macros.calendar(calendar.waterChange, calendarTankData) }}
           {{ macros.calendar(calendar.prime, calendarTankData) }}

@@ -153,9 +153,9 @@
 {%- endmacro %}
 
 {%- macro calendar(s,data) %}
-  <div id="calendar-{{ s.parameter }}" class="mt-4">
-    <h2 class="font-bold mb-2 mx-4 flex items-center md:justify-center">
-      <span class="text-4xl">{{ s.emoji }}</span><span class="text-xl ml-2">{{ s.title }}</span></h2>
+  <div id="calendar-{{ s.parameter }}" class="xl:mt-4">
+    <h2 class="font-bold mb-2 mx-4 flex items-center md:justify-center whitespace-nowrap overflow-x-hidden text-ellipsis">
+      <span class="text-2x md:text-3xl lg:text-4xl">{{ s.emoji }}</span><span class="text-xl ml-2">{{ s.title }}</span></h2>
     <div class="md:grid md:grid-cols-2 md:gap-0">
       {# {{ data[0].days[0] | dump }} #}
       {%- for month in data | reverse %}

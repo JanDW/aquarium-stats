@@ -251,7 +251,6 @@
   }
   /* REEL */
 
-  /* @media (width < theme("screens.xl")) { */
   .reel {
     display: grid;
     gap: 1rem;
@@ -264,9 +263,15 @@
   }
 
   .reel > * {
-    scroll-snap-align: start;
+    scroll-snap-align: center;
   }
-  /* } */
+}
+
+.text-clamp {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--lines, 3);
+  overflow: hidden;
 }
 
 @layer utilities {
