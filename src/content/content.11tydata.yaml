@@ -1,0 +1,34 @@
+species:
+  - name: Harlequin Rasbora
+    binomial: Trigonostigma heteromorpha
+    infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
+    imgSrc: /assets/img/lodge-harlequin-rasbora.jpg
+  - name: Nerite Snail
+    binomial: Neritina natalensis Zebra
+    infoLink: https://en.wikipedia.org/wiki/Vittina_natalensis
+    imgSrc: /assets/img/lodge-zebra-nerite.jpeg
+  - name: Otocinclus
+    binomial: Otocinclus vittatus
+    infoLink: https://en.wikipedia.org/wiki/Otocinclus_vittatus
+    imgSrc: /assets/img/lodge-otocinclus.jpg
+  - name: Amano Shrimp
+    binomial: Caridina multidentata
+    infoLink: https://en.wikipedia.org/wiki/Amano_shrimp
+    imgSrc: /assets/img/lodge-amano-shrimp.jpg
+  - name: Veiltail Betta
+    binomial: Betta splendens
+    infoLink: https://en.wikipedia.org/wiki/Siamese_fighting_fish
+    imgSrc: /assets/img/lodge-blue-veiltail-betta.jpg
+  - name: Bladder snail
+    emoji: 🐌
+    binomial: Physella acuta
+    infoLink: https://en.wikipedia.org/wiki/Physella_acuta
+    imgSrc: /assets/img/lodge-bladder-snail.jpg
+  - name: Red Cherry shrimp
+    binomial: Neocaridina davidi "Red Cherry"
+    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
+    imgSrc: /assets/img/lodge-red-cherry-neocaridina.jpg
+  - name: Orange shrimp
+    binomial: Neocaridina davidi "Orange"
+    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
+    imgSrc: /assets/img/lodge-pumpkin-neocaridina.jpg

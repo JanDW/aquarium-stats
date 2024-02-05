@@ -48,15 +48,14 @@ inhabitants:
     emoji: 🥭
     species: Harlequin Rasbora
     dateNew: 2024-01-15
-species:
-  - name: Harlequin Rasbora
-    binomial: Trigonostigma heteromorpha
-    infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
-    imgSrc: /assets/img/lodge-harlequin-rasbora.jpg
-  - name: Nerite Snail
-    binomial: Neritina natalensis Zebra
-    infoLink: https://en.wikipedia.org/wiki/Vittina_natalensis
-    imgSrc: /assets/img/lodge-zebra-nerite.jpeg
+  - name: Parmesan
+    emoji: 🧀
+    species: Otocinclus
+    dateNew: 2024-02-03
+  - name: Ravioli
+    emoji: 🍝
+    species: Otocinclus
+    dateNew: 2024-02-03
 calendar:
   waterChange:
     parameter: "waterChange"

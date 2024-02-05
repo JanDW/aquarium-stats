@@ -43,20 +43,26 @@ inhabitants:
     emoji: 🍒
     species: Red Cherry shrimp
     dateNew: 2024-01-15
-species:
-  - name: Bladder snail
+  - name: Tulip
+    emoji: 🌷
+    species: Red Cherry shrimp
+    dateNew: 2024-02-03
+  - name: Scarlet
+    emoji: 💃🏽
+    species: Red Cherry shrimp
+    dateNew: 2024-02-03
+  - name: Begonia
+    emoji: 🌺
+    species: Red Cherry shrimp
+    dateNew: 2024-02-03
+  - name: Lemon
+    emoji: 🍋
+    species: Amano Shrimp
+    dateNew: 2024-02-03
+  - name: Bladder Snails
     emoji: 🐌
-    binomial: Physella acuta
-    infoLink: https://en.wikipedia.org/wiki/Physella_acuta
-    imgSrc: /assets/img/lodge-bladder-snail.jpg
-  - name: Red Cherry shrimp
-    binomial: Neocaridina davidi "Red Cherry"
-    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
-    imgSrc: /assets/img/lodge-red-cherry-neocaridina.jpg
-  - name: Orange shrimp
-    binomial: Neocaridina davidi "Orange"
-    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
-    imgSrc: /assets/img/lodge-pumpkin-neocaridina.jpg
+    species: Bladder snail
+    dateNew: 2024-02-03
 calendar:
   waterChange:
     parameter: "waterChange"
