@@ -44,7 +44,7 @@
   {# ↓ This block should only exist when there is data, override block should just be the graphs #}
 
   {%- if tankData %}
-    <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px]">
+    <section class="xl:mx-[2vw] 3xl:mx-auto max-w-[2000px]">
       <div class="max-xl:reel xl:grid xl:grid-cols-2 xl:gap-8">
         {%- block calendars %}
           {{ macros.calendar(calendar.waterChange, calendarTankData) }}
