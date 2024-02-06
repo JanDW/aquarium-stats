@@ -3,32 +3,80 @@ species:
     binomial: Trigonostigma heteromorpha
     infoLink: https://en.wikipedia.org/wiki/Harlequin_rasbora
     imgSrc: /assets/img/lodge-harlequin-rasbora.jpg
+    size: 2"
+    ph: 6.0-7.8
+    temp: 72-81
+    kh: 1-12
+    gh: 2-15
+    diet: omnivore
   - name: Nerite Snail
     binomial: Neritina natalensis Zebra
     infoLink: https://en.wikipedia.org/wiki/Vittina_natalensis
     imgSrc: /assets/img/lodge-zebra-nerite.jpeg
+    size: 1"
+    ph: 7.5-8.5
+    temp: 72-78
+    kh: 5-12
+    gh: 8-12
+    diet: algae eater
   - name: Otocinclus
     binomial: Otocinclus vittatus
     infoLink: https://en.wikipedia.org/wiki/Otocinclus_vittatus
     imgSrc: /assets/img/lodge-otocinclus.jpg
+    size: 2"
+    ph: 6.5-7.5
+    temp: 72-79
+    kh: 3-8
+    gh: 3-10
+    diet: algae eater
   - name: Amano Shrimp
     binomial: Caridina multidentata
     infoLink: https://en.wikipedia.org/wiki/Amano_shrimp
     imgSrc: /assets/img/lodge-amano-shrimp.jpg
+    size: 2"
+    ph: 6.5-7.5
+    temp: 72-78
+    kh: 2-5
+    gh: 6-8
+    diet: algae eater
   - name: Veiltail Betta
     binomial: Betta splendens
     infoLink: https://en.wikipedia.org/wiki/Siamese_fighting_fish
     imgSrc: /assets/img/lodge-blue-veiltail-betta.jpg
+    size: 2.5"
+    ph: 6.0-8.0
+    temp: 75-80
+    kh: 3-8
+    gh: 3-15
+    diet: insectivore
   - name: Bladder snail
     emoji: 🐌
     binomial: Physella acuta
     infoLink: https://en.wikipedia.org/wiki/Physella_acuta
     imgSrc: /assets/img/lodge-bladder-snail.jpg
+    size: 1"
+    ph: 7.0-8.0
+    temp: 70-78
+    kh: 3-8
+    gh: 3-15
+    diet: algae eater
   - name: Red Cherry shrimp
     binomial: Neocaridina davidi "Red Cherry"
     infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
     imgSrc: /assets/img/lodge-red-cherry-neocaridina.jpg
+    size: 1.5"
+    ph: 6.5-8.0
+    temp: 65-85
+    kh: 3-10
+    gh: 4-14
+    diet: algae eater
   - name: Orange shrimp
     binomial: Neocaridina davidi "Orange"
     infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
     imgSrc: /assets/img/lodge-pumpkin-neocaridina.jpg
+    size: 1.5"
+    ph: 6.5-8.0
+    temp: 65-85
+    kh: 3-10
+    gh: 4-14
+    diet: algae eater
