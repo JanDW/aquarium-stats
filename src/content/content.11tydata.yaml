@@ -80,3 +80,38 @@ species:
     kh: 3-10
     gh: 4-14
     diet: algae eater
+plantSpecies:
+  - name: Java Moss
+    binomial: Taxiphyllum barbieri
+    infoLink: https://en.wikipedia.org/wiki/Taxiphyllum_barbieri
+    imgSrc: /assets/img/lodge-java-moss.jpg
+  - name: Giant Baby Tears
+    otherNames: Shade Mudflower
+    binomial: Micranthemum Umbrosom
+    infoLink: https://plants.usda.gov/home/plantProfile?symbol=MIUM
+    imgSrc: /assets/img/plant-giant-baby-tears.jpg
+    imgAlt: Giant Baby Tears
+    imgOriginalSrc: https://www.forestryimages.org/browse/detail.cfm?imgnum=5563751
+    imgAuthor: Shaun Winterton
+    imgAuthorLink: https://www.forestryimages.org/browse/autimages.cfm?aut=29470
+  - name: Water Hyssop
+    binomial: Bacopa Carolina
+    infoLink: https://en.wikipedia.org/wiki/Bacopa_caroliniana
+    imgSrc: /assets/img/plant-water-hyssop.jpg
+  - name: Hygro Blue
+    binomial: Hygrophila Salicifolia
+    infoLink: https://flipaquatics.com/products/hygrophila-salicifolia-blue-hygro
+    imgSrc: /assets/img/plant-hygro-blue.jpg
+  - name: Willow Hygro
+    binomial: Hygrophila Corymbosa "Augustifolia"
+    infoLink: https://en.wikipedia.org/wiki/Hygrophila_corymbosa
+    imgSrc: /assets/img/plant-willow-hygro.jpg
+  - name: Lloydiella
+    otherNames: Creeping Jenny
+    binomial: Lysimachia Nummularia Sp
+    infoLink: https://en.wikipedia.org/wiki/Lysimachia_nummularia
+    imgSrc: /assets/img/plant-lloydiella.jpg
+  - name: Brazilian Pennywort
+    binomial: Hydrocotyle leucocephala
+    infoLink: https://en.wikipedia.org/wiki/Hydrocotyle_leucocephala
+    imgSrc: /assets/img/plant-brazilian-pennywort.jpg
