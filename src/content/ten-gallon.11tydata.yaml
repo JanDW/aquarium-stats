@@ -56,6 +56,10 @@ inhabitants:
     emoji: 🍝
     species: Otocinclus
     dateNew: 2024-02-03
+  - name: George Lightning & Friends
+    emoji: 🐌
+    species: Bladder snail
+    dateNew: 2023-11-13
 calendar:
   waterChange:
     parameter: "waterChange"
