@@ -115,3 +115,20 @@ plantSpecies:
     binomial: Hydrocotyle leucocephala
     infoLink: https://en.wikipedia.org/wiki/Hydrocotyle_leucocephala
     imgSrc: /assets/img/plant-brazilian-pennywort.jpg
+wishlist:
+  - name: Thai Micro Crabs
+    url: https://flipaquatics.com/products/5-thai-micro-crabs
+  - name: Japanese Rice Fish
+    url: https://aquariumstoredepot.com/blogs/news/japanese-rice-fish
+  - name: Ember Tetra
+    url: https://en.wikipedia.org/wiki/Ember_tetra
+  - name: Celestial Pearl Danio
+    url: https://en.wikipedia.org/wiki/Danio_margaritatus
+  - name: Pygmy Corydoras
+    url: https://en.wikipedia.org/wiki/Pygmy_corydoras
+  - name: Otocinclus
+    url: https://en.wikipedia.org/wiki/Otocinclus_vittatus
+  - name: African Dwarf Frog
+    url: https://en.wikipedia.org/wiki/Hymenochirus_boettgeri
+  - name: Mexican Dwarf Crayfish
+    url: https://en.wikipedia.org/wiki/Cambarellus_patzcuarensis
