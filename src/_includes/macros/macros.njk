@@ -235,7 +235,7 @@
   {%- for key, value in data %}
     <li class="flex sm:flex-col max-sm:gap-x-8 p-5 text-center bg-emerald-950 sm:pt-12 sm:pb-10 rounded-2xl max-sm:items-center">
       <div class="whitespace-nowrap max-sm:flex md:flex items-center justify-center sm:mt-3">
-        <div class="font-semibold tracking-tight text-cyan-400 text-4xl sm:text-6xl">{{ value.value }}</div>
+        <div class="font-bold sm:font-extrabold tracking-tight text-cyan-400 text-4xl sm:text-6xl">{{ value.value }}</div>
         {%- if key == 'gh' or key == 'kh' %}
           {%- set unit = 'dKH' %}
         {%- elif key == 'ph' %}
@@ -245,8 +245,8 @@
         {%- endif %}
         <div class="text-cyan-500 text-lg font-medium max-sm:ml-3 md:ml-3">{{ unit | safe }}</div>
       </div>
-      <div class="text-orange-200 text-xl font-bold tracking-wider md:tracking-widest font-medium sm:mt-6 uppercase font-mono max-sm:ml-auto">{{ key }}</div>
-      <div class="font-mono text-orange-200/60 text-xl font-base">{{ value.date | shortDate }}</div>
+      <div class="text-orange-200 text-xl font-bold tracking-wider md:tracking-widest font-medium sm:mt-6 uppercase max-sm:ml-auto">{{ key }}</div>
+      <div class="text-orange-200/60 text-xl font-base mt-1">{{ value.date | shortDate }}</div>
     </li>
   {%- endfor %}
 </ul>
