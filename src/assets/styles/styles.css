@@ -54,6 +54,7 @@
   body {
     line-height: 1.5;
     min-height: 100vh;
+    overflow-x: hidden;
   }
 
   /* Set shorter line heights on headings and interactive elements */
