@@ -6,10 +6,10 @@
     {% endblock %}
   </head>
   <body {% if bodyClasses %}class="{{ bodyClasses }}"{%- endif -%}>
+    <a href="#main" id="skip-link">Skip to main content <span aria-hidden>↓</span></a>
     {% block global_nav %}
       {% include 'global-nav.njk' %}
     {% endblock %}
-    {%- block header %}{%- endblock %}
     <main id="main" class="{{ mainClasses }}">
       {%- block main %}{%- endblock %}
     </main>
