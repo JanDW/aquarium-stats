@@ -10,11 +10,11 @@
   const fullData = {{ tankData | reverse | dump | safe }};
 {% endjs %}
 
-{%- block header %}
-  {% include 'hero-header.njk' %}
-{%- endblock %}
-
 {%- block main %}
+
+  {%- block header %}
+    {% include 'hero-header.njk' %}
+  {%- endblock %}
 
   {%- block recentData %}
     {%- if recentTankData  %}
