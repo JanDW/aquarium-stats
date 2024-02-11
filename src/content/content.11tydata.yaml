@@ -60,7 +60,7 @@ species:
     kh: 3-8
     gh: 3-15
     diet: algae eater
-  - name: Red Cherry shrimp
+  - name: Red Cherry Shrimp
     binomial: Neocaridina davidi "Red Cherry"
     infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
     imgSrc: /assets/img/lodge-red-cherry-neocaridina.jpg
@@ -70,7 +70,7 @@ species:
     kh: 3-10
     gh: 4-14
     diet: algae eater
-  - name: Orange shrimp
+  - name: Orange Pumpkin Shrimp
     binomial: Neocaridina davidi "Orange"
     infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
     imgSrc: /assets/img/lodge-pumpkin-neocaridina.jpg
@@ -132,3 +132,7 @@ wishlist:
     url: https://en.wikipedia.org/wiki/Hymenochirus_boettgeri
   - name: Mexican Dwarf Crayfish
     url: https://en.wikipedia.org/wiki/Cambarellus_patzcuarensis
+  - name: Vampire Shrimp
+    url: https://en.wikipedia.org/wiki/Atya_gabonensis
+  - name: Dwarf Chain Loach
+    url: https://en.wikipedia.org/wiki/Dwarf_loach

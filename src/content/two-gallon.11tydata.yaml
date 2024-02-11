@@ -25,44 +25,49 @@ plants: unknown
 inhabitants:
   - name: Zinnia
     emoji: 🌼
-    species: Orange shrimp
+    species: Orange Pumpkin Shrimp
     dateNew: 2023-12-17
   - name: Dahlia
     emoji: 🌼
-    species: Red Cherry shrimp
+    species: Red Cherry Shrimp
     dateNew: 2024-01-15
   - name: Poppy
     emoji: 🥀
-    species: Red Cherry shrimp
+    species: Red Cherry Shrimp
     dateNew: 2024-01-15
   - name: Rose
     emoji: 🌹
-    species: Red Cherry shrimp
+    species: Red Cherry Shrimp
     dateNew: 2024-01-15
   - name: Cherry
     emoji: 🍒
-    species: Red Cherry shrimp
+    species: Red Cherry Shrimp
     dateNew: 2024-01-15
   - name: Tulip
     emoji: 🌷
-    species: Red Cherry shrimp
+    species: Red Cherry Shrimp
     dateNew: 2024-02-03
   - name: Scarlet
     emoji: 💃🏽
-    species: Red Cherry shrimp
+    species: Red Cherry Shrimp
     dateNew: 2024-02-03
   - name: Begonia
     emoji: 🌺
-    species: Red Cherry shrimp
+    species: Red Cherry Shrimp
     dateNew: 2024-02-03
   - name: Lemon
     emoji: 🍋
     species: Amano Shrimp
     dateNew: 2024-02-03
+  - name: Lime
+    emoji: 🍈
+    species: Amano Shrimp
+    dateNew: 2024-02-09
   - name: Bladder Snails
     emoji: 🐌
     species: Bladder snail
     dateNew: 2023-12-17
+
 calendar:
   waterChange:
     parameter: "waterChange"
