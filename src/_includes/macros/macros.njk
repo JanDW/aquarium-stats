@@ -8,6 +8,9 @@
       // Limit to last 30 items
       // data = data.slice(-30);
       const labels = data.map(item => {
+        if (item.date === null) {
+          return;
+        }
         const [year, month, day] = item
           .date
           .split('-')
