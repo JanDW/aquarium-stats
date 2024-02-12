@@ -48,32 +48,24 @@ inhabitants:
     emoji: 🥭
     species: Harlequin Rasbora
     dateNew: 2024-01-15
-  - name: Parmesan
-    emoji: 🧀
-    species: Otocinclus
-    dateNew: 2024-02-03
-  - name: Ravioli
-    emoji: 🍝
-    species: Otocinclus
-    dateNew: 2024-02-03
-  - name: Tortellini
+  - name: Rigatoni
     emoji: 🍝
     species: Otocinclus
     dateNew: 2024-02-09
-  - name: Fettuccine
-    emoji: 🍝
+  - name: Mozzarella
+    emoji: 🧀
     species: Otocinclus
     dateNew: 2024-02-09
   - name: Satsuma
     emoji: 🍊
     species: Amano Shrimp
     dateNew: 2024-02-09
-  - name: Clementine
+  - name: Grapefruit
     emoji: 🍊
     species: Amano Shrimp
     dateNew: 2024-02-09
-  - name: Tangerine
-    emoji: 🍊
+  - name: Citron
+    emoji: 🍋
     species: Amano Shrimp
     dateNew: 2024-02-09
   - name: George Lightning & Friends
