@@ -25,14 +25,6 @@ inhabitants:
     emoji: 🏛️
     species: Nerite Snail
     dateNew: 2023-12-17
-  - name: Parmesan
-    emoji: 🧀
-    species: Otocinclus
-    dateNew: 2024-02-03
-  - name: Ravioli
-    emoji: 🍝
-    species: Otocinclus
-    dateNew: 2024-02-03
 calendar:
   waterChange:
     parameter: "waterChange"
