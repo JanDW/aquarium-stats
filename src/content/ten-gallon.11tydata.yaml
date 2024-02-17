@@ -52,6 +52,15 @@ inhabitants:
     emoji: 🍝
     species: Otocinclus
     dateNew: 2024-02-09
+    dateDied: 2024-02-13
+  - name: Parmesan
+    emoji: 🧀
+    species: Otocinclus
+    dateNew: 2024-02-03
+  - name: Ravioli
+    emoji: 🍝
+    species: Otocinclus
+    dateNew: 2024-02-03
   - name: Mozzarella
     emoji: 🧀
     species: Otocinclus
