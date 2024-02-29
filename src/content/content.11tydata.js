@@ -3,7 +3,7 @@ module.exports = {
   mainClasses: 'main-grid',
   eleventyComputed: {
     socialImg: (data) => {
-      return data.hero.image;
+      return data.hero?.image || null;
     },
   },
 };
