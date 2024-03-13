@@ -276,7 +276,6 @@
     grid-auto-columns: 90%;
     grid-auto-flow: column;
     overflow-x: scroll;
-    overscroll-behavior: contain;
     padding: 1rem;
     scroll-padding: 1rem;
     scroll-snap-type: x mandatory;
