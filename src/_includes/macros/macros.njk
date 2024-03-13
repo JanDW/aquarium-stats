@@ -174,8 +174,13 @@
               <!-- {{ month.year }}-->
             </caption>
             <thead>
-              {%- set isSrOnly = 'max-md:sr-only' if loop.index == 2 %}
-              <tr class="lg:bg-[{{ s.theme.bgHeadColor }}]">
+              {%- if loop.index == 1 %}
+                {%- set rowBgColorClass = s.theme.bgHeadColor %}
+              {%- else %}
+                {%- set rowBgColorClass = s.theme.bgSecondHeadColor %}
+                {%- set isSrOnly = 'max-md:sr-only' %}
+              {%- endif %}
+              <tr class="{{ rowBgColorClass }} {{ lgRowBgColorClass }}">
                 <th scope="col" class="px-2 py-2 font-medium relative">
                   <span class="{{ isSrOnly }}">Mo</span></th>
                 <th scope="col" class="px-2 py-2 font-medium relative">
