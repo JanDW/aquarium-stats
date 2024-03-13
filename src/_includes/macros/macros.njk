@@ -156,7 +156,7 @@
 {%- endmacro %}
 
 {%- macro calendar(s,data) %}
-  <div id="calendar-{{ s.parameter }}" class="xl:mt-4">
+  <div id="calendar-{{ s.parameter }}">
     <h2 class="font-bold mb-2 mx-4 flex items-center md:justify-center">
       <span class="text-2x md:text-3xl lg:text-4xl">{{ s.emoji }}</span><span class="text-xl ml-2 whitespace-nowrap overflow-x-hidden text-ellipsis" title="{{ s.title }}">{{ s.title }}</span></h2>
     <div class="md:grid md:grid-cols-2 md:gap-0">
@@ -173,15 +173,23 @@
 
               <!-- {{ month.year }}-->
             </caption>
-            <thead class="{{ 'max-md:sr-only' if loop.index == 2 }}">
-              <tr class="{{ s.theme.bgHeadColor }}">
-                <th scope="col" class="px-2 py-2 font-medium">Mo</th>
-                <th scope="col" class="px-2 py-2 font-medium">Tu</th>
-                <th scope="col" class="px-2 py-2 font-medium">We</th>
-                <th scope="col" class="px-2 py-2 font-medium">Th</th>
-                <th scope="col" class="px-2 py-2 font-medium">Fr</th>
-                <th scope="col" class="px-2 py-2 font-medium">Sa</th>
-                <th scope="col" class="px-2 py-2 font-medium">Su</th>
+            <thead>
+              {%- set isSrOnly = 'max-md:sr-only' if loop.index == 2 %}
+              <tr class="lg:bg-[{{ s.theme.bgHeadColor }}]">
+                <th scope="col" class="px-2 py-2 font-medium relative">
+                  <span class="{{ isSrOnly }}">Mo</span></th>
+                <th scope="col" class="px-2 py-2 font-medium relative">
+                  <span class="{{ isSrOnly }}">Tu</span></th>
+                <th scope="col" class="px-2 py-2 font-medium relative">
+                  <span class="{{ isSrOnly }}">We</span></th>
+                <th scope="col" class="px-2 py-2 font-medium relative">
+                  <span class="{{ isSrOnly }}">Th</span></th>
+                <th scope="col" class="px-2 py-2 font-medium relative">
+                  <span class="{{ isSrOnly }}">Fr</span></th>
+                <th scope="col" class="px-2 py-2 font-medium relative">
+                  <span class="{{ isSrOnly }}">Sa</span></th>
+                <th scope="col" class="px-2 py-2 font-medium relative">
+                  <span class="{{ isSrOnly }}">Su</span></th>
               </tr>
             </thead>
             <tbody class="{{ s.theme.textColor }} {{ s.theme.bgCaptionColor }}">
