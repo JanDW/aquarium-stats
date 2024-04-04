@@ -2,8 +2,9 @@
 
 {%- block calendars %}
   {{ macros.calendar(calendar.waterChange, twoGallonCalendarData) }}
-  {{ macros.calendar(calendar.stability, twoGallonCalendarData) }}
+  {# {{ macros.calendar(calendar.stability, twoGallonCalendarData) }} #}
   {{ macros.calendar(calendar.fertilizer, twoGallonCalendarData) }}
   {{ macros.calendar(calendar.co2, twoGallonCalendarData) }}
+  {{ macros.calendar(calendar.crushedCoral, calendarTankData) }}
   {{ macros.calendar(calendar.culture, twoGallonCalendarData) }}
 {%- endblock %}

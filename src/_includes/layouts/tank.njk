@@ -48,13 +48,13 @@
       <div class="xl:grid xl:grid-cols-2 xl:gap-8 xl:mt-4 max-xl:reel">
         {%- block calendars %}
           {{ macros.calendar(calendar.waterChange, calendarTankData) }}
-          {{ macros.calendar(calendar.prime, calendarTankData) }}
-          {{ macros.calendar(calendar.stability, calendarTankData) }}
+          {# {{ macros.calendar(calendar.prime, calendarTankData) }} #}
+          {# {{ macros.calendar(calendar.stability, calendarTankData) }} #}
           {{ macros.calendar(calendar.spongeClean, calendarTankData) }}
           {{ macros.calendar(calendar.fertilizer, calendarTankData) }}
           {{ macros.calendar(calendar.co2, calendarTankData) }}
           {{ macros.calendar(calendar.crushedCoral, calendarTankData) }}
-          {{ macros.calendar(calendar.bakingSoda, calendarTankData) }}
+          {# {{ macros.calendar(calendar.bakingSoda, calendarTankData) }} #}
           {{ macros.calendar(calendar.culture, calendarTankData) }}
         {%- endblock %}
       </div>
@@ -72,7 +72,7 @@
         The inhabitants
       </h2>
       {%- if inhabitants %}
-        <ul class="mt-12 grid md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 gap-y-6">
+        <ul class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-6">
           {%- for inhabitant in inhabitants %}
             {%- set inhabitantSpecies = {} %}
             {%- for specie in species %}
