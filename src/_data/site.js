@@ -12,6 +12,7 @@ module.exports = {
     { label: '10 gallon', url: '/' },
     { label: '5 gallon', url: '/five-gallon/' },
     { label: '2 gallon', url: '/two-gallon/' },
+    // { label: 'Journal', url: '/journal/' },
   ],
   footerNavigation: [
     { label: 'jandewil.de', url: 'https://jandewil.de/' },
