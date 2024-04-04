@@ -17,19 +17,20 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^3.1.8",
+    "@11ty/eleventy-img": "^4.0.2",
     "@11ty/eleventy-plugin-bundle": "^1.0.5",
     "@notionhq/client": "^2.2.14",
     "@tailwindcss/typography": "^0.5.10",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.4.5",
     "js-yaml": "^4.1.0",
-    "prettier": "3.2.4",
-    "prettier-plugin-tailwindcss": "^0.5.11",
-    "tailwindcss": "^3.3.6"
+    "outdent": "^0.8.0",
+    "prettier": "3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "tailwindcss": "^3.4.1"
   },
   "dependencies": {
     "@11ty/is-land": "^4.0.0",
     "@zachleat/snow-fall": "^1.0.2",
-    "chart.js": "^4.4.1"
+    "chart.js": "^4.4.2"
   }
 }
