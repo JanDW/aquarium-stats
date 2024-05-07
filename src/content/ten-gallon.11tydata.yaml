@@ -11,6 +11,7 @@ hero:
   imageHeight: 1215
   imageLink: https://www.flickr.com/photos/petermaguire/36854341215
   author: Peter Maguire
+  permission: true
   authorLink: https://www.flickr.com/photos/petermaguire/
   title: '10 Gallon <span class="whitespace-nowrap">T<span class="-ml-3">ank.</span></span>'
   titleColor: text-[aqua]
@@ -83,10 +84,10 @@ inhabitants:
     dateNew: 2023-11-13
 calendar:
   co2:
-    title: "Added API CO₂ Booster (1ml)"
+    title: 'Added API CO₂ Booster (1ml)'
   fertilizer:
-    title: "Added API Leaf Zone (5ml)"
+    title: 'Added API Leaf Zone (5ml)'
   stability:
-    title: "Added Seachem Stability (2.5ml)"
+    title: 'Added Seachem Stability (2.5ml)'
   culture:
-    title: "Added Resurrection Jar Culture (3ml)"
+    title: 'Added Resurrection Jar Culture (3ml)'

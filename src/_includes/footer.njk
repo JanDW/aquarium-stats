@@ -11,11 +11,14 @@
       </p>
       <p>Hosted on <a href="https://netlify.com/" class="text-blue-400 hover:text-blue-500">Netlify</a>. Data is refreshed daily.</p>
       {%- if hero.author and hero.authorLink %}
-      <p class="mb-6">
-        <a href="{{hero.imageLink}}" class="text-blue-400 hover:text-blue-500">Hero image</a> by <a href="{{hero.authorLink}}" class="text-blue-400 hover:text-blue-500">{{hero.author}}</a>.
-      </p>  
+        <p class="mb-6">
+          <a href="{{hero.imageLink}}" class="text-blue-400 hover:text-blue-500">Hero image</a> by <a href="{{hero.authorLink}}" class="text-blue-400 hover:text-blue-500">{{hero.author}}</a>.
+        {%- if hero.permission %}
+          Used with permission.
+        {%- endif %}
+        </p>
       {%- endif %}
-      <p class="mb-4">Cats on the internet are so passé. This site is Web 1.0 compatible.</p>
+      <p class="mb-4">Cats on the internet are so passé.</p>
       <p class="mt-16 mb-8">&copy; <time datetime="{{ site.currentYear }}">{{ site.currentYear }}</time> · <a href="https://jandewil.de" class="text-blue-400 hover:text-blue-500">Jan De Wilde</a> · I'm <a href="mailto:hi@jandewil.de?subject=Hello" class="underline">available for projects</a>.</p>
     </div>
     <div>
