@@ -2,7 +2,7 @@
 const currentYear = new Date().getFullYear();
 
 module.exports = {
-  name: 'Jan De Wilde',
+  name: 'Aquarium Stats',
   url: 'https://tanks.jandewil.de',
   email: 'hi@jandewil.de',
   tagline: 'Overkill aquarium stats tracking',
