@@ -158,7 +158,7 @@
 {%- macro calendar(s,data) %}
   <div id="calendar-{{ s.parameter }}">
     <h2 class="font-bold mb-2 mx-4 flex items-center md:justify-center">
-      <span class="text-2x md:text-3xl lg:text-4xl" aria-hidden>{{ s.emoji }}</span><span class="text-xl ml-2 whitespace-nowrap overflow-x-hidden text-ellipsis" title="{{ s.title }}">{{ s.title }}</span></h2>
+      <span class="text-2xl md:text-3xl lg:text-4xl" aria-hidden>{{ s.emoji }}</span><span class="text-xl ml-2 whitespace-nowrap overflow-x-hidden text-ellipsis" title="{{ s.title }}">{{ s.title }}</span></h2>
     <div class="md:grid md:grid-cols-2 md:gap-0">
       {# {{ data[0].days[0] | dump }} #}
       {%- for month in data | reverse %}
@@ -168,7 +168,7 @@
           {%- set borderClasses = "max-md:border-t-0 max-md:rounded-t-none md:border-l-1 md:rounded-l-none md:-ml-1 " ~ s.theme.borderColorDivider %}
         {%- endif %}
         <div class="rounded-3xl overflow-clip border-4 {{ s.theme.borderColor }} {{ borderClasses }}">
-          <table class="table-auto w-full {{ s.theme.textColor }} font-medium font-mono text-xl">
+          <table class="table-auto w-full {{ s.theme.textColor }} font-medium font-mono text-xl lg:text-lg xl:text-xl">
             <caption class="py-4 {{ 'max-md:py-0' if loop.index == 2 }} {{ s.theme.bgCaptionColor }} font-semibold font-inter text-2xl">{{ month.monthHumanReadable }}
 
               <!-- {{ month.year }}-->
