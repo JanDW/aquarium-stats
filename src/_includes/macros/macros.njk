@@ -167,7 +167,7 @@
         {%- elif loop.index == 2 %}
           {%- set borderClasses = "max-md:border-t-0 max-md:rounded-t-none md:border-l-1 md:rounded-l-none md:-ml-1 " ~ s.theme.borderColorDivider %}
         {%- endif %}
-        <div class="rounded-3xl overflow-clip border-4 {{ s.theme.borderColor }} {{ borderClasses }}">
+        <div class="rounded-3xl overflow-clip border-4 {{ s.theme.borderColor }} {{ borderClasses }} {{ s.theme.textColor }} {{ s.theme.bgCaptionColor }}">
           <table class="table-auto w-full {{ s.theme.textColor }} font-medium font-mono text-xl lg:text-lg xl:text-xl">
             <caption class="py-4 {{ 'max-md:py-0' if loop.index == 2 }} {{ s.theme.bgCaptionColor }} font-semibold font-inter text-2xl">{{ month.monthHumanReadable }}
 
@@ -197,7 +197,7 @@
                   <span class="{{ isSrOnly }}">Su</span></th>
               </tr>
             </thead>
-            <tbody class="{{ s.theme.textColor }} {{ s.theme.bgCaptionColor }}">
+            <tbody>
               {% set counter = 0 %}
               {%- for i in range(0, month.daysToSkip) %}
                 {% if counter % 7 == 0 %}
