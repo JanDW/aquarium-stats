@@ -139,6 +139,15 @@ species:
     kh: 5-12
     gh: 8-12
     diet: algae eater
+  - name: Black Racer Nerite Snail
+    binomial: Neritina pulligera
+    infoLink: https://en.wikipedia.org/wiki/Neritina_pulligera
+    imgSrc: /assets/img/lodge-black-racer-nerite.jpg
+    size: 1"
+    ph: 7-8
+    temp: 71-83
+    kh: 4-8
+    gh: 6-8
   - name: Otocinclus
     binomial: Otocinclus vittatus
     infoLink: https://en.wikipedia.org/wiki/Otocinclus_vittatus
