@@ -1,8 +1,11 @@
+# Deploy from CLI with: gh workflow run Deploy-Netlify.yml
+
 name: 'Deploy-Netlify'
 
 on:
-  schedule:
-    - cron: '0 20 * * *' # UTC, corresponds to 3pm EST
+  #schedule:
+  #  - cron: '0 20 * * *' # UTC, corresponds to 3pm EST
+  # enable manual deployment with workflow_dispatch
   workflow_dispatch:
 
 jobs:
