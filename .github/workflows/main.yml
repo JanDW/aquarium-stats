@@ -3,8 +3,8 @@
 name: 'Deploy-Netlify'
 
 on:
-  #schedule:
-  #  - cron: '0 20 * * *' # UTC, corresponds to 3pm EST
+  schedule:
+    - cron: '0 20 1 * *' # UTC, corresponds to 3pm EST on the 1st of each month
   # enable manual deployment with workflow_dispatch
   workflow_dispatch:
 
