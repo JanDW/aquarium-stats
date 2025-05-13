@@ -2,12 +2,14 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/22455ce2-177c-4815-b907-99337042c6ea/deploy-status)](https://app.netlify.com/sites/frabjous-pony-fe07ea/deploys)
 
+[![Deploy-Netlify](https://github.com/JanDW/aquarium-stats/actions/workflows/main.yml/badge.svg)](https://github.com/JanDW/aquarium-stats/actions/workflows/main.yml)
+
 
 ## Deploy
 
-⚠️ The cron job is disabled in GitHub actions, since the Notion data isn't updated very frequently at this point, I might as well intentionally trigger a build.
+⚠️ The cron job should run once a month, but will be disabled if the repo doesn't get pushed too. 
 
-A deploy can either be triggered in the mobile app, web UI, or via the CLI  with `gh workflow run Deploy-Netlify`
+Additionally, a deployment can be triggered in the mobile app, web UI, or via the CLI  with `gh workflow run Deploy-Netlify`
 
 ## Roadmap
 
