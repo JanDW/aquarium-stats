@@ -178,6 +178,39 @@ species:
     kh: 3-8
     gh: 3-15
     diet: insectivore
+  - name: Guppy var. silver tuxedo
+    binomial: Poecilia reticulata
+    infoLink: https://en.wikipedia.org/wiki/Guppy
+    imgSrc: /assets/img/lodge-guppy-silver-tux-male.jpg
+    size: 2"
+    ph: 7.0-8.0
+    temp: 72-82
+    kh: 8-12
+    gh: 8-12
+    diet: omnivore
+    sex: male
+  - name: Guppy var. cobra
+    binomial: Poecilia reticulata
+    infoLink: https://en.wikipedia.org/wiki/Guppy
+    imgSrc: /assets/img/lodge-guppy-cobra-red-male.jpg
+    size: 2"
+    ph: 7.0-8.0
+    temp: 72-82
+    kh: 8-12
+    gh: 8-12
+    diet: omnivore
+    sex: male
+  - name: Guppy var. dumbo tiger
+    binomial: Poecilia reticulata
+    infoLink: https://en.wikipedia.org/wiki/Guppy
+    imgSrc: /assets/img/lodge-guppy-dumbo-tiger-male.jpg
+    size: 2"
+    ph: 7.0-8.0
+    temp: 72-82
+    kh: 8-12
+    gh: 8-12
+    diet: omnivore
+    sex: male
   - name: Bladder snail
     emoji: 🐌
     binomial: Physella acuta
@@ -191,6 +224,16 @@ species:
     diet: algae eater
   - name: Red Cherry Shrimp
     binomial: Neocaridina davidi "Red Cherry"
+    infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
+    imgSrc: /assets/img/lodge-red-cherry-neocaridina.jpg
+    size: 1.5"
+    ph: 6.5-8.0
+    temp: 65-85
+    kh: 3-10
+    gh: 4-14
+    diet: algae eater
+  - name: Bloody Mary Shrimp
+    binomial: Neocaridina davidi "Bloody Mary"
     infoLink: https://en.wikipedia.org/wiki/Neocaridina_davidi
     imgSrc: /assets/img/lodge-red-cherry-neocaridina.jpg
     size: 1.5"
@@ -215,6 +258,7 @@ species:
     imgSrc: /assets/img/lodge-ostracod.webp
     size: 0.04"
     diet: detritivore
+    
 plantSpecies:
   - name: Java Moss
     binomial: Taxiphyllum barbieri
@@ -250,6 +294,19 @@ plantSpecies:
     binomial: Hydrocotyle leucocephala
     infoLink: https://en.wikipedia.org/wiki/Hydrocotyle_leucocephala
     imgSrc: /assets/img/plant-brazilian-pennywort.jpg
+  - name: Anubias Round Leaf
+    binomial: Anubias barteri var. Golden Coin
+    infoLink: https://en.wikncipedia.org/wiki/Anubias_barteri
+    imgSrc: /assets/img/plant-anubias-round-leaf.jpg
+  - name: Rotala Rotundifolia h'ra
+    binomial: Rotala rotundifolia
+    infoLink: https://en.wikipedia.org/wiki/Rotala_rotundifolia
+    imgSrc: /assets/img/plant-rotala-rotundifolia.jpg
+  - name: Water sprite
+    binomial: Ceratopteris siliquosa
+    infoLink: https://en.wikipedia.org/wiki/Ceratopteris_thalictroides
+    imgSrc: /assets/img/plant-ceratopteris-siliquosa.jpg
+
 wishlist:
   - name: Thai Micro Crabs
     url: https://flipaquatics.com/products/5-thai-micro-crabs

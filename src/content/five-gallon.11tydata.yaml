@@ -26,10 +26,7 @@ inhabitants:
     species: Nerite Snail
     dateNew: 2023-12-17
     dateDied: 2024-11-07
-  - name: Bear
-    emoji: 🐻
-    species: Black Racer Nerite Snail
-    dateNew: 2024-11-16
+    isDead: true
 calendar:
   co2:
     title: 'Added API CO₂ Booster (0.5ml)'

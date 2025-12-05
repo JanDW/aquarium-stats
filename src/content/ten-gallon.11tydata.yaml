@@ -17,27 +17,34 @@ hero:
   titleColor: text-[aqua]
   subtitle: A dirted, planted tank with harlequin rasboras, otocinclus, amano shrimp, and two nerite snails.
 inhabitants:
-  - name: Tiger
+  - name: Robert
+    emoji: 🤵‍♂️
+    species: Guppy var. silver tuxedo
+    dateNew: 2025-11-29
+  - name: Thierry
+    emoji: 🐍
+    species: Guppy var. cobra
+    dateNew: 2025-11-29
+  - name: Guillaume
     emoji: 🐅
-    species: Nerite Snail
-    dateNew: 2023-11-25
-  - name: Stripes
-    emoji: 🇺🇸
-    species: Nerite Snail
-    dateNew: 2023-11-25
+    species: Guppy var. dumbo tiger
+    dateNew: 2025-11-29
   - name: Pineapple
     emoji: 🍍
     species: Harlequin Rasbora
     dateNew: 2023-12-17
+    isDead: true
   - name: Coconut
     emoji: 🥥
     species: Harlequin Rasbora
     dateNew: 2023-12-17
+    isDead: true
   - name: Mango
     emoji: 🥭
     species: Harlequin Rasbora
     dateNew: 2023-12-17
     dateDied: 2024-12-01
+    isDead: true
   - name: Papaya
     emoji: 🥭
     species: Harlequin Rasbora
@@ -46,28 +53,54 @@ inhabitants:
     emoji: 🥝
     species: Harlequin Rasbora
     dateNew: 2024-01-15
+    isDead: true
   - name: Guava
     emoji: 🥭
     species: Harlequin Rasbora
     dateNew: 2024-01-15
     dateDied: 2024-10-01
+    isDead: true
+  - name: Cougar
+    emoji: 🐆
+    species: Harlequin Rasbora
+    dateNew: 2025-11-29
+  - name: Lynx
+    emoji: 🐈‍⬛
+    species: Harlequin Rasbora
+    dateNew: 2025-11-29
+  - name: Lion
+    emoji: 🦁
+    species: Harlequin Rasbora
+    dateNew: 2025-11-29
+  - name: Leopard
+    emoji: 🐆
+    species: Harlequin Rasbora
+    dateNew: 2025-11-29
+  - name: Wolf
+    emoji: 🐺
+    species: Harlequin Rasbora
+    dateNew: 2025-11-29
   - name: Rigatoni
     emoji: 🍝
     species: Otocinclus
     dateNew: 2024-02-09
     dateDied: 2024-02-13
+    isDead: true
   - name: Parmesan
     emoji: 🧀
     species: Otocinclus
     dateNew: 2024-02-03
+    isDead: true
   - name: Ravioli
     emoji: 🍝
     species: Otocinclus
     dateNew: 2024-02-03
+    isDead: true
   - name: Mozzarella
     emoji: 🧀
     species: Otocinclus
     dateNew: 2024-02-09
+    isDead: true
   - name: Satsuma
     emoji: 🍊
     species: Amano Shrimp
@@ -80,10 +113,30 @@ inhabitants:
     emoji: 🍋
     species: Amano Shrimp
     dateNew: 2024-02-09
+  - name: Tiger
+    emoji: 🐅
+    species: Nerite Snail
+    dateNew: 2023-11-25
+  - name: Stripes
+    emoji: 🇺🇸
+    species: Nerite Snail
+    dateNew: 2023-11-25
+  - name: Bear
+    emoji: 🐻
+    species: Black Racer Nerite Snail
+    dateNew: 2024-11-16
+    dateAddedToTank: 2025-11-25
   - name: George Lightning & Friends
     emoji: 🐌
     species: Bladder snail
     dateNew: 2023-11-13
+plants:
+  - name: Rotala Rotundifolia \"h'ra\"
+    dateNew: 2025-11-29
+  - name: Water sprite
+    dateNew: 2025-11-29
+  - name: Anubias Round Leaf
+    dateNew: 2023-11-29
 calendar:
   co2:
     title: 'Added API CO₂ Booster (1ml)'

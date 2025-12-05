@@ -27,42 +27,89 @@ inhabitants:
     emoji: 🌼
     species: Orange Pumpkin Shrimp
     dateNew: 2023-12-17
+    isDead: true
   - name: Dahlia
     emoji: 🌼
-    species: Red Cherry Shrimp
+    species: Bloody Mary Shrimp
     dateNew: 2024-01-15
+    isDead: true
   - name: Poppy
     emoji: 🥀
-    species: Red Cherry Shrimp
+    species: Bloody Mary Shrimp
     dateNew: 2024-01-15
+    isDead: true
   - name: Rose
     emoji: 🌹
-    species: Red Cherry Shrimp
+    species: Bloody Mary Shrimp
     dateNew: 2024-01-15
+    isDead: true
   - name: Cherry
     emoji: 🍒
-    species: Red Cherry Shrimp
+    species: Bloody Mary Shrimp
     dateNew: 2024-01-15
+    isDead: true
   - name: Tulip
     emoji: 🌷
-    species: Red Cherry Shrimp
+    species: Bloody Mary Shrimp
     dateNew: 2024-02-03
   - name: Scarlet
     emoji: 💃🏽
-    species: Red Cherry Shrimp
+    species: Bloody Mary Shrimp
     dateNew: 2024-02-03
   - name: Begonia
     emoji: 🌺
-    species: Red Cherry Shrimp
+    species: Bloody Mary Shrimp
     dateNew: 2024-02-03
+  - name: Maple
+    emoji: 🍁
+    species: Bloody Mary Shrimp
+    dateNew: 2015-11-29
+  - name: Oak
+    emoji: 🌳
+    species: Bloody Mary Shrimp
+    dateNew: 2015-11-29
+  - name: Cherry
+    emoji: 🍒
+    species: Bloody Mary Shrimp
+    dateNew: 2025-11-29
+  - name: Walnut
+    emoji: 🪾
+    species: Bloody Mary Shrimp
+    dateNew: 2025-11-29
+  - name: Pine
+    emoji: 🌲
+    species: Bloody Mary Shrimp
+    dateNew: 2025-11-29
+  - name: Birch
+    emoji: 🌳
+    species: Bloody Mary Shrimp
+    dateNew: 2025-11-29
+  - name: Gingko
+    emoji: 🍂
+    species: Bloody Mary Shrimp
+    dateNew: 2025-11-29
+  - name: Cypress
+    emoji: 🌲
+    species: Bloody Mary Shrimp
+    dateNew: 2025-11-29
+  - name: Acacia
+    emoji: 🌳
+    species: Bloody Mary Shrimp
+    dateNew: 2025-11-29
+  - name: Willow
+    emoji: 🌿
+    species: Bloody Mary Shrimp
+    dateNew: 2025-11-29
   - name: Lemon
     emoji: 🍋
     species: Amano Shrimp
     dateNew: 2024-02-03
+    isDead: true
   - name: Lime
     emoji: 🍈
     species: Amano Shrimp
     dateNew: 2024-02-09
+    isDead: true
   - name: Bladder Snails
     emoji: 🐌
     species: Bladder snail
@@ -71,6 +118,7 @@ inhabitants:
     emoji: 🦪
     species: Seed shrimp
     dateNew: 2023-03-01
+
 calendar:
   co2:
     title: 'Added API CO₂ Booster (0.2ml)'

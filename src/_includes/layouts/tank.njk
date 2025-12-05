@@ -74,13 +74,14 @@
       {%- if inhabitants %}
         <ul class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-6">
           {%- for inhabitant in inhabitants %}
-            {%- set inhabitantSpecies = {} %}
-            {%- for specie in species %}
-              {% if inhabitant.species == specie.name %}
-                {%- set inhabitantSpecies = specie %}
-              {% endif %}
-            {%- endfor %}
-            <li>
+            {%- if not inhabitant.isDead %}
+              {%- set inhabitantSpecies = {} %}
+              {%- for specie in species %}
+                {% if inhabitant.species == specie.name %}
+                  {%- set inhabitantSpecies = specie %}
+                {% endif %}
+              {%- endfor %}
+              <li>
               <div class="flex items-center">
                 <img src="{{ inhabitantSpecies.imgSrc }}" alt="{{  inhabitantSpecies.name }}" class="w-32 h-32 rounded-3xl mr-4 leading-none" lazy>
                 <div>
@@ -103,7 +104,8 @@
 
                 </div>
               </div>
-            </li>
+              </li>
+            {%- endif %}
           {%- endfor %}
         </ul>
       {%- endif %}
@@ -111,7 +113,7 @@
       {%- if hasInhibitantsNote %}
         <div class="text-slate-400 mt-8">
           {%- markdown %}
-          {%- block inhabitantsNote %}{%- endblock %}
+            {%- block inhabitantsNote %}{%- endblock %}
           {%- endmarkdown %}
         </div>
       {%- endif %}
@@ -126,4 +128,5 @@
       </div>
     </div>
   </section> #}
-{%- endblock %}
+  
+{%- endblock %} {# end main #}
