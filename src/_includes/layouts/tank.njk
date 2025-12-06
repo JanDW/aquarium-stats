@@ -93,6 +93,9 @@
                   <p>
                     <a href="{{ inhabitantSpecies.infoLink }}" class="hover:underline">{{ inhabitant.species }}</a>
                   </p>
+                  {%- if inhabitant.nickname %}
+                    <p class="text-sm text-gray-400">a.k.a. “{{ inhabitant.nickname }}”</p>
+                  {%- endif %}
                   <p class="italic text-sm text-gray-400">{{inhabitantSpecies.binomial}}</p>
                   <p class="text-sm text-gray-400">Since {{ inhabitant.dateNew | readableDate }}</p>
                   {%- if inhabitant.dateDied %}
@@ -128,5 +131,7 @@
       </div>
     </div>
   </section> #}
+
+  
   
 {%- endblock %} {# end main #}
