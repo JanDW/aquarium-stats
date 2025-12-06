@@ -3,3 +3,6 @@ node_modules
 .DS_Store
 www
 src/_data/*.json
+
+# Local Netlify folder
+.netlify
