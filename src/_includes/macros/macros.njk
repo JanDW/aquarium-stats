@@ -263,7 +263,7 @@
         <div class="text-cyan-500 text-lg font-medium max-sm:ml-3 md:ml-3">{{ unit | safe }}</div>
       </div>
       <div class="text-orange-200 text-xl font-bold tracking-wider md:tracking-widest font-medium sm:mt-6 uppercase max-sm:ml-auto">{{ key }}</div>
-      <div class="text-orange-200/60 text-xl font-base mt-1">{{ value.date | shortDate }}</div>
+      <div class="text-orange-200/60 text-xl font-base mt-1">{{ value.date | shortDate }}<span class="hidden md:inline">, {{ value.date | year }}</span></div>
     </li>
   {%- endfor %}
 </ul>

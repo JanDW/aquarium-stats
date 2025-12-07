@@ -96,7 +96,13 @@ module.exports = function (eleventyConfig) {
 
   // Filter that converts 2023-12-26 to Dec 26
   eleventyConfig.addFilter('shortDate', (dateStr) => {
-    return DateTime.fromISO(dateStr, { zone: 'utc' }).toFormat('MMM dd, yyyy');
+    return DateTime.fromISO(dateStr, { zone: 'utc' }).toFormat('MMM dd');
+  });
+
+  eleventyConfig.addFilter('year', (dateStr) => {
+    return DateTime.fromISO(dateStr, { zone: 'utc' }).toFormat(
+      'yyyy'
+    );
   });
 
   eleventyConfig.addNunjucksFilter('getData', function (value) {
