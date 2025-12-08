@@ -258,7 +258,7 @@ species:
     imgSrc: /assets/img/lodge-ostracod.webp
     size: 0.04"
     diet: detritivore
-    
+
 plantSpecies:
   - name: Java Moss
     binomial: Taxiphyllum barbieri
@@ -294,14 +294,14 @@ plantSpecies:
     binomial: Hydrocotyle leucocephala
     infoLink: https://en.wikipedia.org/wiki/Hydrocotyle_leucocephala
     imgSrc: /assets/img/plant-brazilian-pennywort.jpg
-  - name: Anubias Round Leaf
+  - name: Anubias round leaf
     binomial: Anubias barteri var. Golden Coin
-    infoLink: https://en.wikncipedia.org/wiki/Anubias_barteri
-    imgSrc: /assets/img/plant-anubias-round-leaf.jpg
-  - name: Rotala Rotundifolia h'ra
+    infoLink: https://en.wikipedia.org/wiki/Anubias_barteri
+    imgSrc: /assets/img/plant-anubias-golden-coin.jpg
+  - name: Rotala rotundifolia h'ra
     binomial: Rotala rotundifolia
     infoLink: https://en.wikipedia.org/wiki/Rotala_rotundifolia
-    imgSrc: /assets/img/plant-rotala-rotundifolia.jpg
+    imgSrc: /assets/img/plant-rotala-hra.jpg
   - name: Water sprite
     binomial: Ceratopteris siliquosa
     infoLink: https://en.wikipedia.org/wiki/Ceratopteris_thalictroides

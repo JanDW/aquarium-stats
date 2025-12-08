@@ -132,11 +132,11 @@ inhabitants:
     species: Bladder snail
     dateNew: 2023-11-13
 plants:
-  - name: Rotala Rotundifolia \"h'ra\"
+  - name: Rotala rotundifolia h'ra
     dateNew: 2025-11-29
   - name: Water sprite
     dateNew: 2025-11-29
-  - name: Anubias Round Leaf
+  - name: Anubias round leaf
     dateNew: 2023-11-29
 calendar:
   co2:

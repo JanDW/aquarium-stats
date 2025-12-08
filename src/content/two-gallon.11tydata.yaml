@@ -21,7 +21,7 @@ tank:
   length: unknown
   volume: 2
   dateStart: 2024-01-20
-plants: unknown
+plants: null
 inhabitants:
   - name: Zinnia
     emoji: 🌼

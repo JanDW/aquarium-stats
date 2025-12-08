@@ -123,15 +123,48 @@
     </section>
   {%- endif %}
 
-  {# <section class="mt-24">
-    <div class="mx-[2vw]">
-      <h2 class="text-2xl font-bold">Water Parameters &amp; Maintenance Log</h2>
-      <div class="border border-slate-800 rounded-lg mt-4 mb-8">
-        {{ macros.table(dataName | getData) }}
-      </div>
-    </div>
-  </section> #}
+  {%- if plants %}
+    <section class="mx-[2vw] 3xl:mx-auto max-w-[2000px] mt-12">
+      <h2 class="text-2xl font-bold mb-4">
+        The plants
+      </h2>
 
-  
-  
+      <ul class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-6">
+        {%- for plant in plants %}
+          {%- set tankPlant = {} %}
+          {%- for plantSpecie in plantSpecies %}
+            {% if plant.name == plantSpecie.name %}
+              {%- set tankPlant = plantSpecie %}
+            {% endif %}
+          {%- endfor %}
+
+          <li>
+            <div class="flex items-center">
+              <img src="{{ tankPlant.imgSrc }}" alt="{{  tankPlant.name }}" class="w-32 h-32 rounded-3xl mr-4 leading-none" lazy>
+              <div>
+                <!--<h3 class="text-xl font-bold">{{ tankPlant.name }}
+                </h3>-->
+                <p>
+                  <a href="{{ tankPlant.infoLink }}" class="hover:underline">{{ tankPlant.name }}</a>
+                </p>
+                <p class="italic text-sm text-gray-400">{{tankPlant.binomial}}</p>
+                <p class="text-sm text-gray-400">Since {{ plant.dateNew | readableDate }}</p>
+              </div>
+            </div>
+          </li>
+        {%- endfor %}
+      </ul>
+      </section>
+    {%- endif %}
+
+
+    {# <section class="mt-24">
+      <div class="mx-[2vw]">
+        <h2 class="text-2xl font-bold">Water Parameters &amp; Maintenance Log</h2>
+        <div class="border border-slate-800 rounded-lg mt-4 mb-8">
+          {{ macros.table(dataName | getData) }}
+        </div>
+      </div>
+    </section> #}
+
 {%- endblock %} {# end main #}
