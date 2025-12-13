@@ -112,11 +112,11 @@ inhabitants:
     isDead: true
   - name: Bladder Snails
     emoji: 🐌
-    species: Bladder snail
+    species: Bladder Snail
     dateNew: 2023-12-17
   - name: A Million Ostracods
     emoji: 🦪
-    species: Seed shrimp
+    species: Seed Shrimp
     dateNew: 2023-03-01
 
 calendar:

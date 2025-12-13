@@ -211,7 +211,7 @@ species:
     gh: 8-12
     diet: omnivore
     sex: male
-  - name: Bladder snail
+  - name: Bladder Snail
     emoji: 🐌
     binomial: Physella acuta
     infoLink: https://en.wikipedia.org/wiki/Physella_acuta
@@ -252,7 +252,7 @@ species:
     kh: 3-10
     gh: 4-14
     diet: algae eater
-  - name: Seed shrimp
+  - name: Seed Shrimp
     binomial: Ostracoda
     infoLink: https://en.wikipedia.org/wiki/Ostracod
     imgSrc: /assets/img/lodge-ostracod.webp
@@ -294,15 +294,15 @@ plantSpecies:
     binomial: Hydrocotyle leucocephala
     infoLink: https://en.wikipedia.org/wiki/Hydrocotyle_leucocephala
     imgSrc: /assets/img/plant-brazilian-pennywort.jpg
-  - name: Anubias round leaf
+  - name: Anubias Round Leaf
     binomial: Anubias barteri var. Golden Coin
     infoLink: https://en.wikipedia.org/wiki/Anubias_barteri
     imgSrc: /assets/img/plant-anubias-golden-coin.jpg
-  - name: Rotala rotundifolia h'ra
+  - name: Rotala Rotundifolia H'ra
     binomial: Rotala rotundifolia
     infoLink: https://en.wikipedia.org/wiki/Rotala_rotundifolia
     imgSrc: /assets/img/plant-rotala-hra.jpg
-  - name: Water sprite
+  - name: Water Sprite
     binomial: Ceratopteris siliquosa
     infoLink: https://en.wikipedia.org/wiki/Ceratopteris_thalictroides
     imgSrc: /assets/img/plant-ceratopteris-siliquosa.jpg

@@ -142,11 +142,11 @@
             <div class="flex items-center">
               <img src="{{ tankPlant.imgSrc }}" alt="{{  tankPlant.name }}" class="w-32 h-32 rounded-3xl mr-4 leading-none" lazy>
               <div>
-                <!--<h3 class="text-xl font-bold">{{ tankPlant.name }}
-                </h3>-->
-                <p>
+                <h3 class="text-xl font-bold">{{ tankPlant.name }}
+                </h3>
+                {# <p>
                   <a href="{{ tankPlant.infoLink }}" class="hover:underline">{{ tankPlant.name }}</a>
-                </p>
+                </p>  #}
                 <p class="italic text-sm text-gray-400">{{tankPlant.binomial}}</p>
                 <p class="text-sm text-gray-400">Since {{ plant.dateNew | readableDate }}</p>
               </div>

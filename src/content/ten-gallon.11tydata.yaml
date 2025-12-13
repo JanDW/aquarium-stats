@@ -129,14 +129,14 @@ inhabitants:
     dateAddedToTank: 2025-11-25
   - name: George Lightning & Friends
     emoji: 🐌
-    species: Bladder snail
+    species: Bladder Snail
     dateNew: 2023-11-13
 plants:
-  - name: Rotala rotundifolia h'ra
+  - name: Rotala Rotundifolia H'ra
     dateNew: 2025-11-29
-  - name: Water sprite
+  - name: Water Sprite
     dateNew: 2025-11-29
-  - name: Anubias round leaf
+  - name: Anubias Round Leaf
     dateNew: 2023-11-29
 calendar:
   co2:
