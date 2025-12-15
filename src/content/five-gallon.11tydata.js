@@ -99,6 +99,7 @@ function getRecentData(data, ...keys) {
       recentData[key] = {
         value: filteredData[0][key],
         date: filteredData[0].date,
+        permalink: filteredData[0].permalink,
       };
     }
   }

@@ -130,6 +130,7 @@ function fromNotionObject(notionPage, keys) {
   const propsById = notionPropertiesById(notionPage.properties);
   return {
     emoji: notionPage?.icon?.emoji ?? null,
+    permalink: notionPage?.url ?? null,
     date: propsById[keys.date]?.date?.start ?? null,
     title: propsById[keys.notes]?.title[0]?.plain_text ?? null,
     ammonia: propsById[keys.ammonia]?.number ?? null,
