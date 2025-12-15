@@ -30,6 +30,7 @@ const twoGallonKeys = {
   date: 'GuZ%3E',
   spongeClean: '%5DUZh',
   culture: 'KMGu',
+  rootTabs: 'fMyq',
 };
 
 const fiveGallonKeys = {
@@ -53,6 +54,7 @@ const fiveGallonKeys = {
   date: 'GuZ%3E',
   spongeClean: '%5DUZh',
   culture: 'KMGu',
+  rootTabs: 'CvmV', 
 };
 
 const tenGallonKeys = {
@@ -76,6 +78,7 @@ const tenGallonKeys = {
   date: 'GuZ%3E',
   spongeClean: '%A%7BFF',
   culture: 'm%40~I',
+  rootTabs: '%3AE%7Bx',
 };
 
 /**
@@ -146,6 +149,7 @@ function fromNotionObject(notionPage, keys) {
     crushedCoral: propsById[keys.crushedCoral]?.checkbox ?? null,
     fertilizer: propsById[keys.fertilizer]?.checkbox ?? null,
     culture: propsById[keys.culture]?.checkbox ?? null,
+    rootTabs: propsById[keys.rootTabs]?.checkbox ?? null,
   };
 }
 
