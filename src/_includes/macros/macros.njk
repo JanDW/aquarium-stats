@@ -250,8 +250,8 @@
 {%- macro recentData(data) %}
 <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 rounded-2xl sm:rounded-3xl p-2 bg-emerald-600">
   {%- for key, value in data %}
-    <li class="flex sm:flex-col max-sm:gap-x-8 p-5 text-center bg-emerald-950 sm:pt-12 sm:pb-10 rounded-2xl max-sm:items-center">
-      <a href="{{ value.permalink }}">
+    <li>
+      <a href="{{ value.permalink }}" class="flex sm:flex-col max-sm:gap-x-8 p-5 text-center bg-emerald-950 sm:pt-12 sm:pb-10 rounded-2xl max-sm:items-center">
         <div class="whitespace-nowrap max-sm:flex md:flex items-center justify-center sm:mt-3">
           <div class="font-bold sm:font-extrabold tracking-tight text-cyan-400 text-4xl sm:text-6xl">{{ value.value }}</div>
           {%- if key == 'gh' or key == 'kh' %}
