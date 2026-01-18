@@ -56,10 +56,6 @@ inhabitants:
     emoji: 💃🏽
     species: Bloody Mary Shrimp
     dateNew: 2024-02-03
-  - name: Begonia
-    emoji: 🌺
-    species: Bloody Mary Shrimp
-    dateNew: 2024-02-03
   - name: Maple
     emoji: 🍁
     species: Bloody Mary Shrimp
@@ -78,26 +74,6 @@ inhabitants:
     dateNew: 2025-11-29
   - name: Pine
     emoji: 🌲
-    species: Bloody Mary Shrimp
-    dateNew: 2025-11-29
-  - name: Birch
-    emoji: 🌳
-    species: Bloody Mary Shrimp
-    dateNew: 2025-11-29
-  - name: Gingko
-    emoji: 🍂
-    species: Bloody Mary Shrimp
-    dateNew: 2025-11-29
-  - name: Cypress
-    emoji: 🌲
-    species: Bloody Mary Shrimp
-    dateNew: 2025-11-29
-  - name: Acacia
-    emoji: 🌳
-    species: Bloody Mary Shrimp
-    dateNew: 2025-11-29
-  - name: Willow
-    emoji: 🌿
     species: Bloody Mary Shrimp
     dateNew: 2025-11-29
   - name: Lemon

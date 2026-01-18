@@ -131,6 +131,36 @@ inhabitants:
     emoji: 🐌
     species: Bladder Snail
     dateNew: 2023-11-13
+  - name: Begonia
+    emoji: 🌺
+    species: Bloody Mary Shrimp
+    dateNew: 2024-02-03
+    dateAddedToTank: 2026-01-17
+  - name: Birch
+    emoji: 🌳
+    species: Bloody Mary Shrimp
+    dateNew: 2025-11-29
+    dateAddedToTank: 2026-01-17
+  - name: Gingko
+    emoji: 🍂
+    species: Bloody Mary Shrimp
+    dateNew: 2025-11-29
+    dateAddedToTank: 2026-01-17
+  - name: Cypress
+    emoji: 🌲
+    species: Bloody Mary Shrimp
+    dateNew: 2025-11-29
+    dateAddedToTank: 2026-01-17
+  - name: Acacia
+    emoji: 🌳
+    species: Bloody Mary Shrimp
+    dateNew: 2025-11-29
+    dateAddedToTank: 2026-01-17
+  - name: Willow
+    emoji: 🌿
+    species: Bloody Mary Shrimp
+    dateNew: 2025-11-29
+    dateAddedToTank: 2026-01-17
 plants:
   - name: Rotala Rotundifolia H'ra
     dateNew: 2025-11-29
