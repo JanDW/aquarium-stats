@@ -168,6 +168,16 @@ plants:
     dateNew: 2025-11-29
   - name: Anubias Round Leaf
     dateNew: 2023-11-29
+  - name: Narrow Leaf Java Fern
+    dateNew: 2026-01-10
+  - name: Dwarf Hairgrass
+    dateNew: 2026-01-10
+  - name: Java Moss
+    dateNew: 2026-01-10
+  - name: Water Wisteria
+    dateNew: 2026-01-24
+  - name: Brazilian Pennywort
+    dateNew: 2026-01-24
 calendar:
   co2:
     title: 'Added API CO₂ Booster (1ml)'
